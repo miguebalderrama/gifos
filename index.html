@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo-mobile.svg" alt="logo-mobile">
+        </div>
+        <div class="hamburger">
+            <div class="_layer -top"></div>
+            <div class="_layer -mid"></div>
+            <div class="_layer -bottom"></div>
+        </div>
+        <nav class="menuppal">
+            <ul>
+              <li><a href="#">Modo Nocturno</a> <div class="linea"></div> </li>
+              <li><a href="#">Favoritos</a><div class="linea"></div></li>
+              <li><a href="#">Mis GIFOS</a><div class="linea"></div></li>
+              
+            </ul>
+          </nav>
+        </header>
+          <main>
+            <section class="busqueda">
+              <div class="tittle">
+              <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span>
+              </h1>
+              </div>
+              <img src="..//img/ilustra_header.svg" alt="">
+              <div id="busqueda" class="form">                
+                  <label for="search"></label>
+                  <input  id="inpu" class="input" type="search" id="search" name="fname" placeholder="Busca GIFOS y más">         
+              
+              </div>              
+              <div class="imagenes" id="imagenes"></div>
+            </section>
+            <section class="parraf" id="trending" >
+              <h3>Trending:</h3>
+              
+              <p>Reactions, Entertrainament,Sports, Stickers, Artists</p>
+              
+            </section>
+            <section class="GIFOS" >
+              <h2>Trending GIFOS</h2>
+              <p>Mirá los últimos GIFOS de nuestra comunidad.</p>
+              
+              <div class="carousel" id="carousel" >
+                <button id="left" ></button>
+                <div class="card" id="trend0" > <img class="giftrend" id="img0" src="" alt="" style="background: rgb(233, 55, 55);"><div class="overlay"></div></div>
+                <div class="card"id="trend1" ><img class="giftrend" id="img1" src="" alt="" style="background: violet;"><div class="overlay"></div></div>
+                <div class="card" id="trend2"><img class="giftrend" id="img2" src="" alt="" style="background:yellowgreen green;"><div class="overlay" ></div></div>
+                <button id="right"></button>             
+
+              </div> 
+            
+             
+            </section>
+          </main>
+    <footer>
+      <div class="redes">
+        <p>Compartir en :</p>
+        <div class="contain_icon_face"></div>
+        <div class="contain_icon_instagram"></div>
+        <div class="contain_icon_twitter"></div>
+              
+      </div>
+      <div class="pie_footer">
+        <p>GIFOS 2020 All Rigth Reserved.</p>
+      </div>
+
+    </footer>
+ 
+   <script src="trending.js"></script>
+   <script src="search.js"></script>
+</body>
+</html>
