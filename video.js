@@ -19,8 +19,10 @@ var grabacion=0;
 function stopRecordingCallback() {
   document.querySelector("h1").innerHTML =
     "Grabacion de GIF detenido: " + bytesToSize(recorder.getBlob().size);
-  let previa = document.getElementById("video");
+  document.getElementById("video").setAttribute("style", "display:none;")
+  let previa = document.getElementById("gif");
   previa.src = URL.createObjectURL(recorder.getBlob());
+  previa.setAttribute("style", "display:block;")
   recorder.stream.stop();
   form.append("file", recorder.getBlob(), "myGif.gif");
   console.log(form.get("file"));
@@ -45,10 +47,6 @@ function subirGif(myGyf) {
 
 
 
-document.getElementById("subir").addEventListener("click", function upload() {
-  subirGif(form);
-  console.log("estoy subiendo mi gyf");
-});
 //////////////////////////////////////////////////////////////////////////////////
 ////////////// AQUI COMENZAMOS LA SECUENCIA//////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
@@ -58,9 +56,13 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
   grabacion++;
  
  if(grabacion==1){
-  var myobj = document.getElementById("message");
-  myobj.remove();
-  document.getElementById("video").setAttribute("style", "display:block;")
+  //var myobj = document.getElementById("message");  
+  //var item = myobj.querySelector ('#titleVideo');
+  // myobj.removeChild (item);
+  //document.getElementById("video").setAttribute("style", "display:block;")
+  document.getElementById("start").setAttribute("style", "display:none;")
+  document.getElementById('titleVideo').textContent = '¿Nos das acceso a tu camara?';
+  document.getElementById('parrafVideo').textContent = 'El acceso a tu camara sera valido solo en el tiempo en que estes creando tu GIFO';
   let uno =document.getElementById("uno")  
   uno.style.backgroundColor = "#572ee5";
   uno.style.color = "white";
@@ -68,14 +70,23 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
     navigator.mediaDevices.getUserMedia({
     audio: false,
     video: {
-       height: { max: 272 }
+       height: { max: 320 }
     }
  })
  .then(function(stream) {
+  var myobj = document.getElementById("message");
+  myobj.remove();
+   document.getElementById("video").setAttribute("style", "display:block;")   
     video.srcObject = stream;
     video.play();
     miVideo=video;
-    
+    document.getElementById('start').textContent = "Grabar"
+    document.getElementById("start").setAttribute("style", "display:block;")
+    let dos =document.getElementById("dos")  
+  dos.style.backgroundColor = "#572ee5";
+  dos.style.color = "white";
+  uno.style.backgroundColor = "white";
+  uno.style.color = "#572ee5";
  }) }
  if(grabacion==2){
     document.querySelector("h1").innerHTML =
@@ -84,8 +95,8 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
     type: "gif",
     frameRate: 1,
     quality: 10,
-    width: 360,
-    hidden: 240,
+    width: 480,
+    hidden: 320,
     onGifRecordingStarted: function () {
       document.querySelector("h1").innerHTML = "Gif record iniciado.";
     },
@@ -96,10 +107,21 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
   // release camera on stopRecording
   recorder.stream = miVideo.srcObject;
   console.log("estoy grabando")
+  document.getElementById('start').textContent = "Finalizar"
  }
  if(grabacion==3){
-    recorder.stopRecording(stopRecordingCallback);
-  grabacion=0;
+  recorder.stopRecording(stopRecordingCallback);  
+  document.getElementById('start').textContent = "Subir Gifo"
+  
+ }
+ if (grabacion==4) {
+  subirGif(form);
+  console.log("estoy subiendo mi gyf");
+  tres.style.backgroundColor = "#572ee5";
+  tres.style.color = "white";
+  dos.style.backgroundColor = "white";
+  dos.style.color = "#572ee5"; 
+  document.getElementById("start").setAttribute("style", "display:none;")
  }
 
 } )

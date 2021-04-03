@@ -88,6 +88,7 @@ body header .menuppal ul li a:hover {
 
 body main .comenzar {
   margin: auto;
+  margin-top: 1.5em;
 }
 
 body main .comenzar #start {
