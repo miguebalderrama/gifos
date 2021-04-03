@@ -3,6 +3,7 @@ var image = document.getElementById("video");
 var recorder;
 var form = new FormData();
 var grabacion=0;
+var flag=0;
 
 /*function captureCamera(callback) {
   navigator.mediaDevices
@@ -40,7 +41,7 @@ function subirGif(myGyf) {
   })
     .then((res) => res.json())
     .catch((error) => console.error("Error:", error))
-    .then((response) => console.log("Success:", response));
+    .then((response) => console.log("Success:", response.data));
 }
 
 
@@ -108,16 +109,17 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
   recorder.stream = miVideo.srcObject;
   console.log("estoy grabando")
   document.getElementById('start').textContent = "Finalizar"
+  transcurrido();
  }
  if(grabacion==3){
   recorder.stopRecording(stopRecordingCallback);  
   document.getElementById('start').textContent = "Subir Gifo"
   document.getElementById("repetir").setAttribute("style", "display:block;")
-
-
+  document.getElementById("reloj").setAttribute("style", "display:none;")
   
  }
  if (grabacion==4) {
+  
   subirGif(form);
   console.log("estoy subiendo mi gyf");
   tres.style.backgroundColor = "#572ee5";
@@ -144,3 +146,29 @@ document.getElementById("repetir").addEventListener("click",function repeatCaptu
 
 
 });
+
+
+function transcurrido() {
+  document.getElementById("reloj").setAttribute("style", "display:block;")
+	let segundos = 0;
+	let minutos = 0;
+	let timer = setInterval(() => {
+		if (grabacion==2) {
+			if (segundos < 60) {
+				if (segundos <= 9) {
+					segundos = '0' + segundos;
+				}
+				reloj.innerHTML=`00:00:0${minutos}:${segundos}`;
+				segundos++;
+				} else {
+				minutos++;
+				segundos = 0;
+			}
+		}
+		else {
+			clearInterval(timer)
+		}
+	}, 1000);
+} 
+
+
