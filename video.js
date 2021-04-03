@@ -75,7 +75,7 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
  })
  .then(function(stream) {
   var myobj = document.getElementById("message");
-  myobj.remove();
+  myobj.setAttribute("style", "display:none;")
    document.getElementById("video").setAttribute("style", "display:block;")   
     video.srcObject = stream;
     video.play();
@@ -112,6 +112,9 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
  if(grabacion==3){
   recorder.stopRecording(stopRecordingCallback);  
   document.getElementById('start').textContent = "Subir Gifo"
+  document.getElementById("repetir").setAttribute("style", "display:block;")
+
+
   
  }
  if (grabacion==4) {
@@ -125,3 +128,19 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
  }
 
 } )
+
+document.getElementById("repetir").addEventListener("click",function repeatCapture(){
+  grabacion=0;
+  let previa = document.getElementById("gif");
+  previa.setAttribute("style", "display:none;")
+  document.getElementById('start').textContent = "Comenzar"
+  document.getElementById('titleVideo').textContent = 'Aquí podrás crear tus propios GIFOS';
+  document.getElementById('parrafVideo').textContent = '¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)';
+  let uno =document.getElementById("uno")  
+  uno.style.backgroundColor = "white";
+  uno.style.color = "#572ee5";
+  dos.style.backgroundColor = "white";
+  dos.style.color = "#572ee5";
+
+
+});
