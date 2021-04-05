@@ -18,8 +18,8 @@ var flag=0;
 }*/
 
 function stopRecordingCallback() {
-  document.querySelector("h1").innerHTML =
-    "Grabacion de GIF detenido: " + bytesToSize(recorder.getBlob().size);
+  //document.querySelector("h1").innerHTML =
+  //  "Grabacion de GIF detenido: " + bytesToSize(recorder.getBlob().size);
   document.getElementById("video").setAttribute("style", "display:none;")
   let previa = document.getElementById("gif");
   previa.src = URL.createObjectURL(recorder.getBlob());
@@ -90,17 +90,17 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
   uno.style.color = "#572ee5";
  }) }
  if(grabacion==2){
-    document.querySelector("h1").innerHTML =
-    "Esperando para la grabacion del GIF...";
+   // document.querySelector("h1").innerHTML =
+   // "Esperando para la grabacion del GIF...";
   recorder = RecordRTC(miVideo.srcObject, {
     type: "gif",
     frameRate: 1,
     quality: 10,
     width: 480,
     hidden: 320,
-    onGifRecordingStarted: function () {
-      document.querySelector("h1").innerHTML = "Gif record iniciado.";
-    },
+   // onGifRecordingStarted: function () {
+   //   document.querySelector("h1").innerHTML = "Gif record iniciado.";
+   // },
    
   });
 
