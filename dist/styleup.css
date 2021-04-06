@@ -60,6 +60,7 @@ body header .menuppal ul li a:hover {
 }
 body main .comenzar {
   margin: auto;
+  margin-top: 1.5em;
 }
 body main .comenzar #start {
   color: #572ee5;
@@ -70,6 +71,8 @@ body main .comenzar #start {
   height: 50px;
   border-radius: 25px;
   font-weight: bold;
+  outline: none;
+  background: none;
 }
 body main .comenzar #start:hover {
   color: white;
@@ -139,8 +142,8 @@ body footer .pie_footer {
   border: 1.5px #572ee5 solid;
 }
 
-#videoElement {
-  width: 360px;
+#video {
+  width: 480px;
   background-color: white;
   margin: auto;
   display: block;
@@ -172,6 +175,33 @@ body footer .pie_footer {
     align-content: center;
     align-items: center;
   }
+  main .videoasset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  main .videoasset .camfull #element-camara {
+    width: 110px;
+    margin-top: -0.4em;
+  }
+  main .videoasset .camfull .camrollo {
+    margin-top: 7em;
+  }
+  main .videoasset .camfull .camrollo #element-cinta1 {
+    width: 45px;
+    margin-right: -0.7em;
+  }
+  main .videoasset .camfull .camrollo #element-cinta2 {
+    width: 63px;
+  }
+  main .videoasset #element-luz-camara {
+    width: 80px;
+  }
+  main .videoasset #pelicula {
+    align-self: flex-end;
+    margin-left: 4em;
+    margin-bottom: -6em;
+  }
   main .videoasset #container .message {
     width: 50%;
     font-size: 25px;
@@ -200,7 +230,7 @@ body footer .pie_footer {
     align-items: center;
     justify-content: center;
   }
-  main .pasos .numeros span {
+  main .pasos .numeros .num {
     width: 30px;
     height: 30px;
     margin-right: 1em;
@@ -211,18 +241,15 @@ body footer .pie_footer {
     display: flex;
     justify-content: center;
   }
-  main .pasos .numeros span p {
+  main .pasos .numeros .num p {
     margin-top: 0.4em;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
   }
-  main .pasos .numeros span:hover {
-    background: #572ee5;
-    color: white;
-  }
   main .pasos .line {
     border-bottom: solid #572ee5 5px;
-    width: 100%;
+    width: 80%;
+    margin: auto;
   }
 }

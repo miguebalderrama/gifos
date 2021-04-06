@@ -179,6 +179,41 @@ body {
     align-content: center;
     align-items: center;
     .videoasset {
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      .camfull{
+        #element-camara{
+          width: 110px; 
+          margin-top: -0.4em;      
+        }
+        .camrollo{          
+          margin-top: 7em;
+      #element-cinta1{
+        width: 45px; 
+        margin-right: -0.5em;
+        animation: 3s rotate linear infinite;   ;
+        transform-origin: 50% 50%;            
+      }
+      @keyframes rotate {from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}}
+      #element-cinta2{
+        width: 63px; 
+        animation: 3s rotate linear infinite;   ;
+        transform-origin: 50% 50%; 
+        animation-direction: reverse;
+                
+      }
+    }
+    }
+      #element-luz-camara{
+        width: 80px;
+      }
+      #pelicula{
+        align-self: flex-end;
+        margin-left:4em;
+        margin-bottom: -6em;
+      }
       #container {
         .message {
           width: 50%;
@@ -230,7 +265,8 @@ body {
       }
       .line {
         border-bottom: solid #572ee5 5px;
-        width: 100%;
+        width: 80%;
+        margin: auto;
       }
     }
     

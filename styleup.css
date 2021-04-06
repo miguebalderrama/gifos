@@ -254,6 +254,70 @@ body footer .pie_footer {
         -ms-flex-align: center;
             align-items: center;
   }
+  main .videoasset {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .videoasset .camfull #element-camara {
+    width: 110px;
+    margin-top: -0.4em;
+  }
+  main .videoasset .camfull .camrollo {
+    margin-top: 7em;
+  }
+  main .videoasset .camfull .camrollo #element-cinta1 {
+    width: 45px;
+    margin-right: -0.5em;
+    -webkit-animation: 3s rotate linear infinite;
+            animation: 3s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  @-webkit-keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  main .videoasset .camfull .camrollo #element-cinta2 {
+    width: 63px;
+    -webkit-animation: 3s rotate linear infinite;
+            animation: 3s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    animation-direction: reverse;
+  }
+  main .videoasset #element-luz-camara {
+    width: 80px;
+  }
+  main .videoasset #pelicula {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-left: 4em;
+    margin-bottom: -6em;
+  }
   main .videoasset #container .message {
     width: 50%;
     font-size: 25px;
@@ -311,7 +375,8 @@ body footer .pie_footer {
   }
   main .pasos .line {
     border-bottom: solid #572ee5 5px;
-    width: 100%;
+    width: 80%;
+    margin: auto;
   }
 }
 /*# sourceMappingURL=styleup.css.map */
