@@ -199,11 +199,47 @@ body footer .pie_footer {
   border: 1.5px #572ee5 solid;
 }
 
-#video {
+#container #video {
   width: 480px;
+  height: 320px;
   background-color: white;
   margin: auto;
   display: block;
+  position: relative;
+  z-index: 1;
+}
+
+#container .preview {
+  position: relative;
+}
+
+#container .preview .overlay {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  background: rgba(87, 46, 229, 0.6);
+  /* Black see-through */
+  height: 100%;
+  width: 100%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#container .preview .overlay .estado {
+  color: white;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media only screen and (min-width: 768px) {
@@ -273,7 +309,11 @@ body footer .pie_footer {
   main .videoasset .camfull .camrollo {
     margin-top: 7em;
   }
-  main .videoasset .camfull .camrollo #element-cinta1 {
+  main .videoasset .camfull .camrollo .element-cinta1 {
+    width: 45px;
+    margin-right: -0.5em;
+  }
+  main .videoasset .camfull .camrollo .element-cinta1-active {
     width: 45px;
     margin-right: -0.5em;
     -webkit-animation: 3s rotate linear infinite;
@@ -301,7 +341,10 @@ body footer .pie_footer {
               transform: rotate(360deg);
     }
   }
-  main .videoasset .camfull .camrollo #element-cinta2 {
+  main .videoasset .camfull .camrollo .element-cinta2 {
+    width: 63px;
+  }
+  main .videoasset .camfull .camrollo .element-cinta2-active {
     width: 63px;
     -webkit-animation: 3s rotate linear infinite;
             animation: 3s rotate linear infinite;
@@ -309,8 +352,41 @@ body footer .pie_footer {
             transform-origin: 50% 50%;
     animation-direction: reverse;
   }
-  main .videoasset #element-luz-camara {
+  main .videoasset .element-luz-camara {
     width: 80px;
+  }
+  main .videoasset .element-luz-camara-active {
+    width: 80px;
+    -webkit-animation-name: parpadeo;
+            animation-name: parpadeo;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+  }
+  @-webkit-keyframes parpadeo {
+    0% {
+      opacity: 1.0;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1.0;
+    }
+  }
+  @keyframes parpadeo {
+    0% {
+      opacity: 1.0;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1.0;
+    }
   }
   main .videoasset #pelicula {
     -ms-flex-item-align: end;
@@ -340,7 +416,20 @@ body footer .pie_footer {
     width: 50%;
     margin: auto;
   }
-  main .pasos .numeros {
+  main .pasos .instrucciones {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .pasos .instrucciones .numeros {
     margin: 2em;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -352,7 +441,9 @@ body footer .pie_footer {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  main .pasos .numeros .num {
+  main .pasos .instrucciones .numeros .num {
+    -ms-flex-item-align: center;
+        align-self: center;
     width: 30px;
     height: 30px;
     margin-right: 1em;
@@ -367,9 +458,16 @@ body footer .pie_footer {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  main .pasos .numeros .num p {
+  main .pasos .instrucciones .numeros .num p {
     margin-top: 0.4em;
     font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+  }
+  main .pasos .instrucciones .reloj {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    color: #572ee5;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
   }

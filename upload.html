@@ -43,12 +43,12 @@
          <section style="margin-top: 1em;" class="videoasset">
           <div class="camfull">
            <div class="camrollo ">
-            <img style="width: 45px;" id="element-cinta1" src="../assets/element_cinta1.svg" alt="">
-            <img style="width: 63px;" id="element-cinta2" src="../assets/element_cinta2.svg" alt="">         
+            <img style="width: 45px;" class="element-cinta1" id="element-cinta1" src="../assets/element_cinta1.svg" alt="">
+            <img style="width: 63px;" class="element-cinta2" id="element-cinta2" src="../assets/element_cinta2.svg" alt="">         
         </div>
-        <img id="element-camara" src="../assets/element-camara.svg" alt="">
+        <img  id="element-camara" src="../assets/element-camara.svg" alt="">
         </div>
-          <img id="element-luz-camara" src="../assets/element-luz-camara.svg" alt="">
+          <img class="element-luz-camara" id="element-luz-camara" src="../assets/element-luz-camara.svg" alt="">
         <div id="container">
           
           <div id="message" class="message">
@@ -57,12 +57,18 @@
               grabar un video)</p>
           </div>
            <video id="video" src=""  style="display: none;" ></video>
-           <img style="display: none;" id="gif" src="" alt="">
-           
+           <div class="preview"><img style="display: none;" id="gif" src="" alt="">
+            <div id="overlay" class="overlay">
+              <div  id="estado" class="estado">
+                <img id="load" src="../assets/loader.svg" alt="">                
+                <p id="texto" >Estamos subiendo tu Gifo</p></div>
+              </div>
+            </div>           
            </div>
            <img id="pelicula" src="../assets/pelicula.svg" alt="">
       </section>
       <div class="pasos">
+        <div class="instrucciones">
         <div class="numeros">
           <span class="num" id="uno" >
             <p>1</p>
@@ -73,12 +79,18 @@
           <span class="num" id="tres" >
             <p>3</p>
           </span>
-          <div id="repetir" style="display:none;" class="repetir">Repetir captura
-          <a href=""></a></div>
-          
-          <div style="display:none;" class="reloj" id="reloj"></div>
-
+        </div>
+          <div  class="reloj">
+            <div   id="repetir" style="display:none;margin-right: 0;" class="repetir">Repetir captura
             <a href=""></a></div>
+            
+            <div style="display:none;margin-right: 0;" class="reloj" id="reloj"></div>
+  
+              <a href=""></a></div>
+            </div>
+          
+          
+            
             <div class="line"></div>
         </div>
         

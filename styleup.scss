@@ -146,14 +146,40 @@ body {
   width: 688px;
   height: 390px;
   border: 1.5px #572ee5 solid;
+  #video {
+    width: 480px;
+    height: 320px;
+    //height: 272px;
+    background-color: white;
+    margin: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+   
+  }
+  .preview{
+    position: relative;
+    .overlay {
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 0;
+      background: rgba(87, 46, 229, 0.6); /* Black see-through */
+      height: 100%;
+      width: 100%;
+      transition: 0.5s ease;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .estado{
+        color: white;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+  }
 }
-#video {
-  width: 480px;
-  //height: 272px;
-  background-color: white;
-  margin: auto;
-  display: block;
-}
+
 
 @media only screen and (min-width: 768px) {
   .busqueda {
@@ -189,7 +215,12 @@ body {
         }
         .camrollo{          
           margin-top: 7em;
-      #element-cinta1{
+      .element-cinta1{
+        width: 45px; 
+        margin-right: -0.5em;
+                  
+      }
+      .element-cinta1-active{
         width: 45px; 
         margin-right: -0.5em;
         animation: 3s rotate linear infinite;   ;
@@ -197,17 +228,35 @@ body {
       }
       @keyframes rotate {from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}}
-      #element-cinta2{
+
+
+      .element-cinta2{
+        width: 63px;         
+                       
+      }
+      .element-cinta2-active{
         width: 63px; 
-        animation: 3s rotate linear infinite;   ;
+        animation: 3s rotate linear infinite;   
         transform-origin: 50% 50%; 
-        animation-direction: reverse;
-                
+        animation-direction: reverse;  
       }
     }
     }
-      #element-luz-camara{
+      .element-luz-camara{
         width: 80px;
+        
+      }
+      .element-luz-camara-active{
+        width: 80px;
+        animation-name: parpadeo;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      @keyframes parpadeo {  
+        0% { opacity: 1.0; }
+         50% { opacity: 0.3; }
+        100% { opacity: 1.0; }
       }
       #pelicula{
         align-self: flex-end;
@@ -239,12 +288,20 @@ body {
     .pasos {
       width: 50%;
       margin: auto;
+      .instrucciones{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
       .numeros {
         margin: 2em;
         display: flex;
         align-items: center;
         justify-content: center;
+        ;          
+            
         .num {
+          align-self: center;
           width: 30px;
           height: 30px;
           margin-right: 1em;
@@ -263,6 +320,14 @@ body {
         }
         
       }
+      .reloj{
+        align-self: flex-end;
+        color: #572ee5;
+        font-family: "Roboto", sans-serif;
+            font-weight: bold    
+      }
+    }
+    
       .line {
         border-bottom: solid #572ee5 5px;
         width: 80%;

@@ -141,12 +141,28 @@ body footer .pie_footer {
   height: 390px;
   border: 1.5px #572ee5 solid;
 }
-
-#video {
+#container #video {
   width: 480px;
+  height: 320px;
   background-color: white;
   margin: auto;
   display: block;
+  position: relative;
+  z-index: 1;
+}
+#container .preview {
+  position: relative;
+}
+#container .preview .overlay {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  background: rgba(87, 46, 229, 0.6);
+  /* Black see-through */
+  height: 100%;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -187,15 +203,53 @@ body footer .pie_footer {
   main .videoasset .camfull .camrollo {
     margin-top: 7em;
   }
-  main .videoasset .camfull .camrollo #element-cinta1 {
+  main .videoasset .camfull .camrollo .element-cinta1 {
     width: 45px;
-    margin-right: -0.7em;
+    margin-right: -0.5em;
   }
-  main .videoasset .camfull .camrollo #element-cinta2 {
+  main .videoasset .camfull .camrollo .element-cinta1-active {
+    width: 45px;
+    margin-right: -0.5em;
+    animation: 3s rotate linear infinite;
+    transform-origin: 50% 50%;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  main .videoasset .camfull .camrollo .element-cinta2 {
     width: 63px;
   }
-  main .videoasset #element-luz-camara {
+  main .videoasset .camfull .camrollo .element-cinta2-active {
+    width: 63px;
+    animation: 3s rotate linear infinite;
+    transform-origin: 50% 50%;
+    animation-direction: reverse;
+  }
+  main .videoasset .element-luz-camara {
     width: 80px;
+  }
+  main .videoasset .element-luz-camara-active {
+    width: 80px;
+    animation-name: parpadeo;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes parpadeo {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   main .videoasset #pelicula {
     align-self: flex-end;
@@ -224,13 +278,20 @@ body footer .pie_footer {
     width: 50%;
     margin: auto;
   }
-  main .pasos .numeros {
+  main .pasos .instrucciones {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  main .pasos .instrucciones .numeros {
     margin: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  main .pasos .numeros .num {
+  main .pasos .instrucciones .numeros .num {
+    align-self: center;
     width: 30px;
     height: 30px;
     margin-right: 1em;
@@ -241,9 +302,15 @@ body footer .pie_footer {
     display: flex;
     justify-content: center;
   }
-  main .pasos .numeros .num p {
+  main .pasos .instrucciones .numeros .num p {
     margin-top: 0.4em;
     font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+  }
+  main .pasos .instrucciones .reloj {
+    align-self: flex-end;
+    color: #572ee5;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
   }

@@ -41,7 +41,15 @@ function subirGif(myGyf) {
   })
     .then((res) => res.json())
     .catch((error) => console.error("Error:", error))
-    .then((response) => console.log("Success:", response.data));
+    .then(function (response) {
+       console.log("Success:", response.data)
+       texto=document.getElementById("texto")
+       texto.textContent= "GIFO subido con éxito"
+       loadersvg = document.getElementById("load");
+       loadersvg.setAttribute("src","../assets/ok.svg");
+      }   
+    
+    );
 }
 
 
@@ -97,7 +105,7 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
     frameRate: 1,
     quality: 10,
     width: 480,
-    hidden: 320,
+    hidden: 240,
    // onGifRecordingStarted: function () {
    //   document.querySelector("h1").innerHTML = "Gif record iniciado.";
    // },
@@ -110,18 +118,37 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
   console.log("estoy grabando")
   document.getElementById('start').textContent = "Finalizar"
   transcurrido();
+  cintauno=document.getElementById("element-cinta1")
+  //cintauno.classList.toggle("element-cinta1");
+  cintauno.classList.toggle("element-cinta1-active");
+  cintados=document.getElementById("element-cinta2")
+  //cintados.classList.toggle("element-cinta2");
+  cintados.classList.toggle("element-cinta2-active");
+  luzcam=document.getElementById("element-luz-camara")
+  //luzcam.classList.toggle("element-luz-camara");
+  luzcam.classList.toggle("element-luz-camara-active")
  }
  if(grabacion==3){
   recorder.stopRecording(stopRecordingCallback);  
   document.getElementById('start').textContent = "Subir Gifo"
   document.getElementById("repetir").setAttribute("style", "display:block;")
   document.getElementById("reloj").setAttribute("style", "display:none;")
-  
+  cintauno=document.getElementById("element-cinta1")
+  cintauno.classList.toggle("element-cinta1-active");
+  cintauno.classList.toggle("element-cinta1");
+  cintados=document.getElementById("element-cinta2")
+  cintados.classList.toggle("element-cinta2-active");
+  cintados.classList.toggle("element-cinta2");
+  luzcam=document.getElementById("element-luz-camara")
+  luzcam.classList.toggle("element-luz-camara");
+  luzcam.classList.toggle("element-luz-camara-active")
  }
  if (grabacion==4) {
   
   subirGif(form);
   console.log("estoy subiendo mi gyf");
+  overlay=document.getElementById("overlay")
+  overlay.setAttribute("style","opacity:1;")
   tres.style.backgroundColor = "#572ee5";
   tres.style.color = "white";
   dos.style.backgroundColor = "white";
