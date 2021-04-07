@@ -154,15 +154,29 @@ body footer .pie_footer {
   position: relative;
 }
 #container .preview .overlay {
-  box-sizing: border-box;
   position: absolute;
-  bottom: 0;
+  top: 0;
+  box-sizing: border-box;
   background: rgba(87, 46, 229, 0.6);
   /* Black see-through */
   height: 100%;
   width: 100%;
   transition: 0.5s ease;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-direction: column;
+}
+#container .preview .overlay .estado {
+  color: white;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+#container .preview .overlay .icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }
 
 @media only screen and (min-width: 768px) {
