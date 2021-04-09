@@ -59,8 +59,8 @@
            <video id="video" src=""  style="display: none;" ></video>
            <div class="preview"><img style="display: none;" id="gif" src="" alt="">
             <div  id="overlay" class="overlay">
-              <div class="icon">
-                <a style="cursor:pointer" href=""> <img  src="../assets/icon-download.svg" alt=""> </a> 
+              <div style="display: none;" id="icon" class="icon">
+                <a id="download" style="cursor:pointer" download href="" target="_blank" > <img  src="../assets/icon-download.svg" alt=""> </a> 
                 <img  src="../assets/icon-link-normal.svg" alt="">  
               </div>
               <div id="estado" class="estado">                
@@ -87,21 +87,12 @@
           </span>
         </div>
           <div  class="reloj">
-            <div   id="repetir" style="display:none;margin-right: 0;" class="repetir">Repetir captura
+            <div   id="repetir" style="display:none;" class="repetir">REPETIR CAPTURA<a href=""></a></div>         
+            <div style="display:none;cursor:pointer;" class="reloj" id="reloj"></div>
             <a href=""></a></div>
-            
-            <div style="display:none;margin-right: 0;" class="reloj" id="reloj"></div>
-  
-              <a href=""></a></div>
-            </div>
-          
-          
-            
+            </div>              
             <div class="line"></div>
-        </div>
-        
-        
-      
+        </div>        
       <div class="comenzar">
         <button id="start" class="button" >Comenzar</button>
       </div>

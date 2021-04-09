@@ -294,6 +294,7 @@ body {
     .pasos {
       width: 50%;
       margin: auto;
+      position: relative;
       .instrucciones{
         display: flex;
         justify-content: center;
@@ -327,10 +328,27 @@ body {
         
       }
       .reloj{
-        align-self: flex-end;
+        position:absolute;
+        top: 19px;
+        right: 80px;
         color: #572ee5;
-        font-family: "Roboto", sans-serif;
-            font-weight: bold    
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold ;
+        font-size: 13px;   
+      }
+      .repetir{
+        width: auto;
+        white-space: nowrap;
+        position:absolute;
+        top: 19px;
+        right: 60px;
+        color: #572ee5;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold ;
+        font-size: 13px;
+        cursor:pointer; 
+        text-decoration: underline solid 2px #5ED7C6; 
+                  
       }
     }
     

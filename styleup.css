@@ -424,6 +424,7 @@ body footer .pie_footer {
   main .pasos {
     width: 50%;
     margin: auto;
+    position: relative;
   }
   main .pasos .instrucciones {
     display: -webkit-box;
@@ -474,11 +475,27 @@ body footer .pie_footer {
     font-weight: bold;
   }
   main .pasos .instrucciones .reloj {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    position: absolute;
+    top: 19px;
+    right: 80px;
     color: #572ee5;
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
+    font-size: 13px;
+  }
+  main .pasos .instrucciones .repetir {
+    width: auto;
+    white-space: nowrap;
+    position: absolute;
+    top: 19px;
+    right: 60px;
+    color: #572ee5;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    -webkit-text-decoration: underline solid 2px #5ED7C6;
+            text-decoration: underline solid 2px #5ED7C6;
   }
   main .pasos .line {
     border-bottom: solid #572ee5 5px;

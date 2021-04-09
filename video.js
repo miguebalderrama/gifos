@@ -22,7 +22,8 @@ function stopRecordingCallback() {
   //  "Grabacion de GIF detenido: " + bytesToSize(recorder.getBlob().size);
   document.getElementById("video").setAttribute("style", "display:none;")
   let previa = document.getElementById("gif");
-  previa.src = URL.createObjectURL(recorder.getBlob());
+  previa.src = URL.createObjectURL(recorder.getBlob());  
+  document.getElementById("download").setAttribute("href",previa.src); 
   previa.setAttribute("style", "display:block;")
   recorder.stream.stop();
   form.append("file", recorder.getBlob(), "myGif.gif");
@@ -42,11 +43,14 @@ function subirGif(myGyf) {
     .then((res) => res.json())
     .catch((error) => console.error("Error:", error))
     .then(function (response) {
-       console.log("Success:", response.data)
+       console.log("Success:", response.data.id)
+      // document.getElementById("download").setAttribute("href","https://media.giphy.com/media/"+response.data.id+"/source.gif")
        texto=document.getElementById("texto")
        texto.textContent= "GIFO subido con éxito"
        loadersvg = document.getElementById("load");
        loadersvg.setAttribute("src","../assets/ok.svg");
+       icon=document.getElementById("icon")
+        icon.setAttribute("style","display:block;")
       }   
     
     );
@@ -163,8 +167,8 @@ document.getElementById("repetir").addEventListener("click",function repeatCaptu
   let previa = document.getElementById("gif");
   previa.setAttribute("style", "display:none;")
   document.getElementById('start').textContent = "Comenzar"
-  document.getElementById('titleVideo').textContent = 'Aquí podrás crear tus propios GIFOS';
-  document.getElementById('parrafVideo').textContent = '¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)';
+  document.getElementById('titleVideo').textContent = '¿Nos das acceso a tu camara?';
+  document.getElementById('parrafVideo').textContent = 'El acceso a tu camara sera valido solo en el tiempo en que estes creando tu GIFO';
   let uno =document.getElementById("uno")  
   uno.style.backgroundColor = "white";
   uno.style.color = "#572ee5";
