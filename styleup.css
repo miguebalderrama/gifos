@@ -10,9 +10,7 @@ body {
 body header {
   margin: auto;
   padding-top: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -86,8 +84,102 @@ body header .menuppal ul li a:hover {
   color: #333;
 }
 
-body main .comenzar {
+body main .pasos {
+  width: 90%;
   margin: auto;
+  position: relative;
+}
+
+body main .pasos .instrucciones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .pasos .instrucciones .numeros {
+  margin: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .pasos .instrucciones .numeros .num {
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 1em;
+  margin-left: 1em;
+  color: #572ee5;
+  border: solid #572ee5 1.5px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .pasos .instrucciones .numeros .num p {
+  margin-top: 0.4em;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+body main .pasos .instrucciones .reloj {
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  color: #572ee5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+body main .pasos .instrucciones .repetir {
+  width: auto;
+  white-space: nowrap;
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  color: #572ee5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 11px;
+  cursor: pointer;
+  -webkit-text-decoration: underline solid 2px #5ed7c6;
+          text-decoration: underline solid 2px #5ed7c6;
+}
+
+body main .pasos .line {
+  border-bottom: solid #572ee5 7px;
+  width: 100%;
+  margin: auto;
+}
+
+body main .comenzar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 1.5em;
 }
 
@@ -111,8 +203,12 @@ body main .comenzar #start:hover {
 }
 
 body footer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
-  height: 300px;
+  height: 196px;
+  padding-top: 45px;
+  padding-bottom: 25px;
   border-bottom: solid 5px #572ee5;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -135,36 +231,47 @@ body footer .redes {
   padding-left: 0;
 }
 
-body footer .contain_icon_face {
+body footer .redes .iconitos {
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body footer .redes .iconitos .contain_icon_face {
   width: 20px;
-  margin-left: 15px;
+  margin-left: 8px;
   height: 20px;
   background: url("..//assets/icon_facebook.svg") no-repeat;
 }
 
-body footer .contain_icon_face:hover {
+body footer .redes .iconitos .contain_icon_face:hover {
   background: url("..//assets/icon_facebook_hover.svg") no-repeat;
 }
 
-body footer .contain_icon_instagram {
+body footer .redes .iconitos .contain_icon_instagram {
   width: 20px;
-  margin-left: 8px;
+  margin-left: 6px;
   height: 20px;
   background: url("..//assets/icon_instagram.svg") no-repeat;
 }
 
-body footer .contain_icon_instagram:hover {
+body footer .redes .iconitos .contain_icon_instagram:hover {
   background: url("..//assets/icon_instagram-hover.svg") no-repeat;
 }
 
-body footer .contain_icon_twitter {
+body footer .redes .iconitos .contain_icon_twitter {
   width: 20px;
-  margin-left: 15px;
+  margin-left: 10px;
   height: 20px;
   background: url("..//assets/icon-twitter.svg") no-repeat;
 }
 
-body footer .contain_icon_twitter:hover {
+body footer .redes .iconitos .contain_icon_twitter:hover {
   background: url("..//assets/icon-twitter-hover.svg") no-repeat;
 }
 
@@ -176,7 +283,65 @@ body footer .contain_icon_twitter:hover {
   border: none;
 }
 
-#container {
+.videoasset .camfull #element-camara {
+  width: 20%;
+  margin-top: -0.4em;
+}
+
+.videoasset .camfull .camrollo {
+  margin-top: 2em;
+}
+
+.videoasset .camfull .camrollo .element-cinta1 {
+  width: 45px;
+  margin-right: -0.5em;
+}
+
+.videoasset .camfull .camrollo .element-cinta1-active {
+  width: 45px;
+  margin-right: -0.5em;
+  -webkit-animation: 3s rotate linear infinite;
+          animation: 3s rotate linear infinite;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.videoasset .camfull .camrollo .element-cinta2 {
+  width: 63px;
+}
+
+.videoasset .camfull .camrollo .element-cinta2-active {
+  width: 63px;
+  -webkit-animation: 3s rotate linear infinite;
+          animation: 3s rotate linear infinite;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  animation-direction: reverse;
+}
+
+.videoasset #container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,14 +353,35 @@ body footer .contain_icon_twitter:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 688px;
+  width: 350px;
   height: 390px;
   border: 1.5px #572ee5 solid;
+  margin: auto;
 }
 
-#container #video {
-  width: 480px;
-  height: 320px;
+.videoasset #container .message {
+  width: 50%;
+  font-size: 25px;
+  color: #572ee5;
+  text-align: center;
+  line-height: 35px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.videoasset #container .message .word {
+  color: #50e3c2;
+}
+
+.videoasset #container .message p {
+  color: black;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.videoasset #container #video {
+  width: 340px;
   background-color: white;
   margin: auto;
   display: block;
@@ -203,11 +389,16 @@ body footer .contain_icon_twitter:hover {
   z-index: 1;
 }
 
-#container .preview {
+.videoasset #container .preview {
   position: relative;
 }
 
-#container .preview .overlay {
+.videoasset #container .preview #gif {
+  width: 350px;
+  height: auto;
+}
+
+.videoasset #container .preview .overlay {
   position: absolute;
   top: 0;
   -webkit-box-sizing: border-box;
@@ -233,32 +424,36 @@ body footer .contain_icon_twitter:hover {
           flex-direction: column;
 }
 
-#container .preview .overlay .estado {
+.videoasset #container .preview .overlay .estado {
   color: white;
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
 
-#container .preview .overlay .icon {
+.videoasset #container .preview .overlay .icon {
   position: absolute;
   top: 4px;
   right: 4px;
 }
 
-#container .preview .overlay .icon #copy {
+.videoasset #container .preview .overlay .icon #copy {
   opacity: 0.7;
 }
 
-#container .preview .overlay .icon #download {
+.videoasset #container .preview .overlay .icon #download {
   opacity: 0.7;
 }
 
-#container .preview .overlay .icon #copy:hover {
+.videoasset #container .preview .overlay .icon #copy:hover {
   opacity: 1;
 }
 
-#container .preview .overlay .icon #download:hover {
+.videoasset #container .preview .overlay .icon #download:hover {
   opacity: 1;
+}
+
+#pelicula {
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -408,10 +603,86 @@ body footer .contain_icon_twitter:hover {
     }
   }
   body main .videoasset #pelicula {
+    display: block;
     -ms-flex-item-align: end;
         align-self: flex-end;
     margin-left: 4em;
     margin-bottom: -6em;
+  }
+  body main .videoasset #container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 688px;
+    height: 390px;
+    border: 1.5px #572ee5 solid;
+  }
+  body main .videoasset #container #video {
+    width: 480px;
+    height: 320px;
+    background-color: white;
+    margin: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  body main .videoasset #container .preview {
+    position: relative;
+  }
+  body main .videoasset #container .preview .overlay {
+    position: absolute;
+    top: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background: rgba(87, 46, 229, 0.6);
+    /* Black see-through */
+    height: 100%;
+    width: 100%;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+    opacity: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body main .videoasset #container .preview .overlay .estado {
+    color: white;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+  }
+  body main .videoasset #container .preview .overlay .icon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+  body main .videoasset #container .preview .overlay .icon #copy {
+    opacity: 0.7;
+  }
+  body main .videoasset #container .preview .overlay .icon #download {
+    opacity: 0.7;
+  }
+  body main .videoasset #container .preview .overlay .icon #copy:hover {
+    opacity: 1;
+  }
+  body main .videoasset #container .preview .overlay .icon #download:hover {
+    opacity: 1;
   }
   body main .videoasset #container .message {
     width: 50%;
@@ -513,6 +784,7 @@ body footer .contain_icon_twitter:hover {
     margin: auto;
   }
   body footer {
+    height: 300px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -528,31 +800,34 @@ body footer .contain_icon_twitter:hover {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  body footer .redes .contain_icon_face {
+  body footer .redes .iconitos {
+    padding-top: 0;
+  }
+  body footer .redes .iconitos .contain_icon_face {
     width: 20px;
     margin-left: 15px;
     height: 20px;
     background: url("..//assets/icon_facebook.svg") no-repeat;
   }
-  body footer .redes .contain_icon_face:hover {
+  body footer .redes .iconitos .contain_icon_face:hover {
     background: url("..//assets/icon_facebook_hover.svg") no-repeat;
   }
-  body footer .redes .contain_icon_instagram {
+  body footer .redes .iconitos .contain_icon_instagram {
     width: 20px;
     margin-left: 8px;
     height: 20px;
     background: url("..//assets/icon_instagram.svg") no-repeat;
   }
-  body footer .redes .contain_icon_instagram:hover {
+  body footer .redes .iconitos .contain_icon_instagram:hover {
     background: url("..//assets/icon_instagram-hover.svg") no-repeat;
   }
-  body footer .redes .contain_icon_twitter {
+  body footer .redes .iconitos .contain_icon_twitter {
     width: 20px;
     margin-left: 15px;
     height: 20px;
     background: url("..//assets/icon-twitter.svg") no-repeat;
   }
-  body footer .redes .contain_icon_twitter:hover {
+  body footer .redes .iconitos .contain_icon_twitter:hover {
     background: url("..//assets/icon-twitter-hover.svg") no-repeat;
   }
   body footer .pie_footer {
