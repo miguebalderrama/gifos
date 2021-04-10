@@ -6,17 +6,6 @@ var recorder;
 var form = new FormData();
 var grabacion = 0;
 var flag = 0;
-/*function captureCamera(callback) {
-  navigator.mediaDevices
-    .getUserMedia({ video: true })
-    .then(function (camera) {
-      callback(camera);
-    })
-    .catch(function (error) {
-      alert("Unable to capture your camera. Please check console logs.");
-      console.error(error);
-    });
-}*/
 
 function stopRecordingCallback() {
   //document.querySelector("h1").innerHTML =
@@ -24,6 +13,7 @@ function stopRecordingCallback() {
   document.getElementById("video").setAttribute("style", "display:none;");
   var previa = document.getElementById("gif");
   previa.src = URL.createObjectURL(recorder.getBlob());
+  document.getElementById("download").setAttribute("href", previa.src);
   previa.setAttribute("style", "display:block;");
   recorder.stream.stop();
   form.append("file", recorder.getBlob(), "myGif.gif");
@@ -44,7 +34,14 @@ function subirGif(myGyf) {
   })["catch"](function (error) {
     return console.error("Error:", error);
   }).then(function (response) {
-    return console.log("Success:", response.data);
+    console.log("Success:", response.data.id); //document.getElementById("download").setAttribute("href","https://media1.giphy.com/media/"+response.data.id+"/giphy.gif")
+
+    texto = document.getElementById("texto");
+    texto.textContent = "GIFO subido con éxito";
+    loadersvg = document.getElementById("load");
+    loadersvg.setAttribute("src", "../assets/ok.svg");
+    icon = document.getElementById("icon");
+    icon.setAttribute("style", "display:block;");
   });
 } //////////////////////////////////////////////////////////////////////////////////
 ////////////// AQUI COMENZAMOS LA SECUENCIA//////////////////////////////////////
@@ -146,18 +143,21 @@ document.getElementById("start").addEventListener("click", function getStreamAnd
     dos.style.backgroundColor = "white";
     dos.style.color = "#572ee5";
     document.getElementById("start").setAttribute("style", "display:none;");
+    document.getElementById("repetir").setAttribute("style", "display:none;");
   }
 });
 document.getElementById("repetir").addEventListener("click", function repeatCapture() {
   grabacion = 0;
   var previa = document.getElementById("gif");
   previa.setAttribute("style", "display:none;");
-  document.getElementById('start').textContent = "Comenzar";
-  document.getElementById('titleVideo').textContent = 'Aquí podrás crear tus propios GIFOS';
+  var textito = document.getElementById("repetir");
+  textito.setAttribute("style", "display:none;");
+  document.getElementById('titleVideo').textContent = 'Aquí podrás crear tus propios GIFOS'; //document.getElementById('gip').innerHTML="GIFOS"
+
   document.getElementById('parrafVideo').textContent = '¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)';
-  var uno = document.getElementById("uno");
-  uno.style.backgroundColor = "white";
-  uno.style.color = "#572ee5";
+  document.getElementById('message').setAttribute("style", "display:block");
+  document.getElementById('start').textContent = "Comenzar";
+  var dos = document.getElementById("dos");
   dos.style.backgroundColor = "white";
   dos.style.color = "#572ee5";
 });
@@ -184,3 +184,26 @@ function transcurrido() {
     }
   }, 1000);
 }
+
+var boton = document.getElementById('copy');
+boton.addEventListener('click', function (event) {
+  // seleccionar el texto de la dirección de email
+  //var email = document.querySelector('.email');
+  var link = document.getElementById('copy');
+  var range = document.createRange();
+  range.selectNode(link);
+  window.getSelection().addRange(range);
+
+  try {
+    // intentar copiar el contenido seleccionado
+    var resultado = document.execCommand('copy');
+    console.log(resultado ? 'Email copiado' : 'No se pudo copiar el email');
+    console.log(resultado);
+  } catch (err) {
+    console.log('ERROR al intentar copiar el email');
+  } // eliminar el texto seleccionado
+
+
+  window.getSelection().removeAllRanges(); // cuando los navegadores lo soporten, habría
+  // que utilizar: removeRange(range)
+});

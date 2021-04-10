@@ -73,6 +73,7 @@ body main .comenzar #start {
   font-weight: bold;
   outline: none;
   background: none;
+  cursor: pointer;
 }
 body main .comenzar #start:hover {
   color: white;
@@ -83,45 +84,41 @@ body footer {
   height: 300px;
   border-bottom: solid 5px #572ee5;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
 }
 body footer .redes {
-  padding-left: 150px;
-  display: flex;
-  flex-direction: row;
+  padding-left: 0;
 }
-body footer .redes .contain_icon_face {
+body footer .contain_icon_face {
   width: 20px;
   margin-left: 15px;
   height: 20px;
   background: url("..//assets/icon_facebook.svg") no-repeat;
 }
-body footer .redes .contain_icon_face:hover {
+body footer .contain_icon_face:hover {
   background: url("..//assets/icon_facebook_hover.svg") no-repeat;
 }
-body footer .redes .contain_icon_instagram {
+body footer .contain_icon_instagram {
   width: 20px;
   margin-left: 8px;
   height: 20px;
   background: url("..//assets/icon_instagram.svg") no-repeat;
 }
-body footer .redes .contain_icon_instagram:hover {
+body footer .contain_icon_instagram:hover {
   background: url("..//assets/icon_instagram-hover.svg") no-repeat;
 }
-body footer .redes .contain_icon_twitter {
+body footer .contain_icon_twitter {
   width: 20px;
   margin-left: 15px;
   height: 20px;
   background: url("..//assets/icon-twitter.svg") no-repeat;
 }
-body footer .redes .contain_icon_twitter:hover {
+body footer .contain_icon_twitter:hover {
   background: url("..//assets/icon-twitter-hover.svg") no-repeat;
-}
-body footer .pie_footer {
-  padding-right: 150px;
 }
 
 .input:focus {
@@ -178,6 +175,18 @@ body footer .pie_footer {
   top: 4px;
   right: 4px;
 }
+#container .preview .overlay .icon #copy {
+  opacity: 0.7;
+}
+#container .preview .overlay .icon #download {
+  opacity: 0.7;
+}
+#container .preview .overlay .icon #copy:hover {
+  opacity: 1;
+}
+#container .preview .overlay .icon #download:hover {
+  opacity: 1;
+}
 
 @media only screen and (min-width: 768px) {
   .busqueda {
@@ -199,29 +208,29 @@ body footer .pie_footer {
     padding: 20px;
   }
 
-  main {
+  body main {
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
   }
-  main .videoasset {
+  body main .videoasset {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-  main .videoasset .camfull #element-camara {
+  body main .videoasset .camfull #element-camara {
     width: 110px;
     margin-top: -0.4em;
   }
-  main .videoasset .camfull .camrollo {
+  body main .videoasset .camfull .camrollo {
     margin-top: 7em;
   }
-  main .videoasset .camfull .camrollo .element-cinta1 {
+  body main .videoasset .camfull .camrollo .element-cinta1 {
     width: 45px;
     margin-right: -0.5em;
   }
-  main .videoasset .camfull .camrollo .element-cinta1-active {
+  body main .videoasset .camfull .camrollo .element-cinta1-active {
     width: 45px;
     margin-right: -0.5em;
     animation: 3s rotate linear infinite;
@@ -235,19 +244,19 @@ body footer .pie_footer {
       transform: rotate(360deg);
     }
   }
-  main .videoasset .camfull .camrollo .element-cinta2 {
+  body main .videoasset .camfull .camrollo .element-cinta2 {
     width: 63px;
   }
-  main .videoasset .camfull .camrollo .element-cinta2-active {
+  body main .videoasset .camfull .camrollo .element-cinta2-active {
     width: 63px;
     animation: 3s rotate linear infinite;
     transform-origin: 50% 50%;
     animation-direction: reverse;
   }
-  main .videoasset .element-luz-camara {
+  body main .videoasset .element-luz-camara {
     width: 80px;
   }
-  main .videoasset .element-luz-camara-active {
+  body main .videoasset .element-luz-camara-active {
     width: 80px;
     animation-name: parpadeo;
     animation-duration: 1.5s;
@@ -265,12 +274,12 @@ body footer .pie_footer {
       opacity: 1;
     }
   }
-  main .videoasset #pelicula {
+  body main .videoasset #pelicula {
     align-self: flex-end;
     margin-left: 4em;
     margin-bottom: -6em;
   }
-  main .videoasset #container .message {
+  body main .videoasset #container .message {
     width: 50%;
     font-size: 25px;
     color: #572ee5;
@@ -279,32 +288,33 @@ body footer .pie_footer {
     text-align: center;
     font-family: "Montserrat", sans-serif;
   }
-  main .videoasset #container .message .word {
-    color: #50E3C2;
+  body main .videoasset #container .message .word {
+    color: #50e3c2;
   }
-  main .videoasset #container .message p {
+  body main .videoasset #container .message p {
     color: black;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
   }
-  main .pasos {
+  body main .pasos {
     width: 50%;
     margin: auto;
+    position: relative;
   }
-  main .pasos .instrucciones {
+  body main .pasos .instrucciones {
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
   }
-  main .pasos .instrucciones .numeros {
+  body main .pasos .instrucciones .numeros {
     margin: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  main .pasos .instrucciones .numeros .num {
+  body main .pasos .instrucciones .numeros .num {
     align-self: center;
     width: 30px;
     height: 30px;
@@ -316,21 +326,75 @@ body footer .pie_footer {
     display: flex;
     justify-content: center;
   }
-  main .pasos .instrucciones .numeros .num p {
+  body main .pasos .instrucciones .numeros .num p {
     margin-top: 0.4em;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
   }
-  main .pasos .instrucciones .reloj {
-    align-self: flex-end;
+  body main .pasos .instrucciones .reloj {
+    position: absolute;
+    top: 19px;
+    right: 80px;
     color: #572ee5;
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
+    font-size: 13px;
   }
-  main .pasos .line {
-    border-bottom: solid #572ee5 5px;
+  body main .pasos .instrucciones .repetir {
+    width: auto;
+    white-space: nowrap;
+    position: absolute;
+    top: 19px;
+    right: 60px;
+    color: #572ee5;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline solid 2px #5ed7c6;
+  }
+  body main .pasos .line {
+    border-bottom: solid #572ee5 7px;
     width: 80%;
     margin: auto;
+  }
+  body footer {
+    flex-direction: row;
+  }
+  body footer .redes {
+    padding-left: 150px;
+    display: flex;
+    flex-direction: row;
+  }
+  body footer .redes .contain_icon_face {
+    width: 20px;
+    margin-left: 15px;
+    height: 20px;
+    background: url("..//assets/icon_facebook.svg") no-repeat;
+  }
+  body footer .redes .contain_icon_face:hover {
+    background: url("..//assets/icon_facebook_hover.svg") no-repeat;
+  }
+  body footer .redes .contain_icon_instagram {
+    width: 20px;
+    margin-left: 8px;
+    height: 20px;
+    background: url("..//assets/icon_instagram.svg") no-repeat;
+  }
+  body footer .redes .contain_icon_instagram:hover {
+    background: url("..//assets/icon_instagram-hover.svg") no-repeat;
+  }
+  body footer .redes .contain_icon_twitter {
+    width: 20px;
+    margin-left: 15px;
+    height: 20px;
+    background: url("..//assets/icon-twitter.svg") no-repeat;
+  }
+  body footer .redes .contain_icon_twitter:hover {
+    background: url("..//assets/icon-twitter-hover.svg") no-repeat;
+  }
+  body footer .pie_footer {
+    padding-right: 150px;
   }
 }

@@ -1,3 +1,4 @@
+
 /// variable globales
 var image = document.getElementById("video");
 var recorder;
@@ -5,17 +6,6 @@ var form = new FormData();
 var grabacion=0;
 var flag=0;
 
-/*function captureCamera(callback) {
-  navigator.mediaDevices
-    .getUserMedia({ video: true })
-    .then(function (camera) {
-      callback(camera);
-    })
-    .catch(function (error) {
-      alert("Unable to capture your camera. Please check console logs.");
-      console.error(error);
-    });
-}*/
 
 function stopRecordingCallback() {
   //document.querySelector("h1").innerHTML =
@@ -44,7 +34,7 @@ function subirGif(myGyf) {
     .catch((error) => console.error("Error:", error))
     .then(function (response) {
        console.log("Success:", response.data.id)
-      // document.getElementById("download").setAttribute("href","https://media.giphy.com/media/"+response.data.id+"/source.gif")
+      //document.getElementById("download").setAttribute("href","https://media1.giphy.com/media/"+response.data.id+"/giphy.gif")
        texto=document.getElementById("texto")
        texto.textContent= "GIFO subido con éxito"
        loadersvg = document.getElementById("load");
@@ -158,23 +148,26 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
   dos.style.backgroundColor = "white";
   dos.style.color = "#572ee5"; 
   document.getElementById("start").setAttribute("style", "display:none;")
+  document.getElementById("repetir").setAttribute("style", "display:none;")
  }
 
 } )
 
 document.getElementById("repetir").addEventListener("click",function repeatCapture(){
   grabacion=0;
-  let previa = document.getElementById("gif");
+  let previa = document.getElementById("gif");  
   previa.setAttribute("style", "display:none;")
+  let textito = document.getElementById("repetir"); 
+  textito.setAttribute("style", "display:none;") 
+  document.getElementById('titleVideo').textContent = 'Aquí podrás crear tus propios GIFOS';
+  //document.getElementById('gip').innerHTML="GIFOS"
+  document.getElementById('parrafVideo').textContent = '¡Crea tu GIFO en sólo 3 pasos! (sólo necesitas una cámara para grabar un video)';
+  document.getElementById('message').setAttribute("style","display:block")
   document.getElementById('start').textContent = "Comenzar"
-  document.getElementById('titleVideo').textContent = '¿Nos das acceso a tu camara?';
-  document.getElementById('parrafVideo').textContent = 'El acceso a tu camara sera valido solo en el tiempo en que estes creando tu GIFO';
-  let uno =document.getElementById("uno")  
-  uno.style.backgroundColor = "white";
-  uno.style.color = "#572ee5";
+  let dos =document.getElementById("dos")  
   dos.style.backgroundColor = "white";
   dos.style.color = "#572ee5";
-
+  
 
 });
 
@@ -203,3 +196,27 @@ function transcurrido() {
 } 
 
 
+var boton = document.getElementById('copy');
+
+boton.addEventListener('click', function(event) {
+  // seleccionar el texto de la dirección de email
+  //var email = document.querySelector('.email');
+  var link=document.getElementById('copy');
+  var range = document.createRange();
+  range.selectNode(link);
+  window.getSelection().addRange(range);
+
+  try {
+    // intentar copiar el contenido seleccionado
+    var resultado = document.execCommand('copy');
+    console.log(resultado ? 'Email copiado' : 'No se pudo copiar el email');
+    console.log(resultado);
+  } catch(err) {
+    console.log('ERROR al intentar copiar el email');
+  }
+
+  // eliminar el texto seleccionado
+  window.getSelection().removeAllRanges();
+  // cuando los navegadores lo soporten, habría
+  // que utilizar: removeRange(range)
+});
