@@ -395,10 +395,11 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 }
 
 .videoasset #container .preview .overlay .estado {
-  display: none;
+  display: block;
   color: white;
   text-align: center;
   font-family: "Montserrat", sans-serif;
+  position: relative;
 }
 
 .videoasset #container .preview .overlay .icon {

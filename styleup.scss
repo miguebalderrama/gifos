@@ -280,10 +280,11 @@ body {
       align-content: space-between;
       flex-direction: column;
       .estado {
-        display: none;///////////////////////////////////////////////////////////////////////
+        display: block;/////////////////////////////////////////////////////////////////////// aca me agranda el desktop
         color: white;
         text-align: center;
         font-family: "Montserrat", sans-serif;
+        position: relative;
       }
       .icon {
         position: absolute;
