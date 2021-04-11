@@ -4,65 +4,24 @@
 }
 body {
   border-top: solid #572ee5 5px;
+  width: auto;
   header {
-    margin: auto;
-    padding-top: 1em;
-   // display: flex;////////////////////////////////////
-   display: none;
-    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
     justify-content: space-between;
-    align-items: center;
-
-    max-width: 1200px;
-    .logo {
-      img {
-        width: 3rem;
-      }
-    }
-    .menuppal {
-      font-family: "Montserrat", sans-serif;
-      display: flex;
-      justify-content: flex-end;
-      align-content: space-between;
-      height: 100%;
-      width: 100%;
-      z-index: 1001;
-      ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        li {
-          list-style: none;
-          text-align: center;
-          font-family: "Montserrat", sans-serif;
-          font-size: 1rem;
-          line-height: 3em;
-          height: 3em;
-          text-transform: none;
-          font-weight: bold;
-          margin-right: 3em;
-
-          .linea {
-            width: 41px;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.5);
-            margin: auto;
-          }
-          a {
-            text-decoration: none;
-            color: rgba(87, 46, 229, 0.9);
-          }
-          a:hover {
-            text-decoration: none;
-            color: #333;
-          }
-        }
-      }
+   // border-top: solid #572ee5 5px;
+   height: 95px;
+    margin: auto;
+    padding: 2rem 1.2rem;
+    max-width: 1200px;;
+    img {
+      width: 3rem;
     }
   }
   main {
+    
     .pasos {
+      
       width: 90%;
       margin: auto;
       position: relative;
@@ -128,6 +87,7 @@ body {
     .comenzar {
       //margin: auto;
       display: flex;
+      
       justify-content: center;
       margin-top: 1.5em;
       #start {
@@ -157,6 +117,7 @@ body {
     padding-bottom: 25px;
     border-bottom: solid 5px #572ee5;
     display: flex;
+   
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -207,8 +168,11 @@ body {
 .input:active {
   border: none;
 }
-.videoasset{
+.videoasset{  
+  box-sizing: border-box;
+  width: 100%;
   .camfull {
+    
     display: flex;///////////////// esto sacar en desktop
     flex-direction: column;///////////////esto sacar en desktop
     justify-content: center;/////////////////// esto sacar en desktop
@@ -253,21 +217,24 @@ body {
  #container {
   ////display: flex; // PRUEBA MOVIL
   display: flex;
+  
   justify-content: center;
   align-content: center;
   align-items: center;
   width: 350px;
-  height: 390px;
+  height: 260px;
   border: 1.5px #572ee5 solid;
-  margin: auto;
+  margin: 0;
   .message {
-    width: 50%;
-    font-size: 25px;
+    
+    width: 80%;
+    font-size: 20px;
     color: #572ee5;
     text-align: center;
-    line-height: 35px;
+    //line-height: 35px;
     text-align: center;
     font-family: "Montserrat", sans-serif;
+    
     .word {
       color: #50e3c2;
     }
@@ -275,7 +242,10 @@ body {
       color: black;
       font-size: 16px;
       font-family: "Roboto", sans-serif;
-      font-weight: bold;
+      //font-weight: bold;
+      text-align: center;
+      line-height: 23px;
+      margin-top: 12px;
     }
    }
    #video {
@@ -288,13 +258,15 @@ body {
     position: relative;
     z-index: 1;
    }
-   .preview {
+   .preview {////////////aca pasa algo
+    box-sizing: border-box;
     position: relative;
     #gif{
       width: 350px;
       height: auto;
     }
     .overlay {
+      box-sizing: border-box;
       position: absolute;
       top: 0;
       box-sizing: border-box;
@@ -308,6 +280,7 @@ body {
       align-content: space-between;
       flex-direction: column;
       .estado {
+        display: none;///////////////////////////////////////////////////////////////////////
         color: white;
         text-align: center;
         font-family: "Montserrat", sans-serif;
@@ -351,6 +324,108 @@ body {
 #pelicula{
   display: none;
 }
+.hamburger {
+  background-color: transparent;
+
+  height: 30px;
+  width: 30px;
+  padding: 10px 10px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.25s
+    cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  z-index: 1002;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamburger.is-active {
+  background-color: none;
+}
+._layer {
+  background: #572ee5;
+  margin-bottom: 4px;
+  border-radius: 2px;
+  width: 15px;
+  height: 3px;
+  opacity: 1;
+
+  transform: translate3d(0, 0, 0);
+
+  transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+
+.hamburger.is-active .-top {
+  transform: translateY(230%) rotate(45deg) !important;
+}
+.hamburger.is-active .-mid {
+  opacity: 0;
+}
+.hamburger.is-active .-bottom {
+  transform: translateY(-230%) rotate(135deg) !important;
+}
+
+.menuppal.is_active {
+  transform: translate3d(0px, 95px, 0px);
+}
+.menuppal {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(87, 46, 229, 0.9);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  transform: translate3d(0px, -100%, 0px);
+  transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  width: 100%;
+  z-index: 1001;
+  color: white;
+}
+.menuppal ul {
+  margin: 0;
+  padding: 0;
+}
+.menuppal ul li {
+  list-style: none;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1rem;////////////////////tamaño de font menu
+  line-height: 3em;
+  height: 3em;
+
+  text-transform: none;
+  font-weight: bold;
+
+  .linea {
+    width: 41px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+  }
+}
+.menuppal ul li a {
+  text-decoration: none;
+  color: white;
+}
+.menuppal ul li a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.input:focus {
+  border: none;
+}
+
+.input:active {
+  border: none;
+}
+
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
@@ -476,6 +551,10 @@ body {
     z-index: 1;
   }
   .preview {
+    #gif{
+      width: 480px;
+      height: auto;
+    }
     position: relative;
     .overlay {
       position: absolute;

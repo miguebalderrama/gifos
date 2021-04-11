@@ -5,83 +5,26 @@
 
 body {
   border-top: solid #572ee5 5px;
+  width: auto;
 }
 
 body header {
-  margin: auto;
-  padding-top: 1em;
-  display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 95px;
+  margin: auto;
+  padding: 2rem 1.2rem;
   max-width: 1200px;
 }
 
-body header .logo img {
+body header img {
   width: 3rem;
-}
-
-body header .menuppal {
-  font-family: "Montserrat", sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
-  height: 100%;
-  width: 100%;
-  z-index: 1001;
-}
-
-body header .menuppal ul {
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-body header .menuppal ul li {
-  list-style: none;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  line-height: 3em;
-  height: 3em;
-  text-transform: none;
-  font-weight: bold;
-  margin-right: 3em;
-}
-
-body header .menuppal ul li .linea {
-  width: 41px;
-  height: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin: auto;
-}
-
-body header .menuppal ul li a {
-  text-decoration: none;
-  color: rgba(87, 46, 229, 0.9);
-}
-
-body header .menuppal ul li a:hover {
-  text-decoration: none;
-  color: #333;
 }
 
 body main .pasos {
@@ -283,6 +226,12 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   border: none;
 }
 
+.videoasset {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+}
+
 .videoasset .camfull {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -371,17 +320,16 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
       -ms-flex-align: center;
           align-items: center;
   width: 350px;
-  height: 390px;
+  height: 260px;
   border: 1.5px #572ee5 solid;
-  margin: auto;
+  margin: 0;
 }
 
 .videoasset #container .message {
-  width: 50%;
-  font-size: 25px;
+  width: 80%;
+  font-size: 20px;
   color: #572ee5;
   text-align: center;
-  line-height: 35px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
@@ -394,7 +342,9 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   color: black;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  text-align: center;
+  line-height: 23px;
+  margin-top: 12px;
 }
 
 .videoasset #container #video {
@@ -407,6 +357,8 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 }
 
 .videoasset #container .preview {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
 }
 
@@ -416,10 +368,11 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 }
 
 .videoasset #container .preview .overlay {
-  position: absolute;
-  top: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
   background: rgba(87, 46, 229, 0.6);
   /* Black see-through */
   height: 100%;
@@ -442,6 +395,7 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 }
 
 .videoasset #container .preview .overlay .estado {
+  display: none;
   color: white;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -489,6 +443,122 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 
 #pelicula {
   display: none;
+}
+
+.hamburger {
+  background-color: transparent;
+  height: 30px;
+  width: 30px;
+  padding: 10px 10px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98), -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  z-index: 1002;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hamburger.is-active {
+  background-color: none;
+}
+
+._layer {
+  background: #572ee5;
+  margin-bottom: 4px;
+  border-radius: 2px;
+  width: 15px;
+  height: 3px;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+
+.hamburger.is-active .-top {
+  -webkit-transform: translateY(230%) rotate(45deg) !important;
+          transform: translateY(230%) rotate(45deg) !important;
+}
+
+.hamburger.is-active .-mid {
+  opacity: 0;
+}
+
+.hamburger.is-active .-bottom {
+  -webkit-transform: translateY(-230%) rotate(135deg) !important;
+          transform: translateY(-230%) rotate(135deg) !important;
+}
+
+.menuppal.is_active {
+  -webkit-transform: translate3d(0px, 95px, 0px);
+          transform: translate3d(0px, 95px, 0px);
+}
+
+.menuppal {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(87, 46, 229, 0.9);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  -webkit-transform: translate3d(0px, -100%, 0px);
+          transform: translate3d(0px, -100%, 0px);
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  transition: -webkit-transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s, -webkit-transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  width: 100%;
+  z-index: 1001;
+  color: white;
+}
+
+.menuppal ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menuppal ul li {
+  list-style: none;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 3em;
+  height: 3em;
+  text-transform: none;
+  font-weight: bold;
+}
+
+.menuppal ul li .linea {
+  width: 41px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: auto;
+}
+
+.menuppal ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.menuppal ul li a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.input:focus {
+  border: none;
+}
+
+.input:active {
+  border: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -680,6 +750,10 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   }
   body main .videoasset #container .preview {
     position: relative;
+  }
+  body main .videoasset #container .preview #gif {
+    width: 480px;
+    height: auto;
   }
   body main .videoasset #container .preview .overlay {
     position: absolute;

@@ -1,4 +1,18 @@
 
+// selector
+var menu = document.querySelector(".hamburger");
+
+// method
+function toggleMenu(event) {
+  this.classList.toggle("is-active");
+  document.querySelector(".menuppal").classList.toggle("is_active");
+  event.preventDefault();
+}
+
+// event
+menu.addEventListener("click", toggleMenu, false);
+
+// addEventListener version
 /// variable globales
 var image = document.getElementById("video");
 var recorder;
