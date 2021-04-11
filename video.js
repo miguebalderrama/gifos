@@ -129,12 +129,12 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
   document.getElementById("reloj").setAttribute("style", "display:none;")
   cintauno=document.getElementById("element-cinta1")
   cintauno.classList.toggle("element-cinta1-active");
-  cintauno.classList.toggle("element-cinta1");
+  //cintauno.classList.toggle("element-cinta1");
   cintados=document.getElementById("element-cinta2")
   cintados.classList.toggle("element-cinta2-active");
-  cintados.classList.toggle("element-cinta2");
+  //cintados.classList.toggle("element-cinta2");
   luzcam=document.getElementById("element-luz-camara")
-  luzcam.classList.toggle("element-luz-camara");
+  //luzcam.classList.toggle("element-luz-camara");
   luzcam.classList.toggle("element-luz-camara-active")
  }
  if (grabacion==4) {

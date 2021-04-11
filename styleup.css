@@ -283,6 +283,23 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   border: none;
 }
 
+.videoasset .camfull {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: -90px;
+}
+
 .videoasset .camfull #element-camara {
   width: 20%;
   margin-top: -0.4em;
@@ -293,12 +310,12 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 }
 
 .videoasset .camfull .camrollo .element-cinta1 {
-  width: 45px;
+  width: 40px;
   margin-right: -0.5em;
 }
 
 .videoasset .camfull .camrollo .element-cinta1-active {
-  width: 45px;
+  width: 40px;
   margin-right: -0.5em;
   -webkit-animation: 3s rotate linear infinite;
           animation: 3s rotate linear infinite;
@@ -329,11 +346,11 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 }
 
 .videoasset .camfull .camrollo .element-cinta2 {
-  width: 63px;
+  width: 45px;
 }
 
 .videoasset .camfull .camrollo .element-cinta2-active {
-  width: 63px;
+  width: 45px;
   -webkit-animation: 3s rotate linear infinite;
           animation: 3s rotate linear infinite;
   -webkit-transform-origin: 50% 50%;
@@ -452,6 +469,24 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   opacity: 1;
 }
 
+.videoasset .element-luz-camara {
+  width: 50px;
+  margin-left: 220px;
+  margin-bottom: 20px;
+}
+
+.videoasset .element-luz-camara-active {
+  width: 50px;
+  -webkit-animation-name: parpadeo;
+          animation-name: parpadeo;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
 #pelicula {
   display: none;
 }
@@ -516,6 +551,13 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  body main .videoasset .camfull {
+    display: block;
+    margin-bottom: 0;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+  }
   body main .videoasset .camfull #element-camara {
     width: 110px;
     margin-top: -0.4em;
@@ -568,6 +610,8 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   }
   body main .videoasset .element-luz-camara {
     width: 80px;
+    margin-left: 0px;
+    margin-bottom: 0px;
   }
   body main .videoasset .element-luz-camara-active {
     width: 80px;

@@ -209,6 +209,11 @@ body {
 }
 .videoasset{
   .camfull {
+    display: flex;///////////////// esto sacar en desktop
+    flex-direction: column;///////////////esto sacar en desktop
+    justify-content: center;/////////////////// esto sacar en desktop
+    align-items: center;/////////////esto sacar en desktop
+    margin-bottom: -90px;/////////////////////
     #element-camara {
       width: 20%;
       margin-top: -0.4em;
@@ -216,11 +221,11 @@ body {
     .camrollo {
       margin-top: 2em;
       .element-cinta1 {
-        width: 45px;
+        width: 40px;
         margin-right: -0.5em;
       }
       .element-cinta1-active {
-        width: 45px;
+        width: 40px;
         margin-right: -0.5em;
         animation: 3s rotate linear infinite;
         transform-origin: 50% 50%;
@@ -235,10 +240,10 @@ body {
       }
 
       .element-cinta2 {
-        width: 63px;
+        width: 45px;
       }
       .element-cinta2-active {
-        width: 63px;
+        width: 45px;
         animation: 3s rotate linear infinite;
         transform-origin: 50% 50%;
         animation-direction: reverse;
@@ -327,12 +332,28 @@ body {
     }
   }
   
+ }
+ .element-luz-camara {
+  width: 50px;
+  margin-left:220px ;
+  margin-bottom: 20px;
+  
+  
+}
+.element-luz-camara-active {
+  width: 50px;
+  animation-name: parpadeo;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 }
 #pelicula{
   display: none;
 }
-
+///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 @media only screen and (min-width: 768px) {
   .busqueda {
     display: flex;
@@ -358,11 +379,16 @@ body {
       align-content: center;
       align-items: center;
       .videoasset {
+       
          display: flex;//////////////////////////////////////////////aqui saco tod el main casi
        // display: none;
         flex-direction: row;
         justify-content: center;
         .camfull {
+          display: block;///////////////// 
+          margin-bottom:0;
+          align-items: unset;
+    
           #element-camara {
             width: 110px;
             margin-top: -0.4em;
@@ -372,6 +398,7 @@ body {
             .element-cinta1 {
               width: 45px;
               margin-right: -0.5em;
+
             }
             .element-cinta1-active {
               width: 45px;
@@ -400,7 +427,10 @@ body {
           }
         }
         .element-luz-camara {
-          width: 80px;
+          width: 80px;          
+          margin-left:0px ;
+          margin-bottom: 0px;
+          
         }
         .element-luz-camara-active {
           width: 80px;

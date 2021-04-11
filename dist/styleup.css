@@ -200,6 +200,13 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   border: none;
 }
 
+.videoasset .camfull {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -90px;
+}
 .videoasset .camfull #element-camara {
   width: 20%;
   margin-top: -0.4em;
@@ -208,11 +215,11 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   margin-top: 2em;
 }
 .videoasset .camfull .camrollo .element-cinta1 {
-  width: 45px;
+  width: 40px;
   margin-right: -0.5em;
 }
 .videoasset .camfull .camrollo .element-cinta1-active {
-  width: 45px;
+  width: 40px;
   margin-right: -0.5em;
   animation: 3s rotate linear infinite;
   transform-origin: 50% 50%;
@@ -226,10 +233,10 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   }
 }
 .videoasset .camfull .camrollo .element-cinta2 {
-  width: 63px;
+  width: 45px;
 }
 .videoasset .camfull .camrollo .element-cinta2-active {
-  width: 63px;
+  width: 45px;
   animation: 3s rotate linear infinite;
   transform-origin: 50% 50%;
   animation-direction: reverse;
@@ -314,6 +321,18 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 .videoasset #container .preview .overlay .icon #download:hover {
   opacity: 1;
 }
+.videoasset .element-luz-camara {
+  width: 50px;
+  margin-left: 220px;
+  margin-bottom: 20px;
+}
+.videoasset .element-luz-camara-active {
+  width: 50px;
+  animation-name: parpadeo;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
 #pelicula {
   display: none;
@@ -349,6 +368,11 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+  body main .videoasset .camfull {
+    display: block;
+    margin-bottom: 0;
+    align-items: unset;
   }
   body main .videoasset .camfull #element-camara {
     width: 110px;
@@ -386,6 +410,8 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   }
   body main .videoasset .element-luz-camara {
     width: 80px;
+    margin-left: 0px;
+    margin-bottom: 0px;
   }
   body main .videoasset .element-luz-camara-active {
     width: 80px;
