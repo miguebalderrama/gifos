@@ -12,7 +12,8 @@ body header {
           justify-content: space-between;
   margin: auto;
   padding: 2rem 1.2rem;
-  max-width: 1200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body header img {
@@ -20,15 +21,16 @@ body header img {
 }
 
 body main section .tittle h1 {
-  padding: 0rem 4rem;
+  padding: 0rem 2rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 25px;
+  font-size: 22px;
   color: #572ee5;
   line-height: 2rem;
+  text-align: center;
 }
 
 body main section .tittle h1 span {
-  font-size: 25px;
+  font-size: 22px;
   color: #50e3c2;
 }
 
@@ -73,6 +75,26 @@ body main section .form .sug {
   padding-bottom: 0.8rem;
 }
 
+body main .busqueda {
+  width: 90%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: auto;
+}
+
+body main .busqueda #ilustra {
+  max-width: 100%;
+  margin-top: 2em;
+}
+
+body main .busqueda .form {
+  width: 100%;
+}
+
+body main .busqueda .form .input {
+  width: 80%;
+}
+
 body main .parraf {
   margin-top: 30px;
   margin-bottom: 4em;
@@ -104,13 +126,112 @@ body main .parraf p {
   text-align: center;
 }
 
-body footer {
-  width: 100%;
-  height: 116px;
-  border-bottom: solid 5px #572ee5;
+body main .GIFOS {
+  background: #f3f5f8;
+}
+
+body main .GIFOS h2 {
+  padding-top: 67px;
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  color: #572ee5;
+  text-align: center;
+  line-height: 30px;
+}
+
+body main .GIFOS p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #000000;
+  text-align: center;
+  margin: auto;
+  padding-top: 0.8em;
+}
+
+body main .GIFOS .carousel {
+  /* line them up horizontally */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* allow for scrolling */
+  overflow-x: auto;
+  /* make it smooth on iOS */
+  -webkit-overflow-scrolling: touch;
+  -ms-scroll-snap-points-x: repeat(300px);
+      scroll-snap-points-x: repeat(300px);
+  -ms-scroll-snap-type: mandatory;
+      scroll-snap-type: mandatory;
+}
+
+body main .GIFOS .carousel .card {
+  width: 357px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  margin: 1rem;
+  padding: 0;
+}
+
+body main .GIFOS .carousel .card .overlay {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  background: rgba(87, 46, 229, 0.6);
+  /* Black see-through */
+  height: 100%;
+  width: 100%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+
+body main .GIFOS .carousel .card .giftrend {
+  width: 357px;
+  height: 275px;
+  z-index: 100;
+}
+
+body main .GIFOS .carousel .card:hover .overlay {
+  opacity: 1;
+}
+
+body main .GIFOS .carousel #right {
+  display: none;
+  outline: none;
+}
+
+body main .GIFOS .carousel #right:hover {
+  background: url("../assets/button-slider-right-hover.svg") no-repeat;
+}
+
+body main .GIFOS .carousel #left {
+  display: none;
+}
+
+body main .GIFOS .carousel #left:hover {
+  background: url("../assets/button-slider-left-hover.svg") no-repeat;
+}
+
+body footer {
+  border-bottom: solid 5px #572ee5;
+}
+
+body footer .contain_footer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 196px;
+  padding-top: 45px;
+  padding-bottom: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -121,59 +242,62 @@ body footer {
   font-family: "Roboto", sans-serif;
 }
 
-body footer .redes {
-  padding-left: 150px;
+body footer .contain_footer .redes {
+  padding-left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-body footer .redes .contain_icon_face {
+body footer .contain_footer .redes .iconitos {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body footer .contain_footer .redes .iconitos .contain_icon_face {
   width: 20px;
-  margin-left: 15px;
+  margin-left: 8px;
   height: 20px;
-  background: url("..//assets/icon_facebook.svg") no-repeat;
+  background: url("../assets/icon_facebook.svg") no-repeat;
 }
 
-body footer .redes .contain_icon_face:hover {
+body footer .contain_footer .redes .iconitos .contain_icon_face:hover {
   background: url("..//assets/icon_facebook_hover.svg") no-repeat;
 }
 
-body footer .redes .contain_icon_instagram {
+body footer .contain_footer .redes .iconitos .contain_icon_instagram {
   width: 20px;
-  margin-left: 8px;
+  margin-left: 6px;
   height: 20px;
   background: url("..//assets/icon_instagram.svg") no-repeat;
 }
 
-body footer .redes .contain_icon_instagram:hover {
+body footer .contain_footer .redes .iconitos .contain_icon_instagram:hover {
   background: url("..//assets/icon_instagram-hover.svg") no-repeat;
 }
 
-body footer .redes .contain_icon_twitter {
+body footer .contain_footer .redes .iconitos .contain_icon_twitter {
   width: 20px;
-  margin-left: 15px;
+  margin-left: 10px;
   height: 20px;
   background: url("..//assets/icon-twitter.svg") no-repeat;
 }
 
-body footer .redes .contain_icon_twitter:hover {
+body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   background: url("..//assets/icon-twitter-hover.svg") no-repeat;
-}
-
-body footer .pie_footer {
-  padding-right: 150px;
 }
 
 .hamburger {
   background-color: transparent;
   height: 30px;
   width: 30px;
-  padding: 10px 10px;
+  padding: 10px 0px;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
@@ -286,20 +410,6 @@ body footer .pie_footer {
 }
 
 @media only screen and (min-width: 768px) {
-  .busqueda {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   .imagenes {
     margin-top: 30px;
     display: -webkit-box;
@@ -319,13 +429,38 @@ body footer .pie_footer {
   .imagenes img {
     padding: 20px;
   }
-  main .busqueda .form .input {
+  body main .busqueda {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 70%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: auto;
+  }
+  body main .busqueda #ilustra {
+    max-width: 60%;
+    margin-top: 2em;
+  }
+  body main .busqueda .form {
+    width: 60%;
+  }
+  body main .busqueda .form .input {
     width: 80%;
   }
-  main .GIFOS {
+  body main .GIFOS {
     background: #f3f5f8;
   }
-  main .GIFOS h2 {
+  body main .GIFOS h2 {
     padding-top: 67px;
     margin: auto;
     font-family: "Montserrat", sans-serif;
@@ -334,7 +469,7 @@ body footer .pie_footer {
     text-align: center;
     line-height: 30px;
   }
-  main .GIFOS p {
+  body main .GIFOS p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     color: #000000;
@@ -342,7 +477,7 @@ body footer .pie_footer {
     margin: auto;
     padding-top: 0.8em;
   }
-  main .GIFOS .carousel {
+  body main .GIFOS .carousel {
     margin-top: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -358,7 +493,7 @@ body footer .pie_footer {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  main .GIFOS .carousel .card {
+  body main .GIFOS .carousel .card {
     width: 357px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -366,7 +501,7 @@ body footer .pie_footer {
     margin: 1rem;
     padding: 0;
   }
-  main .GIFOS .carousel .card .overlay {
+  body main .GIFOS .carousel .card .overlay {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     position: absolute;
@@ -379,15 +514,16 @@ body footer .pie_footer {
     transition: 0.5s ease;
     opacity: 0;
   }
-  main .GIFOS .carousel .card .giftrend {
+  body main .GIFOS .carousel .card .giftrend {
     width: 357px;
     height: 275px;
     z-index: 100;
   }
-  main .GIFOS .carousel .card:hover .overlay {
+  body main .GIFOS .carousel .card:hover .overlay {
     opacity: 1;
   }
-  main .GIFOS .carousel #right {
+  body main .GIFOS .carousel #right {
+    display: block;
     width: 40px;
     height: 40px;
     background: url("../assets/button-slider-right.svg") no-repeat;
@@ -395,10 +531,11 @@ body footer .pie_footer {
     padding: 10px;
     outline: none;
   }
-  main .GIFOS .carousel #right:hover {
+  body main .GIFOS .carousel #right:hover {
     background: url("../assets/button-slider-right-hover.svg") no-repeat;
   }
-  main .GIFOS .carousel #left {
+  body main .GIFOS .carousel #left {
+    display: block;
     width: 40px;
     height: 40px;
     background: url("../assets/button-slider-left.svg") no-repeat;
@@ -407,8 +544,25 @@ body footer .pie_footer {
     margin: 0px;
     outline: none;
   }
-  main .GIFOS .carousel #left:hover {
+  body main .GIFOS .carousel #left:hover {
     background: url("../assets/button-slider-left-hover.svg") no-repeat;
+  }
+  body footer .contain_footer {
+    width: 70%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: auto;
+  }
+  body footer .contain_footer .redes {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  body footer .contain_footer .redes .iconitos {
+    margin-top: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
