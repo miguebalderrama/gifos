@@ -71,6 +71,10 @@ body main .busqueda .form {
 body main .busqueda .form .input {
   width: 80%;
 }
+body main .busqueda #imagenes {
+  width: 156px;
+  height: 120px;
+}
 body main .parraf {
   margin-top: 30px;
   margin-bottom: 4em;

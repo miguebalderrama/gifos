@@ -16,7 +16,7 @@ menu.addEventListener("click", toggleMenu, false);
 let apiKey = "bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H";
 var count = 0;
 let arraygifs = new Array();
-fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=7`)
+fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=12`)
   .then((response) => response.json())
   .then((json) => {
     json.data
