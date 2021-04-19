@@ -95,6 +95,11 @@ body main .busqueda .form .input {
   width: 80%;
 }
 
+body main .busqueda .form input::-webkit-search-decoration,
+body main .busqueda .form input::-webkit-search-cancel-button {
+  display: none;
+}
+
 body main .parraf {
   margin-top: 30px;
   margin-bottom: 4em;
@@ -147,6 +152,79 @@ body main .parraf #imagenes {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+body main .parraf #imagenes .divi {
+  position: relative;
+  margin-top: 1em;
+}
+
+body main .parraf #imagenes .divi .titulo {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  color: white;
+  opacity: 1;
+}
+
+body main .parraf #imagenes .divi .overlay:hover {
+  opacity: 1;
+}
+
+body main .parraf #imagenes .divi .overlay {
+  position: absolute;
+  top: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: rgba(87, 46, 229, 0.6);
+  /* Black see-through */
+  height: 100%;
+  width: 100%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main .parraf #imagenes .divi .overlay .estado {
+  color: white;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  display: none;
+}
+
+body main .parraf #imagenes .divi .overlay .icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: none;
+}
+
+body main .parraf #imagenes .divi .overlay .icon #copy {
+  opacity: 0.7;
+}
+
+body main .parraf #imagenes .divi .overlay .icon #download {
+  opacity: 0.7;
+}
+
+body main .parraf #imagenes .divi .overlay .icon #copy:hover {
+  opacity: 1;
+}
+
+body main .parraf #imagenes .divi .overlay .icon #download:hover {
+  opacity: 1;
 }
 
 body main .parraf #imagenes #searchis {
@@ -450,13 +528,9 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 75%;
-  }
-  .imagenes img {
-    padding: 20px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 60%;
   }
   body main .busqueda {
     display: -webkit-box;
@@ -608,5 +682,12 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   body footer .contain_footer .redes .iconitos {
     margin-top: 0;
   }
+}
+
+.titulo {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

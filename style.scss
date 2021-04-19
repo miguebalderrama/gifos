@@ -78,6 +78,10 @@ body {
         .input {
           width: 80%;
         }
+        input::-webkit-search-decoration,
+        input::-webkit-search-cancel-button {
+      	display: none; 
+      }
       }
      
     }
@@ -116,6 +120,59 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        .divi{
+          position:relative;
+          margin-top: 1em;
+          .titulo{
+            position: absolute;
+            bottom:4px;
+            left: 4px;
+            color: white;
+            opacity: 1;
+          }
+          .overlay:hover{
+            opacity: 1;
+          }
+        .overlay {
+          position: absolute;
+          top: 0;
+          box-sizing: border-box;
+          background: rgba(87, 46, 229, 0.6); /* Black see-through */
+          height: 100%;
+          width: 100%;
+          transition: 0.5s ease;
+          opacity: 0;
+          display: flex;
+          justify-content: center;
+          align-content: space-between;
+          flex-direction: column;
+          
+          .estado {
+            color: white;
+            text-align: center;
+            font-family: "Montserrat", sans-serif;
+            display: none;
+          }
+          .icon {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            display: none;
+            #copy {
+              opacity: 0.7;
+            }
+            #download {
+              opacity: 0.7;
+            }
+            #copy:hover {
+              opacity: 1;
+            }
+            #download:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
         #searchis{
           margin-top: 1.5em;
         width: 156px;
@@ -170,6 +227,7 @@ body {
             transition: 0.5s ease;
             opacity: 0;
           }
+          
           .giftrend {
             width: 357px;
             height: 275px;
@@ -354,7 +412,7 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-  ///////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////////
   // .busqueda {
 
   //}
@@ -363,11 +421,11 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 75%;
-    img {
-      padding: 20px;
-    }
+    justify-content: space-around;
+    width: 60%;
+    //img {
+  //    padding: 20px;
+   // }
   }
   body {
     main {
@@ -499,4 +557,11 @@ body {
   }
   }
   
+}
+
+.titulo{
+  position: absolute;
+  bottom:4px;
+  left: 4px;
+  color: white;
 }

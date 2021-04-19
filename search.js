@@ -59,8 +59,15 @@ tags.addEventListener("input", () => {
 
 const input = document.querySelector('input[type="search"]');
 var buscar = null;
+var identifier=0;
 input.addEventListener("search", () => {
-  console.log("The term searched for was " + input.value);
+  searchs();
+});
+
+
+
+  function searchs (){
+    console.log("The term searched for was " + input.value);
   event.preventDefault();
   buscar = input.value;
   document.getElementById("inpu").setAttribute("style", "border-bottom: none");
@@ -79,6 +86,7 @@ input.addEventListener("search", () => {
   )
     .then((response) => response.json())
     .then((json) => {
+      console.log(json.data)
       var e = document.getElementById("imagenes");
         //e.firstElementChild can be used.
         var child = e.lastElementChild; /////////here remove last search
@@ -86,20 +94,44 @@ input.addEventListener("search", () => {
             e.removeChild(child);
             child = e.lastElementChild;
         }   
+        
       json.data.map((gif) => gif.images.fixed_height.url)      
-        .forEach((url) => {    
-                        let img = document.createElement("img");
-          img.id = "searchis";
+        .forEach((url) => { 
+          console.log(url)   
+          let div = document.createElement("div"); 
+          div.id= identifier;        
+          div.className="divi";
+          let overlay = document.createElement("div");
+          overlay.className="overlay";          
+          let img = document.createElement("img");          
           img.src = url;
           img.setAttribute("width", "260px");
           img.setAttribute("height", "200px");
-          document.getElementById("imagenes").appendChild(img);
+          div.appendChild(img);
+          div.appendChild(overlay);
+          document.getElementById("imagenes").appendChild(div);
+          
+          let icon = document.createElement("div");                  
+          icon.className="titulo";
+          icon.id= "icon"+identifier; 
+          //icon.textContent="saraza";
+          overlay.appendChild(icon);
+          identifier++;
         });
+        identifier=0;
       // document.getElementById("titleTrending").style="display:none";
       // document.getElementById("parrafTrending").style="display:none";
       let titleSearch = document.getElementById("titleSearchs");
       titleSearch.style = "display.block";
       titleSearch.textContent = buscar;
+      json.data.map((data) => data.title)      
+      .forEach((title) => { 
+        document.getElementById("icon"+identifier).textContent=title;
+        identifier++;
+        console.log(title)   
+        
+      });
+      identifier=0;
     })
     .catch((error) => (document.body.appendChild = error));
-});
+  }
