@@ -159,14 +159,6 @@ body main .parraf #imagenes .divi {
   margin-top: 1em;
 }
 
-body main .parraf #imagenes .divi .titulo {
-  position: absolute;
-  bottom: 4px;
-  left: 4px;
-  color: white;
-  opacity: 1;
-}
-
 body main .parraf #imagenes .divi .overlay:hover {
   opacity: 1;
 }
@@ -186,15 +178,32 @@ body main .parraf #imagenes .divi .overlay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body main .parraf #imagenes .divi .overlay .titulo {
+  color: white;
+  opacity: 1;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+}
+
+body main .parraf #imagenes .divi .overlay .user {
+  color: white;
+  opacity: 1;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-left: 0.5em;
 }
 
 body main .parraf #imagenes .divi .overlay .estado {
@@ -682,12 +691,5 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   body footer .contain_footer .redes .iconitos {
     margin-top: 0;
   }
-}
-
-.titulo {
-  position: absolute;
-  bottom: 4px;
-  left: 4px;
-  color: white;
 }
 /*# sourceMappingURL=style.css.map */

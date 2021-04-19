@@ -122,18 +122,31 @@ body {
         justify-content: space-evenly;
         .divi{
           position:relative;
-          margin-top: 1em;
-          .titulo{
-            position: absolute;
-            bottom:4px;
-            left: 4px;
-            color: white;
-            opacity: 1;
-          }
+          margin-top: 1em;          
+          
+          
           .overlay:hover{
             opacity: 1;
           }
         .overlay {
+          .titulo{
+            
+            color: white;
+            opacity: 1;
+            font-family: "Roboto", sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 1em;
+            margin-left: 0.5em;
+          }
+          .user{            
+            color: white;
+            opacity: 1;
+            margin-bottom: 0px;
+            font-family: "Roboto", sans-serif;
+            font-size: 15px;
+            margin-left: 0.5em;
+          }
           position: absolute;
           top: 0;
           box-sizing: border-box;
@@ -143,9 +156,10 @@ body {
           transition: 0.5s ease;
           opacity: 0;
           display: flex;
-          justify-content: center;
-          align-content: space-between;
-          flex-direction: column;
+          //justify-content: center;
+          //align-content: space-between;
+          flex-direction: column-reverse;
+          justify-content: flex-start;
           
           .estado {
             color: white;
@@ -559,9 +573,3 @@ body {
   
 }
 
-.titulo{
-  position: absolute;
-  bottom:4px;
-  left: 4px;
-  color: white;
-}

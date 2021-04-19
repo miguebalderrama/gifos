@@ -114,6 +114,11 @@ function searchs() {
       icon.id = "icon" + identifier; //icon.textContent="saraza";
 
       overlay.appendChild(icon);
+      var user = document.createElement("div");
+      user.className = "user";
+      user.id = "user" + identifier; //icon.textContent="saraza";
+
+      icon.appendChild(user);
       identifier++;
     });
     identifier = 0; // document.getElementById("titleTrending").style="display:none";
@@ -130,6 +135,13 @@ function searchs() {
       console.log(title);
     });
     identifier = 0;
+    json.data.map(function (user) {
+      return user.username;
+    }).forEach(function (username) {
+      document.getElementById("user" + identifier).textContent = username;
+      identifier++;
+      console.log(username);
+    });
   })["catch"](function (error) {
     return document.body.appendChild = error;
   });

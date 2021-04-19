@@ -116,6 +116,11 @@ input.addEventListener("search", () => {
           icon.id= "icon"+identifier; 
           //icon.textContent="saraza";
           overlay.appendChild(icon);
+          let user = document.createElement("div");                  
+          user.className="user";
+          user.id= "user"+identifier; 
+          //icon.textContent="saraza";
+          overlay.appendChild(user);
           identifier++;
         });
         identifier=0;
@@ -129,6 +134,13 @@ input.addEventListener("search", () => {
         document.getElementById("icon"+identifier).textContent=title;
         identifier++;
         console.log(title)   
+        
+      });
+      identifier=0;
+      json.data.map((user) => user.username).forEach((username) => { 
+        document.getElementById("user"+identifier).textContent=username;
+        identifier++;
+        console.log(username)   
         
       });
       identifier=0;

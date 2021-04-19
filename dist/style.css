@@ -115,13 +115,21 @@ body main .parraf #imagenes {
 body main .parraf #imagenes .divi {
   position: relative;
   margin-top: 1em;
+  display: flex;
 }
 body main .parraf #imagenes .divi .titulo {
-  position: absolute;
-  bottom: 4px;
-  left: 4px;
   color: white;
   opacity: 1;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+body main .parraf #imagenes .divi .user {
+  color: white;
+  opacity: 1;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
 }
 body main .parraf #imagenes .divi .overlay:hover {
   opacity: 1;
