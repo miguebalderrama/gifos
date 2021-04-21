@@ -227,6 +227,17 @@ body {
         }
       }
     }
+    .modal{
+      display: none; 
+      position: fixed; 
+      z-index: 2;
+      left: 0;
+      top: 0;
+      width: 420px;
+      height: 100%; 
+      background-color: greenyellow;
+      justify-content: space-around;
+    }
     .GIFOS {
       background: #f3f5f8;
       h2 {

@@ -156,3 +156,27 @@ input.addEventListener("search", () => {
     })
     .catch((error) => (document.body.appendChild = error));
   }
+  //////////////////////////////////////////////
+  ////////////modal///////////////
+ // let over= document.querySelector('.overlay')
+ document.querySelector('.imagenes').addEventListener("click", function ampliarModal(e){
+
+  console.log("hubo un click");
+  if (e.target && e.target.matches("a.amp")) {
+    console.log("presionamos algun ampliar");    
+    console.log(e.target.id);
+  }
+  if (e.target && e.target.matches("a.down")) {
+    console.log("presionamos algun download");    
+    console.log(e.target.id);
+  }
+  if (e.target && e.target.matches("a.fav")) {
+    console.log("presionamos algun favoritos");    
+    console.log(e.target.id);
+  }
+  //document.getElementById("modal").style= "display:block";
+} ); 
+
+ 
+
+  

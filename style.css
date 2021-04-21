@@ -286,6 +286,19 @@ body main .parraf #imagenes #searchis {
   height: 120px;
 }
 
+body main .modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 420px;
+  height: 100%;
+  background-color: greenyellow;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 body main .GIFOS {
   background: #f3f5f8;
 }
