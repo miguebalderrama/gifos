@@ -133,7 +133,7 @@ body main .parraf p {
 }
 
 body main .parraf h2 {
-  border-top: 1px solid #9CAFC3;
+  border-top: 1px solid #9cafc3;
   padding-top: 67px;
   margin: auto;
   font-family: "Montserrat", sans-serif;
@@ -204,6 +204,50 @@ body main .parraf #imagenes .divi .overlay .user {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   margin-left: 0.5em;
+}
+
+body main .parraf #imagenes .divi .overlay .iconos {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100px;
+  height: 32px;
+}
+
+body main .parraf #imagenes .divi .overlay .iconos .down {
+  background: url("..//assets/icon-download.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+
+body main .parraf #imagenes .divi .overlay .iconos .fav {
+  background: url("..//assets/icon-fav.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+
+body main .parraf #imagenes .divi .overlay .iconos .amp {
+  background: url("..//assets/icon-max-normal.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+
+body main .parraf #imagenes .divi .overlay .iconos .down:hover {
+  background: url("..//assets/icon-download-hover.svg") no-repeat;
+}
+
+body main .parraf #imagenes .divi .overlay .iconos .fav:hover {
+  background: url("..//assets/icon-fav-hover.svg") no-repeat;
+}
+
+body main .parraf #imagenes .divi .overlay .iconos .amp:hover {
+  background: url("..//assets/icon-max-hover.svg") no-repeat;
 }
 
 body main .parraf #imagenes .divi .overlay .estado {

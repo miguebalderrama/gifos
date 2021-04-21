@@ -64,8 +64,6 @@ input.addEventListener("search", () => {
   searchs();
 });
 
-
-
   function searchs (){
     console.log("The term searched for was " + input.value);
   event.preventDefault();
@@ -88,7 +86,6 @@ input.addEventListener("search", () => {
     .then((json) => {
       console.log(json.data)
       var e = document.getElementById("imagenes");
-        //e.firstElementChild can be used.
         var child = e.lastElementChild; /////////here remove last search
         while (child) {
             e.removeChild(child);
@@ -110,17 +107,30 @@ input.addEventListener("search", () => {
           div.appendChild(img);
           div.appendChild(overlay);
           document.getElementById("imagenes").appendChild(div);
-          
-          let icon = document.createElement("div");                  
-          icon.className="titulo";
-          icon.id= "icon"+identifier; 
-          //icon.textContent="saraza";
-          overlay.appendChild(icon);
+
+          let title = document.createElement("div");                  
+          title.className="titulo";
+          title.id= "titulo"+identifier;           
+          overlay.appendChild(title);
           let user = document.createElement("div");                  
           user.className="user";
-          user.id= "user"+identifier; 
-          //icon.textContent="saraza";
+          user.id= "user"+identifier;           
           overlay.appendChild(user);
+          let iconos = document.createElement("div");
+          iconos.className="iconos"
+          overlay.appendChild(iconos);
+          let fav = document.createElement("a");
+          fav.className="fav";
+          fav.id= "favoritos"+identifier;           
+          iconos.appendChild(fav);
+          let adownload = document.createElement("a");
+          adownload.className="down";
+          adownload.id= "download"+identifier;           
+          iconos.appendChild(adownload);
+          let amp = document.createElement("a");
+          amp.className="amp";
+          amp.id= "ampliar"+identifier;           
+          iconos.appendChild(amp);
           identifier++;
         });
         identifier=0;
@@ -131,10 +141,9 @@ input.addEventListener("search", () => {
       titleSearch.textContent = buscar;
       json.data.map((data) => data.title)      
       .forEach((title) => { 
-        document.getElementById("icon"+identifier).textContent=title;
+        document.getElementById("titulo"+identifier).textContent=title;
         identifier++;
-        console.log(title)   
-        
+        console.log(title);         
       });
       identifier=0;
       json.data.map((user) => user.username).forEach((username) => { 

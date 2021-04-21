@@ -84,8 +84,7 @@ function searchs() {
     return response.json();
   }).then(function (json) {
     console.log(json.data);
-    var e = document.getElementById("imagenes"); //e.firstElementChild can be used.
-
+    var e = document.getElementById("imagenes");
     var child = e.lastElementChild; /////////here remove last search
 
     while (child) {
@@ -109,16 +108,29 @@ function searchs() {
       div.appendChild(img);
       div.appendChild(overlay);
       document.getElementById("imagenes").appendChild(div);
-      var icon = document.createElement("div");
-      icon.className = "titulo";
-      icon.id = "icon" + identifier; //icon.textContent="saraza";
-
-      overlay.appendChild(icon);
+      var title = document.createElement("div");
+      title.className = "titulo";
+      title.id = "titulo" + identifier;
+      overlay.appendChild(title);
       var user = document.createElement("div");
       user.className = "user";
-      user.id = "user" + identifier; //icon.textContent="saraza";
-
-      icon.appendChild(user);
+      user.id = "user" + identifier;
+      overlay.appendChild(user);
+      var iconos = document.createElement("div");
+      iconos.className = "iconos";
+      overlay.appendChild(iconos);
+      var fav = document.createElement("a");
+      fav.className = "fav";
+      fav.id = "favoritos" + identifier;
+      iconos.appendChild(fav);
+      var adownload = document.createElement("a");
+      adownload.className = "down";
+      adownload.id = "download" + identifier;
+      iconos.appendChild(adownload);
+      var amp = document.createElement("a");
+      amp.className = "amp";
+      amp.id = "ampliar" + identifier;
+      iconos.appendChild(amp);
       identifier++;
     });
     identifier = 0; // document.getElementById("titleTrending").style="display:none";
@@ -130,7 +142,7 @@ function searchs() {
     json.data.map(function (data) {
       return data.title;
     }).forEach(function (title) {
-      document.getElementById("icon" + identifier).textContent = title;
+      document.getElementById("titulo" + identifier).textContent = title;
       identifier++;
       console.log(title);
     });
@@ -142,6 +154,7 @@ function searchs() {
       identifier++;
       console.log(username);
     });
+    identifier = 0;
   })["catch"](function (error) {
     return document.body.appendChild = error;
   });

@@ -115,21 +115,6 @@ body main .parraf #imagenes {
 body main .parraf #imagenes .divi {
   position: relative;
   margin-top: 1em;
-  display: flex;
-}
-body main .parraf #imagenes .divi .titulo {
-  color: white;
-  opacity: 1;
-  font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  font-weight: bold;
-}
-body main .parraf #imagenes .divi .user {
-  color: white;
-  opacity: 1;
-  margin-bottom: 0px;
-  font-family: "Roboto", sans-serif;
-  font-size: 15px;
 }
 body main .parraf #imagenes .divi .overlay:hover {
   opacity: 1;
@@ -145,9 +130,47 @@ body main .parraf #imagenes .divi .overlay {
   transition: 0.5s ease;
   opacity: 0;
   display: flex;
-  justify-content: center;
-  align-content: space-between;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+}
+body main .parraf #imagenes .divi .overlay .titulo {
+  color: white;
+  opacity: 1;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+}
+body main .parraf #imagenes .divi .overlay .user {
+  color: white;
+  opacity: 1;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-left: 0.5em;
+}
+body main .parraf #imagenes .divi .overlay .iconos {
+  align-self: flex-start;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 32px;
+}
+body main .parraf #imagenes .divi .overlay .iconos .down {
+  background: url("..//assets/icon-download.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+body main .parraf #imagenes .divi .overlay .iconos .fav {
+  background: url("..//assets/icon-fav.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+}
+body main .parraf #imagenes .divi .overlay .iconos .amp {
+  background: url("..//assets/icon-max-normal.svg") no-repeat;
+  width: 32px;
+  height: 32px;
 }
 body main .parraf #imagenes .divi .overlay .estado {
   color: white;
@@ -532,10 +555,4 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   body footer .contain_footer .redes .iconitos {
     margin-top: 0;
   }
-}
-.titulo {
-  position: absolute;
-  bottom: 4px;
-  left: 4px;
-  color: white;
 }
