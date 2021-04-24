@@ -79,9 +79,7 @@ input.addEventListener("search", () => {
 
   /////
 
-  fetch(
-    `https://api.giphy.com/v1/gifs/search?q=${buscar}&api_key=${apiKey}&limit=12`
-  )
+  fetch( `https://api.giphy.com/v1/gifs/search?q=${buscar}&api_key=${apiKey}&limit=12` )
     .then((response) => response.json())
     .then((json) => {
       console.log(json.data)
@@ -153,6 +151,17 @@ input.addEventListener("search", () => {
         
       });
       identifier=0;
+      json.data.map((data) => data.images.original.url)      
+      .forEach((urlorigin) => { 
+        document.getElementById("download"+identifier).src=urlorigin;
+        //document.getElementById("download"+identifier).download="tuGifo.gif"
+        document.getElementById("download"+identifier).target="_blank";
+       
+
+        identifier++;
+        //console.log(title);         
+      });
+      identifier=0;
     })
     .catch((error) => (document.body.appendChild = error));
   }
@@ -165,11 +174,19 @@ input.addEventListener("search", () => {
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");    
     console.log(e.target.id);
+    document.getElementById("modal").style= "display:block";
   }
   if (e.target && e.target.matches("a.down")) {
     console.log("presionamos algun download");    
     console.log(e.target.id);
+    fetch( document.getElementById(e.target.id).src)
+.then(response => response.blob())
+.then(function(myBlob) {  
+  downloadGif(myBlob, e.target.id) ; 
+});
+
   }
+  
   if (e.target && e.target.matches("a.fav")) {
     console.log("presionamos algun favoritos");    
     console.log(e.target.id);
@@ -177,6 +194,17 @@ input.addEventListener("search", () => {
   //document.getElementById("modal").style= "display:block";
 } ); 
 
- 
+ ///////////////////////////FUNCION QUE DESCARGA GIF/////////////////////////////////
 
-  
+  function downloadGif (blob,target) {
+  let identifier = target.substring(8,target.length);  
+  console.log(identifier)
+    var objectURL = URL.createObjectURL(blob);
+  console.log(objectURL)
+  let tag = document.createElement('a');
+  tag.href = objectURL;
+	tag.download = `${document.getElementById("titulo"+identifier).textContent}.gif`;  
+	document.body.appendChild(tag);
+	tag.click();
+	document.body.removeChild(tag);
+  }

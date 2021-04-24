@@ -169,6 +169,7 @@ document.querySelector('.imagenes').addEventListener("click", function ampliarMo
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");
     console.log(e.target.id);
+    document.getElementById("modal").style = "display:block";
   }
 
   if (e.target && e.target.matches("a.down")) {

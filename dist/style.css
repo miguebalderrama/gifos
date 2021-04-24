@@ -98,7 +98,7 @@ body main .parraf p {
   margin-bottom: 1.5em;
 }
 body main .parraf h2 {
-  border-top: 1px solid #9CAFC3;
+  border-top: 1px solid #9cafc3;
   padding-top: 67px;
   margin: auto;
   font-family: "Montserrat", sans-serif;
@@ -151,7 +151,9 @@ body main .parraf #imagenes .divi .overlay .user {
   margin-left: 0.5em;
 }
 body main .parraf #imagenes .divi .overlay .iconos {
-  align-self: flex-start;
+  position: absolute;
+  top: 5px;
+  right: 5px;
   display: flex;
   justify-content: space-between;
   width: 100px;
@@ -171,6 +173,15 @@ body main .parraf #imagenes .divi .overlay .iconos .amp {
   background: url("..//assets/icon-max-normal.svg") no-repeat;
   width: 32px;
   height: 32px;
+}
+body main .parraf #imagenes .divi .overlay .iconos .down:hover {
+  background: url("..//assets/icon-download-hover.svg") no-repeat;
+}
+body main .parraf #imagenes .divi .overlay .iconos .fav:hover {
+  background: url("..//assets/icon-fav-hover.svg") no-repeat;
+}
+body main .parraf #imagenes .divi .overlay .iconos .amp:hover {
+  background: url("..//assets/icon-max-hover.svg") no-repeat;
 }
 body main .parraf #imagenes .divi .overlay .estado {
   color: white;
@@ -200,6 +211,15 @@ body main .parraf #imagenes #searchis {
   margin-top: 1.5em;
   width: 156px;
   height: 120px;
+}
+body main .modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  width: 420px;
+  height: 100%;
+  background-color: #6b7989;
+  justify-content: space-around;
 }
 body main .GIFOS {
   background: #f3f5f8;

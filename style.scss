@@ -156,16 +156,19 @@ body {
                 background: url("..//assets/icon-download.svg") no-repeat;
                 width: 32px;
                 height: 32px;
+                cursor: pointer;
               }
               .fav {
                 background: url("..//assets/icon-fav.svg") no-repeat;
                 width: 32px;
                 height: 32px;
+                cursor: pointer;
               }
               .amp {
                 background: url("..//assets/icon-max-normal.svg") no-repeat;
                 width: 32px;
                 height: 32px;
+                cursor: pointer;
               }
               .down:hover {
                 background: url("..//assets/icon-download-hover.svg") no-repeat;
@@ -230,12 +233,12 @@ body {
     .modal{
       display: none; 
       position: fixed; 
-      z-index: 2;
-      left: 0;
-      top: 0;
+      z-index: 1000;
+      left: 200px;
+      top: 100px;
       width: 420px;
       height: 100%; 
-      background-color: greenyellow;
+      background-color:#6b7989;
       justify-content: space-around;
     }
     .GIFOS {
