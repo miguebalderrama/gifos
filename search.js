@@ -2,7 +2,8 @@
 //
 //
 //let apiKey = "bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H";
-
+var vermas=1;
+var cantGifs=0;
 let tags = document.querySelector('input[type="search"]');
 let letterInput = null;
 let indice = 0;
@@ -82,7 +83,7 @@ input.addEventListener("search", () => {
   fetch( `https://api.giphy.com/v1/gifs/search?q=${buscar}&api_key=${apiKey}&limit=50` )
     .then((response) => response.json())
     .then((json) => {
-      var cantGifs = json.data.length;
+       cantGifs = json.data.length;
       var e = document.getElementById("imagenes");
         var child = e.lastElementChild; /////////here remove last search
         while (child) {
@@ -220,9 +221,22 @@ input.addEventListener("search", () => {
 
 
   document.getElementById('boton_ver_mas').addEventListener("click", function (){
-    for (let index = 12; index < 24; index++) {
+    console.log(cantGifs);
+    let pags= cantGifs/12;
+    let bloque=12
+    if (vermas<pags) {   
+      console.log(vermas);
+      console.log(pags);
+    for (let index = bloque*vermas; index < bloque+(bloque*vermas); index++) {
       const element = document.getElementById(index);
       element.style="display:block"; 
       document.getElementById("boton_ver_mas").style="display:block";
     }
+    vermas++
+  }
+  else{
+  vermas= 1;
+  document.getElementById("boton_ver_mas").style="display:none";
+}
+
   })
