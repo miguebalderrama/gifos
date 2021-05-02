@@ -165,10 +165,10 @@ input.addEventListener("search", () => {
       identifier=0;
 
       if(cantGifs>12){
-        for (let index = 0; index < 6; index++) {
+        for (let index = 0; index < 12; index++) {
           const element = document.getElementById(index);
-          element.style="display:block";
-          
+          element.style="display:block"; 
+          document.getElementById("boton_ver_mas").style="display:block";
         }
       }
 
@@ -217,3 +217,12 @@ input.addEventListener("search", () => {
 	tag.click();
 	document.body.removeChild(tag);
   }
+
+
+  document.getElementById('boton_ver_mas').addEventListener("click", function (){
+    for (let index = 12; index < 24; index++) {
+      const element = document.getElementById(index);
+      element.style="display:block"; 
+      document.getElementById("boton_ver_mas").style="display:block";
+    }
+  })
