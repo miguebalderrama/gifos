@@ -79,10 +79,10 @@ input.addEventListener("search", () => {
 
   /////
 
-  fetch( `https://api.giphy.com/v1/gifs/search?q=${buscar}&api_key=${apiKey}&limit=12` )
+  fetch( `https://api.giphy.com/v1/gifs/search?q=${buscar}&api_key=${apiKey}&limit=50` )
     .then((response) => response.json())
     .then((json) => {
-      console.log(json.data)
+      var cantGifs = json.data.length;
       var e = document.getElementById("imagenes");
         var child = e.lastElementChild; /////////here remove last search
         while (child) {
@@ -96,6 +96,7 @@ input.addEventListener("search", () => {
           let div = document.createElement("div"); 
           div.id= identifier;        
           div.className="divi";
+          div.style= "display:none";////////////ver mas............
           let overlay = document.createElement("div");
           overlay.className="overlay";          
           let img = document.createElement("img");          
@@ -162,13 +163,23 @@ input.addEventListener("search", () => {
         //console.log(title);         
       });
       identifier=0;
+
+      if(cantGifs>12){
+        for (let index = 0; index < 6; index++) {
+          const element = document.getElementById(index);
+          element.style="display:block";
+          
+        }
+      }
+
+
     })
     .catch((error) => (document.body.appendChild = error));
   }
   //////////////////////////////////////////////
-  ////////////modal///////////////
+ 
  // let over= document.querySelector('.overlay')
- document.querySelector('.imagenes').addEventListener("click", function ampliarModal(e){
+ document.querySelector('.imagenes').addEventListener("click", function (e){
 
   console.log("hubo un click");
   if (e.target && e.target.matches("a.amp")) {
@@ -184,9 +195,7 @@ input.addEventListener("search", () => {
 .then(function(myBlob) {  
   downloadGif(myBlob, e.target.id) ; 
 });
-
-  }
-  
+  }  
   if (e.target && e.target.matches("a.fav")) {
     console.log("presionamos algun favoritos");    
     console.log(e.target.id);
