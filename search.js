@@ -92,7 +92,7 @@ input.addEventListener("search", () => {
             child = e.lastElementChild;
         }   
         
-      json.data.map((gif) => gif.images.fixed_height.url)      
+      json.data.map((gif) => gif.images.fixed_height_downsampled.url)      
         .forEach((url) => { 
           //console.log(url)   
           let div = document.createElement("div"); 

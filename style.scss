@@ -256,24 +256,30 @@ body {
     }
 
     .modal{
-      display: none; 
+      
       position: fixed; 
       z-index: 1000;
       left: 0px;
       top: 0px;
       width: 100%;
       height: 100%; 
-      background-color:#c0b7b7;
-      justify-content: space-around;
-      border: solid 1px #572EE5;
-      .imagen_ampliada{
-        z-index: 2000;
+      background-color:#ffffff;      
+      //border: solid 1px #572EE5; 
+      padding-top: 15em;    
+      
+      .contain_modal{
+        margin: auto;
         height: 385px;
         width: 695px;
+      .imagen_ampliada{
+        width: 100%;
+        height: 385px;
+        z-index: 2000;       
         background-repeat: no-repeat;
         background-size: 100% 100%;
         //background: no-repeat;
       }
+    }
     }
     .GIFOS {
       background: #f3f5f8;
