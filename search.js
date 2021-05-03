@@ -84,6 +84,7 @@ input.addEventListener("search", () => {
     .then((response) => response.json())
     .then((json) => {
        cantGifs = json.data.length;
+       console.log(json);
       var e = document.getElementById("imagenes");
         var child = e.lastElementChild; /////////here remove last search
         while (child) {
@@ -93,7 +94,7 @@ input.addEventListener("search", () => {
         
       json.data.map((gif) => gif.images.fixed_height.url)      
         .forEach((url) => { 
-          console.log(url)   
+          //console.log(url)   
           let div = document.createElement("div"); 
           div.id= identifier;        
           div.className="divi";
@@ -153,10 +154,11 @@ input.addEventListener("search", () => {
         
       });
       identifier=0;
-      json.data.map((data) => data.images.original.url)      
+      json.data.map((data) => data.images.downsized_large.url)      
       .forEach((urlorigin) => { 
+        
         document.getElementById("download"+identifier).src=urlorigin;
-        //document.getElementById("download"+identifier).download="tuGifo.gif"
+         //document.getElementById("download"+identifier).download="tuGifo.gif"
         document.getElementById("download"+identifier).target="_blank";
        
 
@@ -185,8 +187,13 @@ input.addEventListener("search", () => {
   console.log("hubo un click");
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");    
-    console.log(e.target.id);
+    console.log(e.target);
     document.getElementById("modal").style= "display:block";
+    let identifi = e.target.id.substring(7,e.target.id.length);  
+  console.log(identifi)
+    let urlmodal = document.getElementById("download"+identifi).src
+    console.log(urlmodal);
+    document.getElementById("imagen_ampliada").src= urlmodal;
   }
   if (e.target && e.target.matches("a.down")) {
     console.log("presionamos algun download");    
@@ -222,21 +229,28 @@ input.addEventListener("search", () => {
 
   document.getElementById('boton_ver_mas').addEventListener("click", function (){
     console.log(cantGifs);
-    let pags= cantGifs/12;
-    let bloque=12
+    let pags= Math.trunc(cantGifs/12);
+    let bloque=12;
+    let limits= bloque+(bloque*vermas)
     if (vermas<pags) {   
-      console.log(vermas);
+      
       console.log(pags);
-    for (let index = bloque*vermas; index < bloque+(bloque*vermas); index++) {
+    for (let index = bloque*vermas; index < limits; index++) {
       const element = document.getElementById(index);
       element.style="display:block"; 
       document.getElementById("boton_ver_mas").style="display:block";
     }
-    vermas++
+    vermas++;
+    console.log(vermas);
   }
   else{
+    for (let index = bloque*vermas; index < cantGifs; index++) {
+      const element = document.getElementById(index);
+      element.style="display:block";       
+    }
   vermas= 1;
   document.getElementById("boton_ver_mas").style="display:none";
 }
+
 
   })

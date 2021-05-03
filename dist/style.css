@@ -222,6 +222,7 @@ body main .boton_ver_mas {
   width: 127px;
   height: 50px;
   margin: auto;
+  margin-bottom: 2em;
   font-weight: bold;
   font-size: 13px;
   color: #572EE5;
@@ -229,19 +230,29 @@ body main .boton_ver_mas {
   text-align: center;
 }
 body main .ver_mas_p {
-  margin-top: 1.1em;
+  margin-top: 1.2em;
   font-family: "Montserrat", sans-serif;
+}
+body main .boton_ver_mas:hover {
+  border: 1px solid #572EE5;
+  background: #572EE5 no-repeat;
+  color: white;
 }
 body main .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 200px;
-  top: 100px;
-  width: 420px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
   height: 100%;
-  background-color: #6b7989;
+  background-color: #c0b7b7;
   justify-content: space-around;
+  border: solid 1px #572EE5;
+}
+body main .modal .imagen_ampliada {
+  z-index: 2000;
+  height: 385px;
 }
 body main .GIFOS {
   background: #f3f5f8;

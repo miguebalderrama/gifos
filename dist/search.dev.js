@@ -4,6 +4,8 @@
 //
 //
 //let apiKey = "bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H";
+var vermas = 1;
+var cantGifs = 0;
 var tags = document.querySelector('input[type="search"]');
 var letterInput = null;
 var indice = 0;
@@ -80,10 +82,11 @@ function searchs() {
 
   indice = 0; /////
 
-  fetch("https://api.giphy.com/v1/gifs/search?q=".concat(buscar, "&api_key=").concat(apiKey, "&limit=12")).then(function (response) {
+  fetch("https://api.giphy.com/v1/gifs/search?q=".concat(buscar, "&api_key=").concat(apiKey, "&limit=50")).then(function (response) {
     return response.json();
   }).then(function (json) {
-    console.log(json.data);
+    cantGifs = json.data.length;
+    console.log(json);
     var e = document.getElementById("imagenes");
     var child = e.lastElementChild; /////////here remove last search
 
@@ -95,10 +98,12 @@ function searchs() {
     json.data.map(function (gif) {
       return gif.images.fixed_height.url;
     }).forEach(function (url) {
-      console.log(url);
+      //console.log(url)   
       var div = document.createElement("div");
       div.id = identifier;
       div.className = "divi";
+      div.style = "display:none"; ////////////ver mas............
+
       var overlay = document.createElement("div");
       overlay.className = "overlay";
       var img = document.createElement("img");
@@ -155,26 +160,52 @@ function searchs() {
       console.log(username);
     });
     identifier = 0;
+    json.data.map(function (data) {
+      return data.images.downsized_large.url;
+    }).forEach(function (urlorigin) {
+      document.getElementById("download" + identifier).src = urlorigin; //document.getElementById("download"+identifier).download="tuGifo.gif"
+
+      document.getElementById("download" + identifier).target = "_blank";
+      identifier++; //console.log(title);         
+    });
+    identifier = 0;
+
+    if (cantGifs > 12) {
+      for (var index = 0; index < 12; index++) {
+        var element = document.getElementById(index);
+        element.style = "display:block";
+        document.getElementById("boton_ver_mas").style = "display:block";
+      }
+    }
   })["catch"](function (error) {
     return document.body.appendChild = error;
   });
 } //////////////////////////////////////////////
-////////////modal///////////////
 // let over= document.querySelector('.overlay')
 
 
-document.querySelector('.imagenes').addEventListener("click", function ampliarModal(e) {
+document.querySelector('.imagenes').addEventListener("click", function (e) {
   console.log("hubo un click");
 
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");
-    console.log(e.target.id);
+    console.log(e.target);
     document.getElementById("modal").style = "display:block";
+    var identifi = e.target.id.substring(7, e.target.id.length);
+    console.log(identifi);
+    var urlmodal = document.getElementById("download" + identifi).src;
+    console.log(urlmodal);
+    document.getElementById("imagen_ampliada").style = "background-image: url(".concat(urlmodal);
   }
 
   if (e.target && e.target.matches("a.down")) {
     console.log("presionamos algun download");
     console.log(e.target.id);
+    fetch(document.getElementById(e.target.id).src).then(function (response) {
+      return response.blob();
+    }).then(function (myBlob) {
+      downloadGif(myBlob, e.target.id);
+    });
   }
 
   if (e.target && e.target.matches("a.fav")) {
@@ -182,4 +213,46 @@ document.querySelector('.imagenes').addEventListener("click", function ampliarMo
     console.log(e.target.id);
   } //document.getElementById("modal").style= "display:block";
 
+}); ///////////////////////////FUNCION QUE DESCARGA GIF/////////////////////////////////
+
+function downloadGif(blob, target) {
+  var identifier = target.substring(8, target.length);
+  console.log(identifier);
+  var objectURL = URL.createObjectURL(blob);
+  console.log(objectURL);
+  var tag = document.createElement('a');
+  tag.href = objectURL;
+  tag.download = "".concat(document.getElementById("titulo" + identifier).textContent, ".gif");
+  document.body.appendChild(tag);
+  tag.click();
+  document.body.removeChild(tag);
+}
+
+document.getElementById('boton_ver_mas').addEventListener("click", function () {
+  console.log(cantGifs);
+  var pags = Math.trunc(cantGifs / 12);
+  var bloque = 12;
+  var limits = bloque + bloque * vermas;
+
+  if (vermas < pags) {
+    console.log(pags);
+
+    for (var index = bloque * vermas; index < limits; index++) {
+      var element = document.getElementById(index);
+      element.style = "display:block";
+      document.getElementById("boton_ver_mas").style = "display:block";
+    }
+
+    vermas++;
+    console.log(vermas);
+  } else {
+    for (var _index = bloque * vermas; _index < cantGifs; _index++) {
+      var _element = document.getElementById(_index);
+
+      _element.style = "display:block";
+    }
+
+    vermas = 1;
+    document.getElementById("boton_ver_mas").style = "display:none";
+  }
 });
