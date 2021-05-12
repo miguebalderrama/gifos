@@ -256,10 +256,14 @@ input.addEventListener("search", () => {
   })
   /////////////////////////buscamos las sugerencias////////////
   document.querySelector('.form').addEventListener("click", function (e){
-
+  let sugess=0;
     console.log("hubo un click");
     if (e.target && e.target.matches("div.sug")) {
       console.log("presionamos alguna sugerencia");    
       console.log(e.target.id);
+      sugges= document.getElementById(e.target.id).innerText
+      console.log(sugges);
+      document.querySelector('input[type="search"]').value=sugges;
+      searchs();
       
     }})

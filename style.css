@@ -73,6 +73,7 @@ body main section .form .sug {
   margin: auto;
   padding-left: 2px;
   padding-bottom: 0.8rem;
+  cursor: pointer;
 }
 
 body main .busqueda {
