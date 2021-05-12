@@ -93,11 +93,24 @@ body main .busqueda .form {
 
 body main .busqueda .form .input {
   width: 80%;
+  background-size: 20px;
+  opacity: 0.5;
+  padding-left: 25px;
 }
 
-body main .busqueda .form input::-webkit-search-decoration,
-body main .busqueda .form input::-webkit-search-cancel-button {
+body main .busqueda .form .input:focus {
+  background: none;
+}
+
+body main .busqueda .form input::-webkit-search-decoration {
   display: none;
+}
+
+body main .busqueda .form input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  background: url("..//assets/close.svg") no-repeat;
+  width: 14px;
+  height: 14px;
 }
 
 body main .parraf {
@@ -316,6 +329,9 @@ body main .boton_ver_mas:hover {
 }
 
 body main .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: fixed;
   z-index: 1000;
   left: 0px;
@@ -324,6 +340,14 @@ body main .modal {
   height: 100%;
   background-color: #ffffff;
   padding-top: 15em;
+}
+
+body main .modal .cerrar_modal {
+  right: 30px;
+  background: url("..//assets/close.svg") no-repeat;
+  width: 1em;
+  height: 1em;
+  z-index: 2000;
 }
 
 body main .modal .contain_modal {
@@ -662,7 +686,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     margin-top: 2em;
   }
   body main .busqueda .form {
-    width: 60%;
+    width: 50%;
   }
   body main .busqueda .form .input {
     width: 80%;

@@ -26,9 +26,9 @@ tags.addEventListener("input", () => {
   }
   if (letterInput.length > 2) {
     console.log("fecheamos");
-    document
-      .getElementById("inpu")
-      .setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
+
+    document.getElementById("inpu").setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
+    document.getElementById("inpu").setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
     fetch(url)
       .then((response) => response.json())
       .then((json) => {

@@ -31,6 +31,7 @@ tags.addEventListener("input", function () {
   if (letterInput.length > 2) {
     console.log("fecheamos");
     document.getElementById("inpu").setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
+    document.getElementById("inpu").setAttribute("style", "background: url(\"..//assets/icon-search.svg\") left no-repeat");
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -96,7 +97,7 @@ function searchs() {
     }
 
     json.data.map(function (gif) {
-      return gif.images.fixed_height.url;
+      return gif.images.fixed_height_downsampled.url;
     }).forEach(function (url) {
       //console.log(url)   
       var div = document.createElement("div");
@@ -195,7 +196,7 @@ document.querySelector('.imagenes').addEventListener("click", function (e) {
     console.log(identifi);
     var urlmodal = document.getElementById("download" + identifi).src;
     console.log(urlmodal);
-    document.getElementById("imagen_ampliada").style = "background-image: url(".concat(urlmodal);
+    document.getElementById("imagen_ampliada").src = urlmodal;
   }
 
   if (e.target && e.target.matches("a.down")) {

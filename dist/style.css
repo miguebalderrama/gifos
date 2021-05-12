@@ -70,10 +70,21 @@ body main .busqueda .form {
 }
 body main .busqueda .form .input {
   width: 80%;
+  background-size: 20px;
+  opacity: 0.5;
+  margin-left: 25px;
 }
-body main .busqueda .form input::-webkit-search-decoration,
-body main .busqueda .form input::-webkit-search-cancel-button {
+body main .busqueda .form .input:focus {
+  background: none;
+}
+body main .busqueda .form input::-webkit-search-decoration {
   display: none;
+}
+body main .busqueda .form input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  background: url("..//assets/close.svg") no-repeat;
+  width: 14px;
+  height: 14px;
 }
 body main .parraf {
   margin-top: 30px;
@@ -239,20 +250,34 @@ body main .boton_ver_mas:hover {
   color: white;
 }
 body main .modal {
-  display: none;
+  display: flex;
   position: fixed;
   z-index: 1000;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
-  background-color: #c0b7b7;
-  justify-content: space-around;
-  border: solid 1px #572EE5;
+  background-color: #ffffff;
+  padding-top: 15em;
 }
-body main .modal .imagen_ampliada {
+body main .modal .cerrar_modal {
+  right: 30px;
+  background: url("..//assets/close.svg") no-repeat;
+  width: 1em;
+  height: 1em;
   z-index: 2000;
+}
+body main .modal .contain_modal {
+  margin: auto;
   height: 385px;
+  width: 695px;
+}
+body main .modal .contain_modal .imagen_ampliada {
+  width: 100%;
+  height: 385px;
+  z-index: 2000;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 body main .GIFOS {
   background: #f3f5f8;
@@ -504,7 +529,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     margin-top: 2em;
   }
   body main .busqueda .form {
-    width: 60%;
+    width: 50%;
   }
   body main .busqueda .form .input {
     width: 80%;

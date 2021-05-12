@@ -76,11 +76,25 @@ body {
       .form {
         width: 100%;
         .input {
-          width: 80%;
+          width: 80%;          
+          background-size: 20px;
+          opacity: 0.5;
+          padding-left: 25px;
         }
-        input::-webkit-search-decoration,
-        input::-webkit-search-cancel-button {
+        .input:focus{
+          background: none;
+        }
+        
+        input::-webkit-search-decoration{
           display: none;
+        }
+        input::-webkit-search-cancel-button{
+          -webkit-appearance: none;
+         background: url("..//assets/close.svg") no-repeat;
+         width: 14px;
+         height: 14px;
+         
+          //cursor: pointer;
         }
       }
     }
@@ -256,7 +270,7 @@ body {
     }
 
     .modal{
-      
+      display: flex;
       position: fixed; 
       z-index: 1000;
       left: 0px;
@@ -265,7 +279,15 @@ body {
       height: 100%; 
       background-color:#ffffff;      
       //border: solid 1px #572EE5; 
-      padding-top: 15em;    
+      padding-top: 15em;
+      .cerrar_modal{
+        right: 30px;
+        background: url("..//assets/close.svg") no-repeat;
+        width: 1em;
+        height: 1em;
+        z-index: 2000;
+        
+      }    
       
       .contain_modal{
         margin: auto;
@@ -543,7 +565,7 @@ body {
           margin-top: 2em;
         }
         .form {
-          width: 60%;
+          width: 50%;
           .input {
             width: 80%;
           }
