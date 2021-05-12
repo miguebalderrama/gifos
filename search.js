@@ -254,3 +254,12 @@ input.addEventListener("search", () => {
 
 
   })
+  /////////////////////////buscamos las sugerencias////////////
+  document.querySelector('.form').addEventListener("click", function (e){
+
+    console.log("hubo un click");
+    if (e.target && e.target.matches("div.sug")) {
+      console.log("presionamos alguna sugerencia");    
+      console.log(e.target.id);
+      
+    }})
