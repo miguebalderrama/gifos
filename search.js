@@ -84,6 +84,7 @@ input.addEventListener("search", () => {
     .then((response) => response.json())
     .then((json) => {
        cantGifs = json.data.length;
+     
        console.log(json);
       var e = document.getElementById("imagenes");
         var child = e.lastElementChild; /////////here remove last search
