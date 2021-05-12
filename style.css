@@ -96,6 +96,7 @@ body main .busqueda .form .input {
   background-size: 20px;
   opacity: 0.5;
   padding-left: 25px;
+  background: url("..//assets/icon-search.svg") right no-repeat;
 }
 
 body main .busqueda .form .input:focus {
