@@ -93,6 +93,7 @@ input.addEventListener("search", () => {
             child = e.lastElementChild;
         }   
         
+        
       json.data.map((gif) => gif.images.fixed_height_downsampled.url)      
         .forEach((url) => { 
           //console.log(url)   
@@ -167,6 +168,13 @@ input.addEventListener("search", () => {
         //console.log(title);         
       });
       identifier=0;
+      if(cantGifs<=12) {
+        for (let index = 0; index < cantGifs; index++) {
+          const element = document.getElementById(index);
+          element.style="display:block"; 
+          document.getElementById("boton_ver_mas").style="display:block";
+        }
+      }
 
       if(cantGifs>12){
         for (let index = 0; index < 12; index++) {
@@ -174,6 +182,20 @@ input.addEventListener("search", () => {
           element.style="display:block"; 
           document.getElementById("boton_ver_mas").style="display:block";
         }
+      }
+      if (cantGifs==0) {
+        console.log("no hay nada que mostrar")
+        let imgouch = document.createElement("img");          
+        imgouch.src = "..//assets/icon-busqueda-sin-resultado.svg";
+        imgouch.setAttribute("width", "260px");
+        imgouch.setAttribute("height", "200px");  
+        let message = document.createElement("p");
+        message.innerText="Intenta con otra busqueda";
+        message.style="color: #50E3C2 ; font-size: 22px";      
+        document.getElementById("imagenes").appendChild(imgouch);
+        document.getElementById("imagenes").appendChild(message);
+        document.getElementById("boton_ver_mas").style="display:none";
+
       }
 
 
