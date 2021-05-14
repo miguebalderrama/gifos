@@ -267,6 +267,27 @@ body main .modal {
   background-color: #ffffff;
   padding-top: 15em;
 }
+body main .modal .iconmodal {
+  position: absolute;
+  margin-left: 1240px;
+  top: 640px;
+  display: flex;
+}
+body main .modal .iconmodal .down {
+  display: block;
+  background: url("..//assets/icon-download.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+body main .modal .iconmodal .fav {
+  display: block;
+  background: url("..//assets/icon-fav.svg");
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
 body main .modal .cerrar_modal {
   position: absolute;
   right: 400px;
