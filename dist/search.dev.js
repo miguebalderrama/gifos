@@ -10,6 +10,17 @@ var tags = document.querySelector('input[type="search"]');
 var letterInput = null;
 var indice = 0;
 var contBusqueda = 0;
+var gustados = new Array(); ///////////////////////VOy a cargar mi local storage////////////////////
+
+var record = JSON.parse(localStorage.getItem("favoritosLocal"));
+console.log("Que hay en mi record??" + record);
+gustados = record;
+
+if (gustados == null) {
+  gustados = new Array();
+} //////////////////////////////////////////////
+
+
 tags.addEventListener("input", function () {
   var url = "https://api.giphy.com/v1/tags/related/".concat(letterInput, "?api_key=").concat(apiKey, "&lang=es&limit=8");
   console.log("La tecla presionada fue " + tags.value);
@@ -99,7 +110,7 @@ function searchs() {
     json.data.map(function (gif) {
       return gif.images.fixed_height_downsampled.url;
     }).forEach(function (url) {
-      //console.log(url)   
+      //console.log(url)
       var div = document.createElement("div");
       div.id = identifier;
       div.className = "divi";
@@ -167,7 +178,7 @@ function searchs() {
       document.getElementById("download" + identifier).src = urlorigin; //document.getElementById("download"+identifier).download="tuGifo.gif"
 
       document.getElementById("download" + identifier).target = "_blank";
-      identifier++; //console.log(title);         
+      identifier++; //console.log(title);
     });
     identifier = 0; //////////////////// prueba ids gifs /////////////////////////////
 
@@ -217,7 +228,7 @@ function searchs() {
 // let over= document.querySelector('.overlay')
 
 
-document.querySelector('.imagenes').addEventListener("click", function (e) {
+document.querySelector(".imagenes").addEventListener("click", function (e) {
   console.log("hubo un click");
 
   if (e.target && e.target.matches("a.amp")) {
@@ -251,6 +262,8 @@ document.querySelector('.imagenes').addEventListener("click", function (e) {
     imgfav.className = "imgfavs";
     document.getElementById(e.target.id).appendChild(imgfav);
     console.log(favoritear);
+    gustados.push(favoritear);
+    localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
   } //document.getElementById("modal").style= "display:block";
 
 }); ///////////////////////////FUNCION QUE DESCARGA GIF/////////////////////////////////
@@ -260,7 +273,7 @@ function downloadGif(blob, target) {
   console.log(identifier);
   var objectURL = URL.createObjectURL(blob);
   console.log(objectURL);
-  var tag = document.createElement('a');
+  var tag = document.createElement("a");
   tag.href = objectURL;
   tag.download = "".concat(document.getElementById("titulo" + identifier).textContent, ".gif");
   document.body.appendChild(tag);
@@ -268,7 +281,7 @@ function downloadGif(blob, target) {
   document.body.removeChild(tag);
 }
 
-document.getElementById('boton_ver_mas').addEventListener("click", function () {
+document.getElementById("boton_ver_mas").addEventListener("click", function () {
   console.log(cantGifs);
   var pags = Math.trunc(cantGifs / 12);
   var bloque = 12;
@@ -297,7 +310,7 @@ document.getElementById('boton_ver_mas').addEventListener("click", function () {
   }
 }); /////////////////////////buscamos las sugerencias////////////
 
-document.querySelector('.form').addEventListener("click", function (e) {
+document.querySelector(".form").addEventListener("click", function (e) {
   var sugess = 0;
   console.log("hubo un click");
 
@@ -309,4 +322,4 @@ document.querySelector('.form').addEventListener("click", function (e) {
     document.querySelector('input[type="search"]').value = sugges;
     searchs();
   }
-});
+}); /////////////////local storage de favoritear////////////////
