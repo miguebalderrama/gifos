@@ -243,10 +243,16 @@ body main .parraf #imagenes .divi .overlay .iconos .down {
 }
 
 body main .parraf #imagenes .divi .overlay .iconos .fav {
-  background: url("..//assets/icon-fav.svg") no-repeat;
+  background: url("..//assets/icon-fav.svg");
+  background-repeat: no-repeat;
   width: 32px;
   height: 32px;
   cursor: pointer;
+}
+
+body main .parraf #imagenes .divi .overlay .iconos .fav .imgfavs {
+  margin-left: 7px;
+  margin-top: 7px;
 }
 
 body main .parraf #imagenes .divi .overlay .iconos .amp {

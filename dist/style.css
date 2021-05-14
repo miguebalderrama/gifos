@@ -55,6 +55,7 @@ body main section .form .sug {
   margin: auto;
   padding-left: 2px;
   padding-bottom: 0.8rem;
+  cursor: pointer;
 }
 body main .busqueda {
   width: 90%;
@@ -72,7 +73,8 @@ body main .busqueda .form .input {
   width: 80%;
   background-size: 20px;
   opacity: 0.5;
-  margin-left: 25px;
+  padding-left: 25px;
+  background: url("..//assets/icon-search.svg") right no-repeat;
 }
 body main .busqueda .form .input:focus {
   background: none;
@@ -177,10 +179,15 @@ body main .parraf #imagenes .divi .overlay .iconos .down {
   cursor: pointer;
 }
 body main .parraf #imagenes .divi .overlay .iconos .fav {
-  background: url("..//assets/icon-fav.svg") no-repeat;
+  background: url("..//assets/icon-fav.svg");
+  background-repeat: no-repeat;
   width: 32px;
   height: 32px;
   cursor: pointer;
+}
+body main .parraf #imagenes .divi .overlay .iconos .fav .imgfavs {
+  margin-left: 7px;
+  margin-top: 7px;
 }
 body main .parraf #imagenes .divi .overlay .iconos .amp {
   background: url("..//assets/icon-max-normal.svg") no-repeat;

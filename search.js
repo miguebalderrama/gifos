@@ -168,6 +168,17 @@ input.addEventListener("search", () => {
         //console.log(title);         
       });
       identifier=0;
+    //////////////////// prueba ids gifs /////////////////////////////
+    json.data.map((data) => data.id)      
+    .forEach((id) => { 
+      document.getElementById("favoritos"+identifier).name=id;
+      identifier++;
+      console.log(id);         
+    });
+    identifier=0;
+
+
+    //////////////////////////////////////////////
       if(cantGifs<=12) {
         for (let index = 0; index < cantGifs; index++) {
           const element = document.getElementById(index);
@@ -230,6 +241,13 @@ input.addEventListener("search", () => {
   if (e.target && e.target.matches("a.fav")) {
     console.log("presionamos algun favoritos");    
     console.log(e.target.id);
+    let favoritear=document.getElementById(e.target.id).name;   
+    let imgfav = document.createElement("img");          
+        imgfav.src = "..//assets/icon-fav-active.svg";
+        imgfav.setAttribute("width", "18px");
+        imgfav.className= "imgfavs"
+        document.getElementById(e.target.id).appendChild(imgfav);
+    console.log(favoritear);
   }
   //document.getElementById("modal").style= "display:block";
 } ); 

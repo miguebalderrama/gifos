@@ -175,10 +175,15 @@ body {
                 cursor: pointer;
               }
               .fav {
-                background: url("..//assets/icon-fav.svg") no-repeat;
+                background: url("..//assets/icon-fav.svg");
+                background-repeat: no-repeat;
                 width: 32px;
                 height: 32px;
                 cursor: pointer;
+                .imgfavs{
+                  margin-left: 7px;
+                  margin-top: 7px;
+                }
               }
               .amp {
                 background: url("..//assets/icon-max-normal.svg") no-repeat;

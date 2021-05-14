@@ -169,14 +169,46 @@ function searchs() {
       document.getElementById("download" + identifier).target = "_blank";
       identifier++; //console.log(title);         
     });
-    identifier = 0;
+    identifier = 0; //////////////////// prueba ids gifs /////////////////////////////
 
-    if (cantGifs > 12) {
-      for (var index = 0; index < 12; index++) {
+    json.data.map(function (data) {
+      return data.id;
+    }).forEach(function (id) {
+      document.getElementById("favoritos" + identifier).name = id;
+      identifier++;
+      console.log(id);
+    });
+    identifier = 0; //////////////////////////////////////////////
+
+    if (cantGifs <= 12) {
+      for (var index = 0; index < cantGifs; index++) {
         var element = document.getElementById(index);
         element.style = "display:block";
         document.getElementById("boton_ver_mas").style = "display:block";
       }
+    }
+
+    if (cantGifs > 12) {
+      for (var _index = 0; _index < 12; _index++) {
+        var _element = document.getElementById(_index);
+
+        _element.style = "display:block";
+        document.getElementById("boton_ver_mas").style = "display:block";
+      }
+    }
+
+    if (cantGifs == 0) {
+      console.log("no hay nada que mostrar");
+      var imgouch = document.createElement("img");
+      imgouch.src = "..//assets/icon-busqueda-sin-resultado.svg";
+      imgouch.setAttribute("width", "260px");
+      imgouch.setAttribute("height", "200px");
+      var message = document.createElement("p");
+      message.innerText = "Intenta con otra busqueda";
+      message.style = "color: #50E3C2 ; font-size: 22px";
+      document.getElementById("imagenes").appendChild(imgouch);
+      document.getElementById("imagenes").appendChild(message);
+      document.getElementById("boton_ver_mas").style = "display:none";
     }
   })["catch"](function (error) {
     return document.body.appendChild = error;
@@ -212,6 +244,13 @@ document.querySelector('.imagenes').addEventListener("click", function (e) {
   if (e.target && e.target.matches("a.fav")) {
     console.log("presionamos algun favoritos");
     console.log(e.target.id);
+    var favoritear = document.getElementById(e.target.id).name;
+    var imgfav = document.createElement("img");
+    imgfav.src = "..//assets/icon-fav-active.svg";
+    imgfav.setAttribute("width", "18px");
+    imgfav.className = "imgfavs";
+    document.getElementById(e.target.id).appendChild(imgfav);
+    console.log(favoritear);
   } //document.getElementById("modal").style= "display:block";
 
 }); ///////////////////////////FUNCION QUE DESCARGA GIF/////////////////////////////////
@@ -247,13 +286,27 @@ document.getElementById('boton_ver_mas').addEventListener("click", function () {
     vermas++;
     console.log(vermas);
   } else {
-    for (var _index = bloque * vermas; _index < cantGifs; _index++) {
-      var _element = document.getElementById(_index);
+    for (var _index2 = bloque * vermas; _index2 < cantGifs; _index2++) {
+      var _element2 = document.getElementById(_index2);
 
-      _element.style = "display:block";
+      _element2.style = "display:block";
     }
 
     vermas = 1;
     document.getElementById("boton_ver_mas").style = "display:none";
+  }
+}); /////////////////////////buscamos las sugerencias////////////
+
+document.querySelector('.form').addEventListener("click", function (e) {
+  var sugess = 0;
+  console.log("hubo un click");
+
+  if (e.target && e.target.matches("div.sug")) {
+    console.log("presionamos alguna sugerencia");
+    console.log(e.target.id);
+    sugges = document.getElementById(e.target.id).innerText;
+    console.log(sugges);
+    document.querySelector('input[type="search"]').value = sugges;
+    searchs();
   }
 });
