@@ -20,7 +20,7 @@ fetch("https://api.giphy.com/v1/gifs/trending?api_key=".concat(apiKey, "&limit=1
   return response.json();
 }).then(function (json) {
   json.data.map(function (gif) {
-    return gif.images.fixed_height.url;
+    return gif.images.original.url;
   }).forEach(function (url) {
     arraygifs[count] = url;
     count++;

@@ -288,13 +288,32 @@ body {
       //border: solid 1px #572EE5; 
       padding-top: 15em;
       .cerrar_modal{
-        right: 30px;
+        position:absolute ;
+        right: 400px;
+        top: 76px;
         background: url("..//assets/close.svg") no-repeat;
         width: 1em;
         height: 1em;
         z-index: 2000;
+        cursor: pointer;
         
-      }    
+      } 
+      .titulo_modal{
+        position:absolute ;
+        font-family: "Roboto", sans-serif;
+              font-size: 16px;
+              font-weight: bold;
+        left: 600px;
+        top: 660px;
+      }  
+      .usuario_modal{
+        position:absolute ;
+        font-family: "Roboto", sans-serif;
+              font-size: 15px;
+              top: 640px;
+              left: 600px;
+              
+      }  
       
       .contain_modal{
         margin: auto;

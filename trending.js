@@ -20,7 +20,7 @@ fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=12`)
   .then((response) => response.json())
   .then((json) => {
     json.data
-      .map((gif) => gif.images.fixed_height.url)
+      .map((gif) => gif.images.original.url) 
 
       .forEach((url) => {
         arraygifs[count] = url;

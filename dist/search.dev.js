@@ -322,4 +322,4 @@ document.querySelector(".form").addEventListener("click", function (e) {
     document.querySelector('input[type="search"]').value = sugges;
     searchs();
   }
-}); /////////////////local storage de favoritear////////////////
+}); /////////////////iconos trendings////////////////

@@ -245,6 +245,10 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     let identifi = e.target.id.substring(7, e.target.id.length);
     console.log(identifi);
     let urlmodal = document.getElementById("download" + identifi).src;
+    let titlemodal = document.getElementById("titulo" + identifi).textContent;
+    let usermodal = document.getElementById("user" + identifi).textContent;
+    document.getElementById("titulo_modal").textContent=titlemodal;
+    document.getElementById("usuario_modal").textContent=usermodal;
     console.log(urlmodal);
     document.getElementById("imagen_ampliada").src = urlmodal;
   }
@@ -327,6 +331,11 @@ document.querySelector(".form").addEventListener("click", function (e) {
   }
 });
 
-/////////////////local storage de favoritear////////////////
-
+/////////////////cerrar modal////////////////
+document.getElementById("cerrar_modal").addEventListener("click", function (e) {
+  
+  console.log("hubo un click cerrar modal");
+  document.getElementById("modal").style = "display:none";
+  
+});
 
