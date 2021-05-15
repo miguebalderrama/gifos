@@ -14,6 +14,7 @@ body {
     img {
       width: 3rem;
     }
+   
   }
   main {
     section {
@@ -481,8 +482,7 @@ body {
 }
 
 .hamburger {
-  background-color: transparent;
-
+  background-color: transparent;  
   height: 30px;
   width: 30px;
   padding: 10px 0px;
@@ -586,7 +586,36 @@ body {
   ////////////////////////////////////////////////////////////////////////////////////
   // .busqueda {
 
-  //}
+  .hamburger{
+    display:none
+  }
+  .menuppal {
+    display: flex;    
+    position: static;
+    font-family: "Montserrat", sans-serif;
+    background-color:white;
+    width: 100%;
+    //z-index: 1001;
+    color:rgba(87, 46, 229, 0.9);
+    transform:none;
+    overflow:hidden;
+    justify-content: flex-end;
+    
+  }
+  .menuppal ul{
+    display: flex;
+    flex-direction: row;
+  }
+  .menuppal ul li{
+    margin-right: 1.5rem;
+  }
+  .menuppal ul li a {
+    font-size: 1rem;
+  line-height: 1em;
+  height: 1em;
+    text-decoration: none;
+    color:rgba(87, 46, 229, 0.9);
+  }
   .imagenes {
     margin-top: 30px;
     display: flex;
@@ -598,7 +627,8 @@ body {
     //    padding: 20px;
     // }
   }
-  body {
+  body {          
+    
     main {
       .busqueda {
         display: flex;
