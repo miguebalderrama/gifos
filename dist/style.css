@@ -585,6 +585,15 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     color: rgba(87, 46, 229, 0.9);
   }
 
+  .menuppal ul li .miGifo {
+    margin-top: 12px;
+    background: url("../assets/button-crear-gifo.svg") no-repeat;
+  }
+
+  .menuppal ul li .miGifo:hover {
+    background: url("../assets/CTA-crear-gifo-hover") no-repeat;
+  }
+
   .imagenes {
     margin-top: 30px;
     display: flex;

@@ -7,9 +7,10 @@ body {
   header {
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
     // border-top: solid #572ee5 5px;
     margin: auto;
-    padding: 2rem 1.2rem;
+    padding: 1rem 1.2rem;
     box-sizing: border-box;
     img {
       width: 3rem;
@@ -20,14 +21,16 @@ body {
     section {
       .tittle {
         h1 {
+          width: 70%;
+          margin: auto;
           padding: 0rem 2rem;
           font-family: "Montserrat", sans-serif;
-          font-size: 22px;
+          font-size: 32px;
           color: #572ee5;
           line-height: 2rem;
           text-align: center;
           span {
-            font-size: 22px;
+            font-size: 32px;
             color: #50e3c2;
           }
         }
@@ -71,6 +74,7 @@ body {
       width: 90%;
       box-sizing: border-box;
       margin: auto;
+     
       #ilustra {
         max-width: 100%;
         margin-top: 2em;
@@ -569,10 +573,10 @@ body {
   text-decoration: none;
   color: white;
 }
-.menuppal ul li a:hover {
-  text-decoration: none;
-  color: #333;
-}
+//.menuppal ul li a:hover {
+//  text-decoration: none;
+//  color: #333;
+//}
 
 .input:focus {
   border: none;
@@ -607,14 +611,32 @@ body {
     flex-direction: row;
   }
   .menuppal ul li{
-    margin-right: 1.5rem;
+    margin-left: 2rem;
   }
   .menuppal ul li a {
     font-size: 1rem;
   line-height: 1em;
   height: 1em;
-    text-decoration: none;
-    color:rgba(87, 46, 229, 0.9);
+  color:rgba(87, 46, 229, 0.9);
+  text-decoration: none;
+  background-image: linear-gradient(#50e3c2, #50e3c2);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
+  }
+  .menuppal ul li a:hover {
+    background-size: 100% 2px;
+  }
+  .menuppal ul li .miGifo{
+    display: block;
+    width: 54px;
+    height: 54px;
+    margin-top: 10px;
+    background: url("../assets/button-crear-gifo.svg") no-repeat;
+  }
+  .menuppal ul li .miGifo:hover{
+    background: url("../assets/CTA-crear-gifo-hover.svg") no-repeat;
   }
   .imagenes {
     margin-top: 30px;
@@ -628,7 +650,9 @@ body {
     // }
   }
   body {          
-    
+    header{
+      justify-content: space-between;
+    }
     main {
       .busqueda {
         display: flex;
@@ -638,6 +662,9 @@ body {
         width: 70%;
         box-sizing: border-box;
         margin: auto;
+        margin-top: 3rem;
+        
+        
         #ilustra {
           max-width: 60%;
           margin-top: 2em;
