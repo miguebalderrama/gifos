@@ -468,11 +468,15 @@ body main .GIFOS .carousel .card {
   padding: 0;
 }
 
+body main .GIFOS .carousel .card .overlay:hover {
+  opacity: 1;
+}
+
 body main .GIFOS .carousel .card .overlay {
+  position: absolute;
+  top: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  position: absolute;
-  bottom: 0;
   background: rgba(87, 46, 229, 0.6);
   /* Black see-through */
   height: 100%;
@@ -480,6 +484,118 @@ body main .GIFOS .carousel .card .overlay {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body main .GIFOS .carousel .card .overlay .titulo {
+  color: white;
+  opacity: 1;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+}
+
+body main .GIFOS .carousel .card .overlay .user {
+  color: white;
+  opacity: 1;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-left: 0.5em;
+}
+
+body main .GIFOS .carousel .card .overlay .iconos {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100px;
+  height: 32px;
+}
+
+body main .GIFOS .carousel .card .overlay .iconos .down {
+  background: url("..//assets/icon-download.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+body main .GIFOS .carousel .card .overlay .iconos .fav {
+  background: url("..//assets/icon-fav.svg");
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+body main .GIFOS .carousel .card .overlay .iconos .fav .imgfavs {
+  margin-left: 7px;
+  margin-top: 7px;
+}
+
+body main .GIFOS .carousel .card .overlay .iconos .amp {
+  background: url("..//assets/icon-max-normal.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+body main .GIFOS .carousel .card .overlay .iconos .down:hover {
+  background: url("..//assets/icon-download-hover.svg") no-repeat;
+}
+
+body main .GIFOS .carousel .card .overlay .iconos .fav:hover {
+  background: url("..//assets/icon-fav-hover.svg") no-repeat;
+}
+
+body main .GIFOS .carousel .card .overlay .iconos .amp:hover {
+  background: url("..//assets/icon-max-hover.svg") no-repeat;
+}
+
+body main .GIFOS .carousel .card .overlay .estado {
+  color: white;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  display: none;
+}
+
+body main .GIFOS .carousel .card .overlay .icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: none;
+}
+
+body main .GIFOS .carousel .card .overlay .icon #copy {
+  opacity: 0.7;
+}
+
+body main .GIFOS .carousel .card .overlay .icon #download {
+  opacity: 0.7;
+}
+
+body main .GIFOS .carousel .card .overlay .icon #copy:hover {
+  opacity: 1;
+}
+
+body main .GIFOS .carousel .card .overlay .icon #download:hover {
+  opacity: 1;
 }
 
 body main .GIFOS .carousel .card .giftrend {
