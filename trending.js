@@ -16,19 +16,40 @@ menu.addEventListener("click", toggleMenu, false);
 let apiKey = "bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H";
 var count = 0;
 let arraygifs = new Array();
-fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=12`)
+let arrayTitle = new Array();
+let arrayUser = new Array();
+fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=6`)
   .then((response) => response.json())
   .then((json) => {
-    json.data
-      .map((gif) => gif.images.original.url) 
-
+    json.data.map((gif) => gif.images.original.url) 
       .forEach((url) => {
         arraygifs[count] = url;
         count++;
         console.log(arraygifs.length);
       });
+      count=0;
+      json.data.map((data) => data.title)
+        .forEach((title) => {
+          arrayTitle[count] = title;
+          console.log(arrayTitle[count]);
+        count++;
+        
+        
+        });
+        count=0;
+        json.data
+        .map((user) => user.username)
+        .forEach((username) => {
+          arrayUser[count] = username;
+        count++;    
+     
+        });
+        
     for (var a = 0; a < 3; a++) {
-      document.getElementById("img" + a).setAttribute("src", arraygifs[a]);
+      document.getElementById("img" + a).src= arraygifs[a];
+      document.getElementById("user" + a).textContent= arrayUser[a];
+      document.getElementById("tit" + a).textContent= arrayTitle[a];
+      
     }
   })
   .catch((error) => (document.body.appendChild = error));
@@ -57,13 +78,13 @@ function atras() {
       counti = 4;
     }
     if (counti + i >= arraygifs.length) {
-      document
-        .getElementById("img" + i)
-        .setAttribute("src", arraygifs[i + counti - arraygifs.length]);
+      document.getElementById("img" + i).setAttribute("src", arraygifs[i + counti - arraygifs.length]);
+      document.getElementById("user" + i).textContent= arrayUser[i + counti - arraygifs.length];
+      document.getElementById("tit" + i).textContent=  arrayTitle[i + counti - arraygifs.length];
     } else {
-      document
-        .getElementById("img" + i)
-        .setAttribute("src", arraygifs[counti + i]);
+      document.getElementById("img" + i).setAttribute("src", arraygifs[counti + i]);
+      document.getElementById("user" + i).textContent= arrayUser[counti + i];
+      document.getElementById("tit" + i).textContent=  arrayTitle[counti + i];
     }
   }
   console.log(counti);
@@ -75,13 +96,13 @@ function adelante() {
   }
   for (var i = 0; i < 3; i++) {
     if (counti + i >= arraygifs.length) {
-      document
-        .getElementById("img" + i)
-        .setAttribute("src", arraygifs[i + counti - arraygifs.length]);
+      document.getElementById("img" + i).setAttribute("src", arraygifs[i + counti - arraygifs.length]);
+      document.getElementById("user" + i).textContent= arrayUser[i + counti - arraygifs.length];
+      document.getElementById("tit" + i).textContent=  arrayTitle[i + counti - arraygifs.length];
     } else {
-      document
-        .getElementById("img" + i)
-        .setAttribute("src", arraygifs[i + counti]);
+      document.getElementById("img" + i).setAttribute("src", arraygifs[i + counti]);
+      document.getElementById("user" + i).textContent= arrayUser[counti + i];
+      document.getElementById("tit" + i).textContent=  arrayTitle[counti + i];
     }
   }
   console.log(counti);
