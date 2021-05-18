@@ -40,6 +40,7 @@ fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=6`)
         arrayUser[count] = username;
         count++;
       });
+      count=0;
       json.data.map((data) => data.images.downsized_large.url).forEach((urlorigin) => {
         arrayUrl[count] = urlorigin;
         count++;
@@ -141,9 +142,26 @@ downtrenddos.addEventListener("click", function (e){
 
 function downloadTrend(card){
   
-  console.log("presionamos la card"+card);
-  console.log(document.getElementById(card).src);
+  console.log("presionamos la "+card);
   
-    
+  fetch(document.getElementById(card).src)
+  .then((response) => response.blob())
+  .then(function (blobs) {
+    downloadGiftrend(blobs,card); 
+  });
+   
 }
 
+function downloadGiftrend(blobs,card) {
+  let identifier = card.substring(9,card.length);
+  console.log(identifier);
+  console.log(blobs);
+  let objectURLtrend = URL.createObjectURL(blobs);
+  console.log(objectURLtrend);
+  let tagtrend = document.createElement("a");
+ tagtrend.href = objectURLtrend;
+ tagtrend.download = `${ document.getElementById("tit" + identifier).textContent}.gif`;
+ document.body.appendChild(tagtrend);
+  tagtrend.click();
+  document.body.removeChild(tagtrend);
+}
