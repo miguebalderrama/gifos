@@ -146,22 +146,18 @@ function downloadTrend(card){
   
   fetch(document.getElementById(card).src)
   .then((response) => response.blob())
-  .then(function (blobs) {
-    downloadGiftrend(blobs,card); 
+  .then(function (blobs) {    
+      let identifier = card.substring(9,card.length);
+      console.log(identifier);
+      console.log(blobs);
+      let objectURLtrend = URL.createObjectURL(blobs);
+      console.log(objectURLtrend);
+      let tagtrend = document.createElement("a");
+     tagtrend.href = objectURLtrend;
+     tagtrend.download = `${ document.getElementById("tit" + identifier).textContent}.gif`;
+     document.body.appendChild(tagtrend);
+      tagtrend.click();
+      document.body.removeChild(tagtrend);    
   });
-   
-}
+   }
 
-function downloadGiftrend(blobs,card) {
-  let identifier = card.substring(9,card.length);
-  console.log(identifier);
-  console.log(blobs);
-  let objectURLtrend = URL.createObjectURL(blobs);
-  console.log(objectURLtrend);
-  let tagtrend = document.createElement("a");
- tagtrend.href = objectURLtrend;
- tagtrend.download = `${ document.getElementById("tit" + identifier).textContent}.gif`;
- document.body.appendChild(tagtrend);
-  tagtrend.click();
-  document.body.removeChild(tagtrend);
-}
