@@ -19,7 +19,7 @@ let arraygifs = new Array();
 let arrayTitle = new Array();
 let arrayUser = new Array();
 let arrayUrl = new Array();
-fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=6`)
+fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=8`)
   .then((response) => response.json())
   .then((json) => {
     json.data
@@ -80,18 +80,17 @@ function atras() {
     }
     if (counti + i >= arraygifs.length) {
       document
-        .getElementById("img" + i)
-        .setAttribute("src", arraygifs[i + counti - arraygifs.length]);
-      document.getElementById("user" + i).textContent =
-        arrayUser[i + counti - arraygifs.length];
-      document.getElementById("tit" + i).textContent =
-        arrayTitle[i + counti - arraygifs.length];
+        .getElementById("img" + i).setAttribute("src", arraygifs[i + counti - arraygifs.length]);
+      document.getElementById("user" + i).textContent =arrayUser[i + counti - arraygifs.length];
+      document.getElementById("tit" + i).textContent =arrayTitle[i + counti - arraygifs.length];
+      document.getElementById("downtrend" + i).src=arrayUrl[i + counti - arraygifs.length];
     } else {
       document
-        .getElementById("img" + i)
-        .setAttribute("src", arraygifs[counti + i]);
+        .getElementById("img" + i).setAttribute("src", arraygifs[counti + i]);
       document.getElementById("user" + i).textContent = arrayUser[counti + i];
       document.getElementById("tit" + i).textContent = arrayTitle[counti + i];
+      document.getElementById("downtrend" + i).src= arrayUrl[counti + i];
+      
     }
   }
   console.log(counti);
@@ -106,16 +105,16 @@ function adelante() {
       document
         .getElementById("img" + i)
         .setAttribute("src", arraygifs[i + counti - arraygifs.length]);
-      document.getElementById("user" + i).textContent =
-        arrayUser[i + counti - arraygifs.length];
-      document.getElementById("tit" + i).textContent =
-        arrayTitle[i + counti - arraygifs.length];
+      document.getElementById("user" + i).textContent =arrayUser[i + counti - arraygifs.length];
+      document.getElementById("tit" + i).textContent =arrayTitle[i + counti - arraygifs.length];
+      document.getElementById("downtrend" + i).src=arrayUrl[i + counti - arraygifs.length];
     } else {
       document
         .getElementById("img" + i)
         .setAttribute("src", arraygifs[i + counti]);
       document.getElementById("user" + i).textContent = arrayUser[counti + i];
       document.getElementById("tit" + i).textContent = arrayTitle[counti + i];
+      document.getElementById("downtrend" + i).src= arrayUrl[counti + i];
     }
   }
   console.log(counti);
