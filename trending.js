@@ -136,8 +136,22 @@ downtrenddos.addEventListener("click", function (e){
   downloadTrend(downtrenddos.id);
 })
 
-
-
+var amptrenddos=document.getElementById("amptrend2")
+amptrenddos.addEventListener("click", function (e){
+  e.preventDefault();
+  console.log("hice click en el modal 2")
+  let urlmodal = document.getElementById("downtrend2").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+})
+var amptrenduno=document.getElementById("amptrend1")
+amptrenduno.addEventListener("click", function (e){
+  e.preventDefault();
+  console.log("hice click en el modal 1")
+  let urlmodal = document.getElementById("downtrend1").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+})
 
 function downloadTrend(card){
   
