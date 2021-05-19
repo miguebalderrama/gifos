@@ -19,6 +19,7 @@ let arraygifs = new Array();
 let arrayTitle = new Array();
 let arrayUser = new Array();
 let arrayUrl = new Array();
+let arrayId = new Array();
 fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=8`)
   .then((response) => response.json())
   .then((json) => {
@@ -46,12 +47,19 @@ fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=8`)
         count++;
       }); 
       count=0; 
+      json.data.map((data) => data.id).forEach((id) => {
+        arrayId[count] = id;
+        count++;
+        
+      });
+      count=0;
 
     for (var a = 0; a < 3; a++) {
       document.getElementById("img" + a).src = arraygifs[a];
       document.getElementById("user" + a).textContent = arrayUser[a];
       document.getElementById("tit" + a).textContent = arrayTitle[a];
       document.getElementById("downtrend" + a).src = arrayUrl[a];
+      document.getElementById("favtrend" + a).name = arrayId[a];
     }
   })
   .catch((error) => (document.body.appendChild = error));
@@ -119,6 +127,7 @@ function adelante() {
   }
   console.log(counti);
 }
+///////////// listener de los icinos de los trending/////////////////////////
 
 var downtrend=document.getElementById("downtrend0")
 downtrend.addEventListener("click", function (e){
@@ -160,6 +169,23 @@ amptrendcero.addEventListener("click", function (e){
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
 })
+
+var favtrend=document.getElementById("favtrend0")
+favtrend.addEventListener("click", function (e){
+  e.preventDefault();
+  console.log("detectamos el primer fav"  )
+  let favoritrend = document.getElementById("favtrend0").name;
+  let imgfav = document.createElement("img");
+    imgfav.src = "..//assets/icon-fav-active.svg";
+    imgfav.setAttribute("width", "18px");
+    imgfav.className = "imgfavs";
+    document.getElementById("favtrend0").appendChild(imgfav);
+    console.log(favoritrend);
+    gustados.push(favoritrend);
+    localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+})
+
+
 
 function downloadTrend(card){
   

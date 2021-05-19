@@ -192,9 +192,7 @@ function searchs() {
         });
       identifier = 0;
       //////////////////// prueba ids gifs /////////////////////////////
-      json.data
-        .map((data) => data.id)
-        .forEach((id) => {
+      json.data.map((data) => data.id).forEach((id) => {
           document.getElementById("favoritos" + identifier).name = id;
           identifier++;
           console.log(id);
