@@ -6,23 +6,26 @@
 body header {
   display: flex;
   justify-content: space-between;
+  max-width: 1200px;
   margin: auto;
-  padding: 2rem 1.2rem;
+  padding: 1rem 1.2rem;
   box-sizing: border-box;
 }
 body header img {
   width: 3rem;
 }
 body main section .tittle h1 {
+  width: 70%;
+  margin: auto;
   padding: 0rem 2rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 22px;
+  font-size: 32px;
   color: #572ee5;
   line-height: 2rem;
   text-align: center;
 }
 body main section .tittle h1 span {
-  font-size: 22px;
+  font-size: 32px;
   color: #50e3c2;
 }
 body main section .form {
@@ -362,16 +365,104 @@ body main .GIFOS .carousel .card {
   margin: 1rem;
   padding: 0;
 }
+body main .GIFOS .carousel .card .overlay:hover {
+  opacity: 1;
+}
 body main .GIFOS .carousel .card .overlay {
-  box-sizing: border-box;
   position: absolute;
-  bottom: 0;
+  top: 0;
+  box-sizing: border-box;
   background: rgba(87, 46, 229, 0.6);
   /* Black see-through */
   height: 100%;
   width: 100%;
   transition: 0.5s ease;
   opacity: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+}
+body main .GIFOS .carousel .card .overlay .titulo {
+  color: white;
+  opacity: 1;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+}
+body main .GIFOS .carousel .card .overlay .user {
+  color: white;
+  opacity: 1;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-left: 0.5em;
+}
+body main .GIFOS .carousel .card .overlay .iconos {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 32px;
+}
+body main .GIFOS .carousel .card .overlay .iconos .down {
+  background: url("..//assets/icon-download.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+body main .GIFOS .carousel .card .overlay .iconos .fav {
+  background: url("..//assets/icon-fav.svg");
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+body main .GIFOS .carousel .card .overlay .iconos .fav .imgfavs {
+  margin-left: 7px;
+  margin-top: 7px;
+}
+body main .GIFOS .carousel .card .overlay .iconos .amp {
+  background: url("..//assets/icon-max-normal.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+body main .GIFOS .carousel .card .overlay .iconos .down:hover {
+  background: url("..//assets/icon-download-hover.svg") no-repeat;
+}
+body main .GIFOS .carousel .card .overlay .iconos .fav:hover {
+  background: url("..//assets/icon-fav-hover.svg") no-repeat;
+}
+body main .GIFOS .carousel .card .overlay .iconos .amp:hover {
+  background: url("..//assets/icon-max-hover.svg") no-repeat;
+}
+body main .GIFOS .carousel .card .overlay .estado {
+  color: white;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  display: none;
+}
+body main .GIFOS .carousel .card .overlay .icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: none;
+}
+body main .GIFOS .carousel .card .overlay .icon #copy {
+  opacity: 0.7;
+}
+body main .GIFOS .carousel .card .overlay .icon #download {
+  opacity: 0.7;
+}
+body main .GIFOS .carousel .card .overlay .icon #copy:hover {
+  opacity: 1;
+}
+body main .GIFOS .carousel .card .overlay .icon #download:hover {
+  opacity: 1;
 }
 body main .GIFOS .carousel .card .giftrend {
   width: 357px;
@@ -538,11 +629,6 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   color: white;
 }
 
-.menuppal ul li a:hover {
-  text-decoration: none;
-  color: #333;
-}
-
 .input:focus {
   border: none;
 }
@@ -551,7 +637,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   border: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1070px) and (max-width: 1920px) {
   .hamburger {
     display: none;
   }
@@ -574,24 +660,36 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   }
 
   .menuppal ul li {
-    margin-right: 1.5rem;
+    margin-left: 2rem;
   }
 
   .menuppal ul li a {
     font-size: 1rem;
     line-height: 1em;
     height: 1em;
-    text-decoration: none;
     color: rgba(87, 46, 229, 0.9);
+    text-decoration: none;
+    background-image: linear-gradient(#50e3c2, #50e3c2);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.3s;
+  }
+
+  .menuppal ul li a:hover {
+    background-size: 100% 2px;
   }
 
   .menuppal ul li .miGifo {
-    margin-top: 12px;
+    display: block;
+    width: 54px;
+    height: 54px;
+    margin-top: 10px;
     background: url("../assets/button-crear-gifo.svg") no-repeat;
   }
 
   .menuppal ul li .miGifo:hover {
-    background: url("../assets/CTA-crear-gifo-hover") no-repeat;
+    background: url("../assets/CTA-crear-gifo-hover.svg") no-repeat;
   }
 
   .imagenes {
@@ -603,6 +701,9 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     width: 60%;
   }
 
+  body header {
+    justify-content: space-between;
+  }
   body main .busqueda {
     display: flex;
     flex-direction: column;
@@ -611,6 +712,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     width: 70%;
     box-sizing: border-box;
     margin: auto;
+    margin-top: 3rem;
   }
   body main .busqueda #ilustra {
     max-width: 60%;

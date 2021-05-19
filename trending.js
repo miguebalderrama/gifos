@@ -10,7 +10,9 @@ function toggleMenu(event) {
 
 // event
 menu.addEventListener("click", toggleMenu, false);
-
+var favtrend0=0;
+var favtrend0=1;
+var favtrend0=2;
 // addEventListener version
 // trending
 let apiKey = "bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H";
@@ -20,7 +22,8 @@ let arrayTitle = new Array();
 let arrayUser = new Array();
 let arrayUrl = new Array();
 let arrayId = new Array();
-fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=8`)
+let arrayLike = new Array();
+fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=5`)
   .then((response) => response.json())
   .then((json) => {
     json.data
@@ -72,6 +75,24 @@ var forward = document.getElementById("right");
 let counti = 0;
 forward.addEventListener("click", () => {
   counti++;
+  if(favtrend0===1){
+    let d = document.getElementById("favtrend0");
+   let d_nested = document.getElementById("imgfav0");
+    d.removeChild(d_nested);
+    favtrend0=0;
+    } 
+    if(favtrend1===1){
+      let d = document.getElementById("favtrend1");
+     let d_nested = document.getElementById("imgfav1");
+      d.removeChild(d_nested);
+      favtrend1=0;
+      }  
+      if(favtrend2===1){
+        let d = document.getElementById("favtrend2");
+       let d_nested = document.getElementById("imgfav2");
+        d.removeChild(d_nested);
+        favtrend2=0;
+        }
   adelante();
 });
 
@@ -82,22 +103,25 @@ reward.addEventListener("click", () => {
 });
 
 function atras() {
+  
+
   for (var i = 0; i < 3; i++) {
     if (counti < 0) {
       counti = 4;
     }
     if (counti + i >= arraygifs.length) {
-      document
-        .getElementById("img" + i).setAttribute("src", arraygifs[i + counti - arraygifs.length]);
+      document.getElementById("img" + i).setAttribute("src", arraygifs[i + counti - arraygifs.length]);
       document.getElementById("user" + i).textContent =arrayUser[i + counti - arraygifs.length];
       document.getElementById("tit" + i).textContent =arrayTitle[i + counti - arraygifs.length];
       document.getElementById("downtrend" + i).src=arrayUrl[i + counti - arraygifs.length];
+      document.getElementById("favtrend" + i).name=arrayId[i + counti - arraygifs.length];
     } else {
       document
         .getElementById("img" + i).setAttribute("src", arraygifs[counti + i]);
       document.getElementById("user" + i).textContent = arrayUser[counti + i];
       document.getElementById("tit" + i).textContent = arrayTitle[counti + i];
       document.getElementById("downtrend" + i).src= arrayUrl[counti + i];
+      document.getElementById("favtrend" + i).name=arrayId[i + counti ];
       
     }
   }
@@ -105,6 +129,7 @@ function atras() {
 }
 
 function adelante() {
+  
   if (counti >= arraygifs.length) {
     counti = 0;
   }
@@ -116,6 +141,7 @@ function adelante() {
       document.getElementById("user" + i).textContent =arrayUser[i + counti - arraygifs.length];
       document.getElementById("tit" + i).textContent =arrayTitle[i + counti - arraygifs.length];
       document.getElementById("downtrend" + i).src=arrayUrl[i + counti - arraygifs.length];
+      document.getElementById("favtrend" + i).name=arrayId[i + counti - arraygifs.length];
     } else {
       document
         .getElementById("img" + i)
@@ -123,9 +149,20 @@ function adelante() {
       document.getElementById("user" + i).textContent = arrayUser[counti + i];
       document.getElementById("tit" + i).textContent = arrayTitle[counti + i];
       document.getElementById("downtrend" + i).src= arrayUrl[counti + i];
+      document.getElementById("favtrend" + i).name=arrayId[i + counti ];
     }
   }
   console.log(counti);
+  if(arrayLike.find(element => element == (document.getElementById("favtrend0").name))){
+  console.log("hay un gustado en card 0")
+  favtrend0=1;
+  let imgfavs = document.createElement("img");
+    imgfavs.src = "..//assets/icon-fav-active.svg";
+    imgfavs.setAttribute("width", "18px");
+    imgfavs.className = "imgfavs";
+    imgfavs.id="imgfav0";
+    document.getElementById("favtrend0").appendChild(imgfavs);
+  }
 }
 ///////////// listener de los icinos de los trending/////////////////////////
 
@@ -173,12 +210,15 @@ amptrendcero.addEventListener("click", function (e){
 var favtrend=document.getElementById("favtrend0")
 favtrend.addEventListener("click", function (e){
   e.preventDefault();
+  favtrend0=1;
   console.log("detectamos el primer fav"  )
   let favoritrend = document.getElementById("favtrend0").name;
+  arrayLike.push(favoritrend);
   let imgfav = document.createElement("img");
     imgfav.src = "..//assets/icon-fav-active.svg";
     imgfav.setAttribute("width", "18px");
     imgfav.className = "imgfavs";
+    imgfav.id="imgfav0";
     document.getElementById("favtrend0").appendChild(imgfav);
     console.log(favoritrend);
     gustados.push(favoritrend);

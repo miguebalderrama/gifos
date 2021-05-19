@@ -815,7 +815,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   border: none;
 }
 
-@media only screen and (min-width: 1070px) and (max-width: 1605px) {
+@media only screen and (min-width: 1070px) and (max-width: 1920px) {
   .hamburger {
     display: none;
   }
