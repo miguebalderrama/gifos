@@ -152,6 +152,14 @@ amptrenduno.addEventListener("click", function (e){
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
 })
+var amptrendcero=document.getElementById("amptrend0")
+amptrendcero.addEventListener("click", function (e){
+  e.preventDefault();
+  console.log("hice click en el modal 0")
+  let urlmodal = document.getElementById("downtrend0").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+})
 
 function downloadTrend(card){
   
