@@ -27,6 +27,7 @@ tags.addEventListener("input", () => {
   letterInput = tags.value;
   if (letterInput == 0) {
     console.log("campos vacio");
+    document.getElementById("lupon").setAttribute("style","display:none");
     for (let flag = 0; flag < indice; flag++) {
       var d = document.getElementById("busqueda");
       var d_nested = document.getElementById("sug" + flag);
@@ -40,8 +41,9 @@ tags.addEventListener("input", () => {
   if (letterInput.length > 2) {
     console.log("fecheamos");
     document.getElementById("inpu").setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
-    document.getElementById("inpu").setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
-    let imgfavs = document.createElement("img");
+    //document.getElementById("inpu").setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
+    //let imgfavs = document.createElement("img");
+    document.getElementById("lupon").setAttribute("style","display:block");
     
     
     fetch(url)
@@ -59,7 +61,7 @@ tags.addEventListener("input", () => {
           div.innerText = element.name;
           div.setAttribute("class", "sug");
           div.setAttribute("id", "sug" + indice);
-          div.setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
+          div.style=`background: url("..//assets/icon-search.svg") left/4% no-repeat`;
           document.getElementById("busqueda").appendChild(div);
           indice++;
         });
@@ -78,7 +80,9 @@ const input = document.querySelector('input[type="search"]');
 var buscar = null;
 var identifier = 0;
 input.addEventListener("search", () => {
+  document.getElementById("lupon").setAttribute("style","display:none");
   searchs();
+
 });
 
 function searchs() {
@@ -333,3 +337,11 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
   
 });
 
+////////////////busqueda por lupon//////////////
+document.getElementById("lupon").addEventListener("click", function() {
+  
+  console.log("hubo un click en lupon");
+  document.getElementById("lupon").setAttribute("style","display:none");
+  searchs();
+  
+});
