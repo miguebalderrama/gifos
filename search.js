@@ -39,16 +39,11 @@ tags.addEventListener("input", () => {
   }
   if (letterInput.length > 2) {
     console.log("fecheamos");
-
-    document
-      .getElementById("inpu")
-      .setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
-    document
-      .getElementById("inpu")
-      .setAttribute(
-        "style",
-        `background: url("..//assets/icon-search.svg") left no-repeat`
-      );
+    document.getElementById("inpu").setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
+    document.getElementById("inpu").setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
+    let imgfavs = document.createElement("img");
+    
+    
     fetch(url)
       .then((response) => response.json())
       .then((json) => {
@@ -64,6 +59,7 @@ tags.addEventListener("input", () => {
           div.innerText = element.name;
           div.setAttribute("class", "sug");
           div.setAttribute("id", "sug" + indice);
+          div.setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
           document.getElementById("busqueda").appendChild(div);
           indice++;
         });

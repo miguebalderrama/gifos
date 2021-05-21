@@ -64,9 +64,12 @@ body {
           font-size: 1rem;
           color: #6b7989;
           margin: auto;
-          padding-left: 2px;
+          padding-top: 12px;
+          padding-left: 2em;
           padding-bottom: 0.8rem;
           cursor:pointer;
+          opacity: 0.6;
+          background-size:100% 100%;
         }
       }
     }
