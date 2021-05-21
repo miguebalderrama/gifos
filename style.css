@@ -105,7 +105,8 @@ body main .busqueda .form .lupita {
 }
 
 body main .busqueda .form .lupita .lupon {
-  display: none;
+  visibility: hidden;
+  cursor: pointer;
 }
 
 body main .busqueda .form .lupita .input {

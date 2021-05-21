@@ -27,7 +27,7 @@ tags.addEventListener("input", () => {
   letterInput = tags.value;
   if (letterInput == 0) {
     console.log("campos vacio");
-    document.getElementById("lupon").setAttribute("style","display:none");
+    document.getElementById("lupon").setAttribute("style","visibility: hidden");
     for (let flag = 0; flag < indice; flag++) {
       var d = document.getElementById("busqueda");
       var d_nested = document.getElementById("sug" + flag);
@@ -43,7 +43,7 @@ tags.addEventListener("input", () => {
     document.getElementById("inpu").setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
     //document.getElementById("inpu").setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
     //let imgfavs = document.createElement("img");
-    document.getElementById("lupon").setAttribute("style","display:block");
+    document.getElementById("lupon").setAttribute("style","visibility: visible");
     
     
     fetch(url)
@@ -80,7 +80,7 @@ const input = document.querySelector('input[type="search"]');
 var buscar = null;
 var identifier = 0;
 input.addEventListener("search", () => {
-  document.getElementById("lupon").setAttribute("style","display:none");
+  document.getElementById("lupon").setAttribute("style","visibility: hidden");
   searchs();
 
 });
@@ -341,7 +341,7 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
 document.getElementById("lupon").addEventListener("click", function() {
   
   console.log("hubo un click en lupon");
-  document.getElementById("lupon").setAttribute("style","display:none");
+  document.getElementById("lupon").setAttribute("style","visibility: hidden");
   searchs();
   
 });

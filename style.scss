@@ -89,7 +89,8 @@ body {
           display: flex;
           margin-left: 25px;
          .lupon{
-          display: none;
+          visibility: hidden;
+          cursor:pointer;
         }
         .input {
           margin-left: 10px;
