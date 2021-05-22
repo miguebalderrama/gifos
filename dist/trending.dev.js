@@ -12,8 +12,8 @@ function toggleMenu(event) {
 
 menu.addEventListener("click", toggleMenu, false);
 var favtrend0 = 0;
-var favtrend0 = 1;
-var favtrend0 = 2; // addEventListener version
+var favtrend1 = 0;
+var favtrend2 = 0; // addEventListener version
 // trending
 
 var apiKey = "bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H";
@@ -116,6 +116,34 @@ forward.addEventListener("click", function () {
 var reward = document.getElementById("left");
 reward.addEventListener("click", function () {
   counti--;
+
+  if (favtrend0 === 1) {
+    var d = document.getElementById("favtrend0");
+    var d_nested = document.getElementById("imgfav0");
+    d.removeChild(d_nested);
+    favtrend0 = 0;
+  }
+
+  if (favtrend1 === 1) {
+    var _d3 = document.getElementById("favtrend1");
+
+    var _d_nested3 = document.getElementById("imgfav1");
+
+    _d3.removeChild(_d_nested3);
+
+    favtrend1 = 0;
+  }
+
+  if (favtrend2 === 1) {
+    var _d4 = document.getElementById("favtrend2");
+
+    var _d_nested4 = document.getElementById("imgfav2");
+
+    _d4.removeChild(_d_nested4);
+
+    favtrend2 = 0;
+  }
+
   atras();
 });
 
@@ -141,6 +169,38 @@ function atras() {
   }
 
   console.log(counti);
+
+  var _loop = function _loop(a) {
+    if (arrayLike.find(function (element) {
+      return element == document.getElementById("favtrend" + a).name;
+    })) {
+      if (a == 0) {
+        console.log("hay un gustado en card 0");
+        favtrend0 = 1;
+      }
+
+      if (a == 1) {
+        console.log("hay un gustado en card 1");
+        favtrend1 = 1;
+      }
+
+      if (a == 2) {
+        console.log("hay un gustado en card 2");
+        favtrend2 = 1;
+      }
+
+      var imgfavs = document.createElement("img");
+      imgfavs.src = "..//assets/icon-fav-active.svg";
+      imgfavs.setAttribute("width", "18px");
+      imgfavs.className = "imgfavs";
+      imgfavs.id = "imgfav" + a;
+      document.getElementById("favtrend" + a).appendChild(imgfavs);
+    }
+  };
+
+  for (var a = 0; a < 3; a++) {
+    _loop(a);
+  }
 }
 
 function adelante() {
@@ -166,17 +226,36 @@ function adelante() {
 
   console.log(counti);
 
-  if (arrayLike.find(function (element) {
-    return element == document.getElementById("favtrend0").name;
-  })) {
-    console.log("hay un gustado en card 0");
-    favtrend0 = 1;
-    var imgfavs = document.createElement("img");
-    imgfavs.src = "..//assets/icon-fav-active.svg";
-    imgfavs.setAttribute("width", "18px");
-    imgfavs.className = "imgfavs";
-    imgfavs.id = "imgfav0";
-    document.getElementById("favtrend0").appendChild(imgfavs);
+  var _loop2 = function _loop2(a) {
+    if (arrayLike.find(function (element) {
+      return element == document.getElementById("favtrend" + a).name;
+    })) {
+      if (a == 0) {
+        console.log("hay un gustado en card 0");
+        favtrend0 = 1;
+      }
+
+      if (a == 1) {
+        console.log("hay un gustado en card 1");
+        favtrend1 = 1;
+      }
+
+      if (a == 2) {
+        console.log("hay un gustado en card 2");
+        favtrend2 = 1;
+      }
+
+      var imgfavs = document.createElement("img");
+      imgfavs.src = "..//assets/icon-fav-active.svg";
+      imgfavs.setAttribute("width", "18px");
+      imgfavs.className = "imgfavs";
+      imgfavs.id = "imgfav" + a;
+      document.getElementById("favtrend" + a).appendChild(imgfavs);
+    }
+  };
+
+  for (var a = 0; a < 3; a++) {
+    _loop2(a);
   }
 } ///////////// listener de los icinos de los trending/////////////////////////
 
@@ -203,6 +282,8 @@ amptrenddos.addEventListener("click", function (e) {
   var urlmodal = document.getElementById("downtrend2").src;
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
+  document.getElementById("titulo_modal").textContent = document.getElementById("user2").textContent;
+  document.getElementById("usuario_modal").textContent = document.getElementById("tit2").textContent;
 });
 var amptrenduno = document.getElementById("amptrend1");
 amptrenduno.addEventListener("click", function (e) {
@@ -211,6 +292,8 @@ amptrenduno.addEventListener("click", function (e) {
   var urlmodal = document.getElementById("downtrend1").src;
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
+  document.getElementById("titulo_modal").textContent = document.getElementById("user1").textContent;
+  document.getElementById("usuario_modal").textContent = document.getElementById("tit1").textContent;
 });
 var amptrendcero = document.getElementById("amptrend0");
 amptrendcero.addEventListener("click", function (e) {
@@ -219,8 +302,11 @@ amptrendcero.addEventListener("click", function (e) {
   var urlmodal = document.getElementById("downtrend0").src;
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
-});
-var favtrend = document.getElementById("favtrend0");
+  document.getElementById("titulo_modal").textContent = document.getElementById("user0").textContent;
+  document.getElementById("usuario_modal").textContent = document.getElementById("tit0").textContent;
+}); /////////////////////////favoritos detectcion/////////////////////
+
+favtrend = document.getElementById("favtrend0");
 favtrend.addEventListener("click", function (e) {
   e.preventDefault();
   favtrend0 = 1;
@@ -235,6 +321,40 @@ favtrend.addEventListener("click", function (e) {
   document.getElementById("favtrend0").appendChild(imgfav);
   console.log(favoritrend);
   gustados.push(favoritrend);
+  localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+});
+favtrend1 = document.getElementById("favtrend1");
+favtrend1.addEventListener("click", function (e) {
+  e.preventDefault();
+  favtrend1 = 1;
+  console.log("detectamos el segundo fav");
+  var favoritrend1 = document.getElementById("favtrend1").name;
+  arrayLike.push(favoritrend1);
+  var imgfav = document.createElement("img");
+  imgfav.src = "..//assets/icon-fav-active.svg";
+  imgfav.setAttribute("width", "18px");
+  imgfav.className = "imgfavs";
+  imgfav.id = "imgfav1";
+  document.getElementById("favtrend1").appendChild(imgfav);
+  console.log(favoritrend1);
+  gustados.push(favoritrend1);
+  localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+});
+favtrend2 = document.getElementById("favtrend2");
+favtrend2.addEventListener("click", function (e) {
+  e.preventDefault();
+  favtrend2 = 1;
+  console.log("detectamos el tercer fav");
+  favoritrend2 = document.getElementById("favtrend2").name;
+  arrayLike.push(favoritrend2);
+  var imgfav = document.createElement("img");
+  imgfav.src = "..//assets/icon-fav-active.svg";
+  imgfav.setAttribute("width", "18px");
+  imgfav.className = "imgfavs";
+  imgfav.id = "imgfav2";
+  document.getElementById("favtrend2").appendChild(imgfav);
+  console.log(favoritrend2);
+  gustados.push(favoritrend2);
   localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
 });
 
