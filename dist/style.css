@@ -56,9 +56,11 @@ body main section .form .sug {
   font-size: 1rem;
   color: #6b7989;
   margin: auto;
-  padding-left: 2px;
-  padding-bottom: 0.8rem;
+  padding-top: 8px;
+  padding-left: 2em;
+  padding-bottom: 0.6rem;
   cursor: pointer;
+  opacity: 0.6;
 }
 body main .busqueda {
   width: 90%;
@@ -72,12 +74,18 @@ body main .busqueda #ilustra {
 body main .busqueda .form {
   width: 100%;
 }
-body main .busqueda .form .input {
+body main .busqueda .form .lupita {
+  display: flex;
+  margin-left: 25px;
+}
+body main .busqueda .form .lupita .lupon {
+  visibility: hidden;
+  cursor: pointer;
+}
+body main .busqueda .form .lupita .input {
+  margin-left: 10px;
   width: 80%;
-  background-size: 20px;
-  opacity: 0.5;
-  padding-left: 25px;
-  background: url("..//assets/icon-search.svg") right no-repeat;
+  opacity: 0.9;
 }
 body main .busqueda .form .input:focus {
   background: none;
@@ -293,7 +301,7 @@ body main .modal .iconmodal .fav {
 }
 body main .modal .cerrar_modal {
   position: absolute;
-  right: 400px;
+  right: 25%;
   top: 76px;
   background: url("..//assets/close.svg") no-repeat;
   width: 1em;
@@ -547,7 +555,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
   transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
-  z-index: 1002;
+  z-index: 100;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -637,7 +645,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   border: none;
 }
 
-@media only screen and (min-width: 1070px) and (max-width: 1920px) {
+@media only screen and (min-width: 1367px) and (max-width: 1920px) {
   .hamburger {
     display: none;
   }
@@ -822,5 +830,76 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   }
   body footer .contain_footer .redes .iconitos {
     margin-top: 0;
+  }
+}
+@media only screen and (min-width: 1030px) and (max-width: 1366px) {
+  body main .modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    padding-top: 15em;
+  }
+  body main .modal .iconmodal {
+    position: absolute;
+    margin-left: 1240px;
+    top: 640px;
+    display: flex;
+  }
+  body main .modal .iconmodal .down {
+    display: block;
+    background: url("..//assets/icon-download.svg") no-repeat;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  body main .modal .iconmodal .fav {
+    display: block;
+    background: url("..//assets/icon-fav.svg");
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  body main .modal .cerrar_modal {
+    position: absolute;
+    right: 15%;
+    top: 76px;
+    background: url("..//assets/close.svg") no-repeat;
+    width: 1em;
+    height: 1em;
+    z-index: 2000;
+    cursor: pointer;
+  }
+  body main .modal .titulo_modal {
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    left: 220px;
+    top: 660px;
+  }
+  body main .modal .usuario_modal {
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    top: 640px;
+    left: 220px;
+  }
+  body main .modal .contain_modal {
+    margin: auto;
+    height: 385px;
+    width: 695px;
+  }
+  body main .modal .contain_modal .imagen_ampliada {
+    width: 100%;
+    height: 385px;
+    z-index: 2000;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 }
