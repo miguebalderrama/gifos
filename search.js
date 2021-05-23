@@ -100,9 +100,7 @@ function searchs() {
 
   /////
 
-  fetch(
-    `https://api.giphy.com/v1/gifs/search?q=${buscar}&api_key=${apiKey}&limit=50`
-  )
+  fetch( `https://api.giphy.com/v1/gifs/search?q=${buscar}&api_key=${apiKey}&limit=50` )
     .then((response) => response.json())
     .then((json) => {
       cantGifs = json.data.length;
