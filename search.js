@@ -262,7 +262,7 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     console.log(e.target.id);
     let favoritear = document.getElementById(e.target.id).name;
     let imgfav = document.createElement("img");
-    imgfav.src = "..//assets/icon-fav-active.svg";
+    imgfav.src = "assets/icon-fav-active.svg";
     imgfav.setAttribute("width", "18px");
     imgfav.className = "imgfavs";
     document.getElementById(e.target.id).appendChild(imgfav);
