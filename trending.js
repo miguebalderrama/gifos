@@ -208,7 +208,7 @@ if(a==2){
   favtrend2=1;
 }
   let imgfavs = document.createElement("img");
-    imgfavs.src = "../assets/icon-fav-active.svg";
+    imgfavs.src = "assets/icon-fav-active.svg";
     imgfavs.setAttribute("width", "18px");
     imgfavs.className = "imgfavs";
     imgfavs.id="imgfav"+a;
@@ -274,7 +274,7 @@ favtrend.addEventListener("click", function (e){
   let favoritrend = document.getElementById("favtrend0").name;
   arrayLike.push(favoritrend);
   let imgfav = document.createElement("img");
-    imgfav.src = "..//assets/icon-fav-active.svg";
+    imgfav.src = "assets/icon-fav-active.svg";
     imgfav.setAttribute("width", "18px");
     imgfav.className = "imgfavs";
     imgfav.id="imgfav0";
@@ -292,7 +292,7 @@ favtrend1.addEventListener("click", function (e){
   let favoritrend1 = document.getElementById("favtrend1").name;
   arrayLike.push(favoritrend1);
   let imgfav = document.createElement("img");
-    imgfav.src = "..//assets/icon-fav-active.svg";
+    imgfav.src = "assets/icon-fav-active.svg";
     imgfav.setAttribute("width", "18px");
     imgfav.className = "imgfavs";
     imgfav.id="imgfav1";
@@ -310,7 +310,7 @@ favtrend2.addEventListener("click", function (e){
    favoritrend2 = document.getElementById("favtrend2").name;
   arrayLike.push(favoritrend2);
   let imgfav = document.createElement("img");
-    imgfav.src = "..//assets/icon-fav-active.svg";
+    imgfav.src = "assets/icon-fav-active.svg";
     imgfav.setAttribute("width", "18px");
     imgfav.className = "imgfavs";
     imgfav.id="imgfav2";
