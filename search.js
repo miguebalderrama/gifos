@@ -61,7 +61,7 @@ tags.addEventListener("input", () => {
           div.innerText = element.name;
           div.setAttribute("class", "sug");
           div.setAttribute("id", "sug" + indice);
-          div.style=`background: url("..//assets/icon-search.svg") left/4% no-repeat`;
+          div.style=`background: url("assets/icon-search.svg") left/4% no-repeat`;
           document.getElementById("busqueda").appendChild(div);
           indice++;
         });
