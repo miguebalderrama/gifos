@@ -61,7 +61,7 @@ tags.addEventListener("input", () => {
           div.innerText = element.name;
           div.setAttribute("class", "sug");
           div.setAttribute("id", "sug" + indice);
-          div.style=`background: url("assets/icon-search.svg") left/4% no-repeat`;
+          div.style=`background: url("..//assets/icon-search.svg") left/4% no-repeat`;
           document.getElementById("busqueda").appendChild(div);
           indice++;
         });
@@ -216,7 +216,7 @@ function searchs() {
       if (cantGifs == 0) {
         console.log("no hay nada que mostrar");
         let imgouch = document.createElement("img");
-        imgouch.src = "assets/icon-busqueda-sin-resultado.svg";
+        imgouch.src = "..//assets/icon-busqueda-sin-resultado.svg";
         imgouch.setAttribute("width", "260px");
         imgouch.setAttribute("height", "200px");
         let message = document.createElement("p");
@@ -262,7 +262,7 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     console.log(e.target.id);
     let favoritear = document.getElementById(e.target.id).name;
     let imgfav = document.createElement("img");
-    imgfav.src = "assets/icon-fav-active.svg";
+    imgfav.src = "..//assets/icon-fav-active.svg";
     imgfav.setAttribute("width", "18px");
     imgfav.className = "imgfavs";
     document.getElementById(e.target.id).appendChild(imgfav);
