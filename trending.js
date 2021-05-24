@@ -208,7 +208,7 @@ if(a==2){
   favtrend2=1;
 }
   let imgfavs = document.createElement("img");
-    imgfavs.src = "..//assets/icon-fav-active.svg";
+    imgfavs.src = "../assets/icon-fav-active.svg";
     imgfavs.setAttribute("width", "18px");
     imgfavs.className = "imgfavs";
     imgfavs.id="imgfav"+a;
