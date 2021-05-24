@@ -216,7 +216,7 @@ function searchs() {
       if (cantGifs == 0) {
         console.log("no hay nada que mostrar");
         let imgouch = document.createElement("img");
-        imgouch.src = "..//assets/icon-busqueda-sin-resultado.svg";
+        imgouch.src = "assets/icon-busqueda-sin-resultado.svg";
         imgouch.setAttribute("width", "260px");
         imgouch.setAttribute("height", "200px");
         let message = document.createElement("p");
