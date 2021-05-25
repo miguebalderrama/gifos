@@ -1,3 +1,13 @@
+var gifos = new Array();
+///////////////////////VOy a cargar mi local storage////////////////////
+var recordgif = JSON.parse(localStorage.getItem("misGifos"));
+console.log("Que hay en mi record??" + recordgif);
+gifos = recordgif;
+if (gifos == null) {
+ gifos = new Array();
+  
+}
+
 
 // selector
 var menu = document.querySelector(".hamburger");
@@ -48,6 +58,8 @@ function subirGif(myGyf) {
     .catch((error) => console.error("Error:", error))
     .then(function (response) {
        console.log("Success:", response.data.id)
+       gifos.push(response.data.id);
+    localStorage.setItem("misGifos", JSON.stringify(gifos));
       //document.getElementById("download").setAttribute("href","https://media1.giphy.com/media/"+response.data.id+"/giphy.gif")
        texto=document.getElementById("texto")
        texto.textContent= "GIFO subido con éxito"
