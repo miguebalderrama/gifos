@@ -6,8 +6,14 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
 });
 
 /////////////////////////////
+ gustados = new Array();
 let recordfav = JSON.parse(localStorage.getItem("favoritosLocal"));
 console.log("Que hay en mi record??  " + recordfav);
+gustados = recordfav;
+if (gustados == null) {
+ gustados = new Array();
+  
+}
 
 let urlfav = `https://api.giphy.com/v1/gifs?api_key=bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H&ids=${recordfav}`;
 

@@ -4,11 +4,16 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
   console.log("hubo un click cerrar modal");
   document.getElementById("modal").style = "display:none";
 });
-
+gustados = new Array();
+let recordfav = JSON.parse(localStorage.getItem("favoritosLocal"));
+gustados = recordfav;
 /////////////////////////////
 let recordgifo = JSON.parse(localStorage.getItem("misGifos"));
 console.log("Que hay en mi record??  " + recordgifo);
-
+if (gustados == null) {
+  gustados = new Array();
+   
+ }
 let urlfav = `https://api.giphy.com/v1/gifs?api_key=bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H&ids=${recordgifo}`;
 
 fetch(urlfav)
