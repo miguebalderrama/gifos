@@ -19,7 +19,7 @@ console.log("tenemos estos gustados "+gustados.length);
 if (gustados == null) {
   gustados = new Array();
 }
-
+function pintar(){
 let urlfav = `https://api.giphy.com/v1/gifs?api_key=bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H&ids=${recordfav}`;
 
 fetch(urlfav)
@@ -137,6 +137,8 @@ fetch(urlfav)
   })
 
   .catch((error) => (document.body.appendChild = error));
+} 
+pintar();
 ////////////////////////7 boton ver mas//////////
 let vermasfav=1;
 document.getElementById("boton_ver_mas").addEventListener("click", function () {
@@ -194,17 +196,41 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     console.log("presionamos algun favoritos");
     console.log(e.target.id);
     let favoritear = document.getElementById(e.target.id).name;
-    let imgfav = document.createElement("img");
-    imgfav.src = "assets/icon-fav-active.svg";
-    imgfav.setAttribute("width", "18px");
-    imgfav.className = "imgfavs";
-    document.getElementById(e.target.id).appendChild(imgfav);
+    //let imgfav = document.createElement("img");
+    //imgfav.src = "assets/icon-trash-hover.svg";
+    //imgfav.setAttribute("width", "18px");
+    //imgfav.className = "imgfavs";
+    //document.getElementById(e.target.id).appendChild(imgfav);
+    //document.getElementById("favoritos"+e.target.id).remove;
     console.log(favoritear);
     let element = favoritear;
     let idx = gustados.indexOf(element);
     gustados.splice(idx,1);
     
     localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+
+    ///////////////////////////////////////////////////////////////////
+
+     recordfa = JSON.parse(localStorage.getItem("favoritosLocal"));
+console.log("Que hay en mi record??  " + recordfa);
+const recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
+  return recordfa.indexOf(valor) === indice;
+}
+)
+gustados = recordfav;
+ cantGifs=gustados.length;
+console.log("tenemos estos gustados "+gustados.length);
+if (gustados == null) {
+  gustados = new Array();
+}
+    ///////////////////////////////////////////////////////////////////
+  // Eliminando todos los hijos de un elemento
+  let elementrash  = document.getElementById("imagenes");
+  while (elementrash.firstChild) {
+    elementrash.removeChild(elementrash.firstChild);
+  }
+  
+    pintar();
   }
   //document.getElementById("modal").style= "display:block";
 });

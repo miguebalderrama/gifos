@@ -268,7 +268,7 @@ body main .parraf #imagenes .divi .overlay .iconos .down {
 }
 
 body main .parraf #imagenes .divi .overlay .iconos .fav {
-  background: url("assets/icon-fav.svg");
+  background: url("assets/icon-trash-normal.svg");
   background-repeat: no-repeat;
   width: 32px;
   height: 32px;
@@ -292,7 +292,7 @@ body main .parraf #imagenes .divi .overlay .iconos .down:hover {
 }
 
 body main .parraf #imagenes .divi .overlay .iconos .fav:hover {
-  background: url("assets/icon-fav-hover.svg") no-repeat;
+  background: url("assets/icon-trash-hover.svg") no-repeat;
 }
 
 body main .parraf #imagenes .divi .overlay .iconos .amp:hover {

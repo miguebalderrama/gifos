@@ -192,7 +192,7 @@
                   cursor: pointer;
                 }
                 .fav {
-                  background: url("assets/icon-fav.svg");
+                  background: url("assets/icon-trash-normal.svg");
                   background-repeat: no-repeat;
                   width: 32px;
                   height: 32px;
@@ -212,7 +212,7 @@
                   background: url("assets/icon-download-hover.svg") no-repeat;
                 }
                 .fav:hover {
-                  background: url("assets/icon-fav-hover.svg") no-repeat;
+                  background: url("assets/icon-trash-hover.svg") no-repeat;
                 }
                 .amp:hover {
                   background: url("assets/icon-max-hover.svg") no-repeat;
