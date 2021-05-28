@@ -9,7 +9,7 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
 gustados = new Array();
 let recordfa = JSON.parse(localStorage.getItem("favoritosLocal"));
 console.log("Que hay en mi record??  " + recordfa);
-const recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
+let recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
   return recordfa.indexOf(valor) === indice;
 }
 )
@@ -202,28 +202,30 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     //imgfav.className = "imgfavs";
     //document.getElementById(e.target.id).appendChild(imgfav);
     //document.getElementById("favoritos"+e.target.id).remove;
-    console.log(favoritear);
+    console.log("Elimine este gif"+favoritear);
     let element = favoritear;
     let idx = gustados.indexOf(element);
     gustados.splice(idx,1);
-    
+    console.log(gustados);
+    console.log("eliminamos este "+idx);
     localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
 
     ///////////////////////////////////////////////////////////////////
 
      recordfa = JSON.parse(localStorage.getItem("favoritosLocal"));
-console.log("Que hay en mi record??  " + recordfa);
-const recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
-  return recordfa.indexOf(valor) === indice;
-}
-)
-gustados = recordfav;
- cantGifs=gustados.length;
-console.log("tenemos estos gustados "+gustados.length);
-if (gustados == null) {
-  gustados = new Array();
-}
+    console.log("Que hay en mi record??  " + recordfa);
+     recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
+      return recordfa.indexOf(valor) === indice;
+    }
+    )
+    gustados = recordfav;
+     cantGifs=gustados.length;
+    console.log("tenemos estos gustados "+gustados.length);
+    if (gustados == null) {
+      gustados = new Array();
+    }
     ///////////////////////////////////////////////////////////////////
+
   // Eliminando todos los hijos de un elemento
   let elementrash  = document.getElementById("imagenes");
   while (elementrash.firstChild) {
