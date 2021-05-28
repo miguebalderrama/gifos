@@ -162,3 +162,64 @@ document.getElementById("boton_ver_mas").addEventListener("click", function () {
     document.getElementById("boton_ver_mas").style = "display:none";
   }
 });
+
+//////////////////////detectamos eventos sobre cards/////////////////
+
+document.querySelector(".imagenes").addEventListener("click", function (e) {
+  console.log("hubo un click");
+  if (e.target && e.target.matches("a.amp")) {
+    console.log("presionamos algun ampliar");
+    console.log(e.target);
+    document.getElementById("modal").style = "display:block";
+    let identifi = e.target.id.substring(7, e.target.id.length);
+    console.log(identifi);
+    let urlmodal = document.getElementById("download" + identifi).src;
+    let titlemodal = document.getElementById("titulo" + identifi).textContent;
+    let usermodal = document.getElementById("user" + identifi).textContent;
+    document.getElementById("titulo_modal").textContent=titlemodal;
+    document.getElementById("usuario_modal").textContent=usermodal;
+    console.log(urlmodal);
+    document.getElementById("imagen_ampliada").src = urlmodal;
+  }
+  if (e.target && e.target.matches("a.down")) {
+    console.log("presionamos algun download");
+    console.log(e.target.id);
+    fetch(document.getElementById(e.target.id).src)
+      .then((response) => response.blob())
+      .then(function (myBlob) {
+        downloadGif(myBlob, e.target.id);
+      });
+  }
+  if (e.target && e.target.matches("a.fav")) {
+    console.log("presionamos algun favoritos");
+    console.log(e.target.id);
+    let favoritear = document.getElementById(e.target.id).name;
+    let imgfav = document.createElement("img");
+    imgfav.src = "assets/icon-fav-active.svg";
+    imgfav.setAttribute("width", "18px");
+    imgfav.className = "imgfavs";
+    document.getElementById(e.target.id).appendChild(imgfav);
+    console.log(favoritear);
+    let element = favoritear;
+    let idx = gustados.indexOf(element);
+    gustados.splice(idx,1);
+    
+    localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+  }
+  //document.getElementById("modal").style= "display:block";
+});
+
+function downloadGif(blob, target) {
+  let identifier = target.substring(8, target.length);
+  console.log(identifier);
+  var objectURL = URL.createObjectURL(blob);
+  console.log(objectURL);
+  let tag = document.createElement("a");
+  tag.href = objectURL;
+  tag.download = `${
+    document.getElementById("titulo" + identifier).textContent
+  }.gif`;
+  document.body.appendChild(tag);
+  tag.click();
+  document.body.removeChild(tag);
+}
