@@ -7,8 +7,12 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
 
 /////////////////////////////
 gustados = new Array();
-let recordfav = JSON.parse(localStorage.getItem("favoritosLocal"));
-console.log("Que hay en mi record??  " + recordfav);
+let recordfa = JSON.parse(localStorage.getItem("favoritosLocal"));
+console.log("Que hay en mi record??  " + recordfa);
+const recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
+  return recordfa.indexOf(valor) === indice;
+}
+)
 gustados = recordfav;
 let cantGifs=gustados.length;
 console.log("tenemos estos gustados "+gustados.length);
