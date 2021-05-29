@@ -241,11 +241,13 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
 
   // Eliminando todos los hijos de un elemento
   let elementrash  = document.getElementById("imagenes");
-  while (elementrash.firstChild) {
-    elementrash.removeChild(elementrash.firstChild);
-  }
+  let identifier = e.target.id.substring(9, e.target.id.length);
+  elementrash.removeChild (document.getElementById(identifier))
+  //while (elementrash.firstChild) {
+  //  elementrash.removeChild(elementrash.firstChild);
+  //}
   
-    pintar();
+   // pintar();
   }
   //document.getElementById("modal").style= "display:block";
 });
