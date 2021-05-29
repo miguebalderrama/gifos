@@ -1,4 +1,5 @@
 var identifierfav = 0;
+let cantGifs=0;
 /////////////////cerrar modal////////////////
 document.getElementById("cerrar_modal").addEventListener("click", function (e) {
   console.log("hubo un click cerrar modal");
@@ -8,21 +9,24 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
 /////////////////////////////
 gustados = new Array();
 let recordfa = JSON.parse(localStorage.getItem("favoritosLocal"));
+
 console.log("Que hay en mi record??  " + recordfa);
 let recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
   return recordfa.indexOf(valor) === indice;
 }
 )
 gustados = recordfav;
-let cantGifs=gustados.length;
+cantGifs=gustados.length;
 console.log("tenemos estos gustados "+gustados.length);
+
 if (gustados == null) {
   gustados = new Array();
 }
 function pintar(){
-let urlfav = `https://api.giphy.com/v1/gifs?api_key=bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H&ids=${recordfav}`;
+  if(recordfav!=0){
+    let urlfav = `https://api.giphy.com/v1/gifs?api_key=bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H&ids=${recordfav}`;
 
-fetch(urlfav)
+ fetch(urlfav)
   .then((response) => response.json())
   .then((json) => {
     json.data
@@ -104,7 +108,7 @@ fetch(urlfav)
         console.log(id);
       });
     identifierfav = 0;
-
+  
     //////////////////////////////////////////////
     if (cantGifs <= 12) {
       for (let index = 0; index < cantGifs; index++) {
@@ -121,23 +125,32 @@ fetch(urlfav)
         document.getElementById("boton_ver_mas").style = "display:block";
       }
     }
-    if (cantGifs == 0) {
-      console.log("no hay nada que mostrar");
-      let imgouch = document.createElement("img");
-      imgouch.src = "assets/icon-busqueda-sin-resultado.svg";
-      imgouch.setAttribute("width", "260px");
-      imgouch.setAttribute("height", "200px");
-      let message = document.createElement("p");
-      message.innerText = "Intenta con otra busqueda";
-      message.style = "color: #50E3C2 ; font-size: 22px";
-      document.getElementById("imagenes").appendChild(imgouch);
-      document.getElementById("imagenes").appendChild(message);
-      document.getElementById("boton_ver_mas").style = "display:none";
-    }
+    
+    
+  
   })
 
+
   .catch((error) => (document.body.appendChild = error));
-} 
+}
+if (cantGifs === 0) {
+  console.log("no hay nada que mostrar");
+  let imgouch = document.createElement("img");
+  imgouch.src = "assets/icon-fav-sin-contenido.svg";
+  imgouch.setAttribute("width", "200px");
+  imgouch.setAttribute("height", "200px");
+  imgouch.style="display:block"
+  let message = document.createElement("p");
+  message.innerHTML = "¡Guarda tu primer GIFO en Favoritos"+"<br/>"+"para que se muestre aquí!";
+  message.style = "color: #50E3C2 ; font-size: 22px";
+  document.getElementById("imagenes").appendChild(imgouch);
+  document.getElementById("imagenes").appendChild(message);
+  document.getElementById("boton_ver_mas").style = "display:none";
+
+}
+}  
+
+
 pintar();
 ////////////////////////7 boton ver mas//////////
 let vermasfav=1;

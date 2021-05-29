@@ -60,6 +60,6 @@ fetch(urlfav)
           identifiergif++;
 
   });
- idetifier==0;
+ idetifiergif==0;
 })
   .catch((error) => (document.body.appendChild = error));
