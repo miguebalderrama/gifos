@@ -9,6 +9,22 @@ let letterInput = null;
 let indice = 0;
 var contBusqueda = 0;
 var gustados = new Array();
+//////////////////////////////////////////// guardo en un objeto queda para la proxima//////////////////////
+//////////////////////////////////////////////   Si guardaba los gifs como objetos era mas rapido//////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+let arrFavoriteGifs = [];
+const addToFav = (gif, username, title) => {
+	let objGif = {
+		gif: gif,
+		username: username,
+		title: title,
+	};
+
+	arrFavoriteGifs.push(objGif);
+
+	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
+	
+};
 ///////////////////////VOy a cargar mi local storage////////////////////
 var record = JSON.parse(localStorage.getItem("favoritosLocal"));
 console.log("Que hay en mi record??" + record);
@@ -261,6 +277,14 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     console.log("presionamos algun favoritos");
     console.log(e.target.id);
     let favoritear = document.getElementById(e.target.id).name;
+    //////////////////////////////en el futuro lo guardo como obj//////////////////////////////////////
+    let identifierfav = e.target.id.substring(9, e.target.id.length);
+    console.log(identifierfav);
+     let gif = document.getElementById("download" + identifierfav).src;
+    let title = document.getElementById("titulo" + identifierfav).textContent;
+    let user = document.getElementById("user" + identifierfav).textContent;
+    addToFav(gif,title,user);
+    /////////////////////////////////////////////////////////////////////
     let imgfav = document.createElement("img");
     imgfav.src = "assets/icon-fav-active.svg";
     imgfav.setAttribute("width", "18px");
