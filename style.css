@@ -3,6 +3,24 @@
   padding: 0;
 }
 
+.darkMode {
+  background-color: #37383c;
+  color: #fff;
+}
+
+.darkMode header .menuppal {
+  background-color: #37383c;
+  border: none;
+}
+
+.darkMode main .busqueda .form .lupita .input {
+  background-color: #37383c;
+}
+
+.darkMode main .GIFOS {
+  background-color: #222326;
+}
+
 body header {
   display: -webkit-box;
   display: -ms-flexbox;
