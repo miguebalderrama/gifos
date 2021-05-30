@@ -1,5 +1,7 @@
 html {
   --nombreVariable: url("assets/button-crear-gifo.svg") ;
+  --colorPrimario:#572ee5;
+  --colorSecundario:#ffffff;
 }
 * {
   margin: 0;
@@ -10,7 +12,7 @@ html {
   color: #fff;
   header{
     .menuppal{
-    background-color: #37383c;
+    background-color: #000000;
     border: none;
   }
   }
@@ -53,7 +55,7 @@ body {
           padding: 0rem 2rem;
           font-family: "Montserrat", sans-serif;
           font-size: 32px;
-          color: #572ee5;
+          color:var(--colorPrimario);
           line-height: 2rem;
           text-align: center;
           span {
@@ -69,7 +71,7 @@ body {
         flex-direction: column;
         width: 45%;
         justify-content: center;
-        border: solid 1px rgba(87, 46, 229, 0.9);
+        border: solid 1px var(--colorPrimario);
         border-radius: 27px;
         z-index: 10;
         .input {
@@ -150,7 +152,7 @@ body {
       flex-direction: column;
       align-items: center;
       h3 {
-        color: #572ee5;
+        color: var(--colorPrimario);
         font-size: 18px;
         font-family: "Montserrat", sans-serif;
         font-weight: 700;
@@ -158,7 +160,7 @@ body {
       p {
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
-        color: #572ee5;
+        color:var(--colorPrimario);
         line-height: 40px;
         width: 80%;
         text-align: center;
@@ -170,7 +172,7 @@ body {
         margin: auto;
         font-family: "Montserrat", sans-serif;
         font-size: 35px;
-        color: #572ee5;
+        color: var(--colorPrimario);
         text-align: center;
         line-height: 30px;
       }
@@ -292,7 +294,7 @@ body {
       }
     }
     .boton_ver_mas {
-      border: 1px solid #572ee5;
+      border: 1px solid var(--colorPrimario);
       background: var(--ver-mas) no-repeat;
       border-radius: 25px;
       width: 127px;
@@ -301,7 +303,7 @@ body {
       margin-bottom: 2em;
       font-weight: bold;
       font-size: 13px;
-      color: #572ee5;
+      color:var(--colorPrimario);
       letter-spacing: 0;
       text-align: center;
     }
@@ -310,7 +312,7 @@ body {
       font-family: "Montserrat", sans-serif;
     }
     .boton_ver_mas:hover {
-      border: 1px solid #572ee5;
+      border: 1px solid var(--colorPrimario);;
       background: #572ee5 no-repeat;
       color: white;
     }
@@ -398,7 +400,7 @@ body {
         margin: auto;
         font-family: "Montserrat", sans-serif;
         font-size: 25px;
-        color: #572ee5;
+        color: var(--colorPrimario);
         text-align: center;
         line-height: 30px;
       }
@@ -633,7 +635,7 @@ body {
   background-color: none;
 }
 ._layer {
-  background: #572ee5;
+  background: var(--colorPrimario);
   margin-bottom: 4px;
   border-radius: 2px;
   width: 15px;
@@ -657,10 +659,12 @@ body {
 
 .menuppal.is_active {
   transform: translate3d(0px, 95px, 0px);
+  margin-top: -15px;
+  
 }
 .menuppal {
   font-family: "Montserrat", sans-serif;
-  background-color: rgba(87, 46, 229, 0.9);
+  background-color: #000000;//rgba(87, 46, 229, 0.9);
   bottom: 0;
   height: 100%;
   left: 0;
@@ -743,7 +747,7 @@ body {
     font-size: 1rem;
     line-height: 1em;
     height: 1em;
-    color: rgba(87, 46, 229, 0.9);
+    color:var(--colorPrimario);;
     text-decoration: none;
     background-image: linear-gradient(#50e3c2, #50e3c2);
     background-position: 0% 100%;
@@ -843,7 +847,7 @@ body {
           margin: auto;
           font-family: "Montserrat", sans-serif;
           font-size: 25px;
-          color: #572ee5;
+          color:var(--colorPrimario);
           text-align: center;
           line-height: 30px;
         }
@@ -961,7 +965,7 @@ body {
   font-size: 1rem;
   line-height: 1em;
   height: 1em;
-  color: rgba(87, 46, 229, 0.9);
+  color:var(--colorPrimario);
   text-decoration: none;
   background-image: linear-gradient(#50e3c2, #50e3c2);
   background-position: 0% 100%;
@@ -977,7 +981,7 @@ body {
   width: 54px;
   height: 54px;
   margin-top: 10px;
- background: url( --nombreVariable) no-repeat;
+ background: var(--nombreVariable) no-repeat;
 }
 .menuppal ul li .miGifo:hover {
  background: url("assets/CTA-crear-gifo-hover.svg") no-repeat;
@@ -1115,7 +1119,7 @@ body {
         margin: auto;
         font-family: "Montserrat", sans-serif;
         font-size: 25px;
-        color: #572ee5;
+        color: var(--colorPrimario);
         text-align: center;
         line-height: 30px;
       }
