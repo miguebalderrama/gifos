@@ -1,3 +1,7 @@
+html {
+  --nombreVariable: url("assets/button-crear-gifo.svg") ;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -366,7 +370,6 @@ body main .GIFOS h2 {
 body main .GIFOS p {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  color: #000000;
   text-align: center;
   margin: auto;
   padding-top: 0.8em;
@@ -708,7 +711,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     width: 54px;
     height: 54px;
     margin-top: 10px;
-    background: url("assets/button-crear-gifo.svg") no-repeat;
+    background: var(--nombreVariable) no-repeat;
   }
 
   .menuppal ul li .miGifo:hover {
@@ -792,7 +795,6 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   body main .GIFOS p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    color: #000000;
     text-align: center;
     margin: auto;
     padding-top: 0.8em;
@@ -915,7 +917,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     width: 54px;
     height: 54px;
     margin-top: 10px;
-    background: url("assets/button-crear-gifo.svg") no-repeat;
+    background: url(--nombreVariable) no-repeat;
   }
 
   .menuppal ul li .miGifo:hover {
@@ -1048,7 +1050,6 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   body main .GIFOS p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    color: #000000;
     text-align: center;
     margin: auto;
     padding-top: 0.8em;
