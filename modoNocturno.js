@@ -41,6 +41,7 @@ const setLocalStorageTheme = () => {
 		$switchThemeBtn.textContent = 'Modo Nocturno';
 		document.documentElement.style.setProperty('--nombreVariable', 'url("assets/button-crear-gifo.svg")');
 		document.documentElement.style.setProperty('--colorPrimario', '#572ee5');
+		document.documentElement.style.setProperty('--colorPrimario', '#572ee5');
 		
 	}
 	

@@ -1,7 +1,7 @@
 html {
   --nombreVariable: url("assets/button-crear-gifo.svg") ;
   --colorPrimario:#572ee5;
-  --colorSecundario:#ffffff;
+  --colorNav:#572ee5;
 }
 * {
   margin: 0;
@@ -12,7 +12,8 @@ html {
   color: #fff;
   header{
     .menuppal{
-    background-color: #000000;
+            background-color: transparent; 
+           
     border: none;
   }
   }
@@ -125,12 +126,14 @@ body {
             //background-size: 20px;
             opacity: 0.9;
             //padding-left: 25px;
-            //background: url("..//assets/icon-search.svg") right no-repeat;
+            background: url("..//assets/icon-search.svg") right no-repeat;
+            
+          }
+          .input:focus {
+            background: none;
           }
         }
-        .input:focus {
-          background: none;
-        }
+        
 
         input::-webkit-search-decoration {
           display: none;
@@ -664,7 +667,7 @@ body {
 }
 .menuppal {
   font-family: "Montserrat", sans-serif;
-  background-color: #000000;//rgba(87, 46, 229, 0.9);
+  background-color: var(--colorNav);//rgba(87, 46, 229, 0.9);
   bottom: 0;
   height: 100%;
   left: 0;
