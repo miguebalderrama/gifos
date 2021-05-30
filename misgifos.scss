@@ -192,7 +192,7 @@
                   cursor: pointer;
                 }
                 .fav {
-                  background: url("assets/icon-fav.svg");
+                  background: url("assets/icon-trash-normal.svg");
                   background-repeat: no-repeat;
                   width: 32px;
                   height: 32px;
@@ -212,7 +212,7 @@
                   background: url("assets/icon-download-hover.svg") no-repeat;
                 }
                 .fav:hover {
-                  background: url("assets/icon-fav-hover.svg") no-repeat;
+                  background: url("assets/icon-trash-hover.svg") no-repeat;
                 }
                 .amp:hover {
                   background: url("assets/icon-max-hover.svg") no-repeat;
@@ -316,7 +316,7 @@
           }
           .fav {
             display: block;
-            background: url("assets/icon-fav.svg");
+            background: url("assets/icon-trash-normal.svg");
             background-repeat: no-repeat;
             width: 32px;
             height: 32px;
@@ -439,7 +439,7 @@
                   cursor: pointer;
                 }
                 .fav {
-                  background: url("assets/icon-fav.svg");
+                  background: url("assets/icon-trash-normal.svg");
                   background-repeat: no-repeat;
                   width: 32px;
                   height: 32px;
@@ -459,7 +459,7 @@
                   background: url("assets/icon-download-hover.svg") no-repeat;
                 }
                 .fav:hover {
-                  background: url("assets/icon-fav-hover.svg") no-repeat;
+                  background: url("assets/icon-trash-hover.svg") no-repeat;
                 }
                 .amp:hover {
                   background: url("assets/icon-max-hover.svg") no-repeat;
@@ -738,7 +738,7 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: space-evenly;
       width: 60%;
       //img {
       //    padding: 20px;
@@ -952,6 +952,26 @@
 }
     body {
       main {
+        .parraf {
+          .imagenes {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 60%;
+            
+            //img {
+            //    padding: 20px;
+            // }
+            #searchis {
+              margin-top: 1.5em;
+              width: 260px;
+              height: 200px;
+            }
+          }
+          
+        }
         .GIFOS {
           background: #f3f5f8;
           h2 {
@@ -1056,7 +1076,7 @@
             }
             .fav {
               display: block;
-              background: url("assets/icon-fav.svg");
+              background: url("assets/icon-trash-normal.svg");
               background-repeat: no-repeat;
               width: 32px;
               height: 32px;
