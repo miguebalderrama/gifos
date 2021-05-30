@@ -43,4 +43,4 @@ const setLocalStorageTheme = () => {
 	
 };
 
-//setLocalStorageTheme();
+setLocalStorageTheme();
