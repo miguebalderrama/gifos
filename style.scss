@@ -344,7 +344,7 @@ body {
       height: 100%;
       background-color: #ffffff;
       //border: solid 1px #572EE5;
-      padding-top: 12em;
+      padding-top: 8em;
 
       .iconmodal {
         position: absolute;
@@ -371,7 +371,7 @@ body {
       .cerrar_modal {
         position: absolute;
         right: 6%;
-        top: 170px;
+        top: 100px;
         background: url("assets/close.svg") no-repeat;
         width: 1em;
         height: 1em;
@@ -386,13 +386,13 @@ body {
 
         left: 21px;
 
-        top: 505px;
+        top: 405px;
       }
       .usuario_modal {
         position: absolute;
         font-family: "Roboto", sans-serif;
         font-size: 14px;
-        top: 490px;
+        top: 390px;
         left: 21px; ///600px
       }
 
