@@ -9,6 +9,7 @@ let letterInput = null;
 let indice = 0;
 var contBusqueda = 0;
 var gustados = new Array();
+const trendingTagsEndpoint = 'https://api.giphy.com/v1/trending/searches';
 //////////////////////////////////////////// guardo en un objeto queda para la proxima//////////////////////
 //////////////////////////////////////////////   Si guardaba los gifs como objetos era mas rapido//////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -385,3 +386,36 @@ document.getElementById("lupon").addEventListener("click", function() {
   
 });
 
+///////////////////////Etiquetas de tendecias/////////////////////////////
+
+//  ***   ETIQUETAS DE TENDENCIAS  ***  \\
+
+const getTrendingTags = async () => {
+	await fetch(`${trendingTagsEndpoint}?api_key=${apiKey}`)
+		.then((response) => response.json())
+		.then((trendingTags) => {
+			console.log(trendingTags);
+      console.log("Estas son las etiquetas de tendecias");
+		mostrarTags(trendingTags);
+		})
+		.catch((err) => console.log(err));
+};
+
+getTrendingTags();
+
+function mostrarTags(trendingTags){
+      console.log(trendingTags);
+  for (let index = 0; index < 5; index++) {
+    let wordp=document.createElement("span");
+    if(index<4){
+     wordp.textContent= trendingTags.data[index]+", ";
+     }
+     else{
+      wordp.textContent= trendingTags.data[index] 
+     }
+    //console.log( wordp.textContent);
+    document.getElementById("parrafTrending").appendChild(wordp);
+    
+  }
+
+}

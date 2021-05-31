@@ -1,3 +1,4 @@
+
 // selector
 var menu = document.querySelector(".hamburger");
 

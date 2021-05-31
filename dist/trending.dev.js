@@ -1,6 +1,7 @@
 "use strict";
 
-// selector
+var trendingTagsEndpoint = 'https://api.giphy.com/v1/trending/searches'; // selector
+
 var menu = document.querySelector(".hamburger"); // method
 
 function toggleMenu(event) {
@@ -190,7 +191,7 @@ function atras() {
       }
 
       var imgfavs = document.createElement("img");
-      imgfavs.src = "..//assets/icon-fav-active.svg";
+      imgfavs.src = "assets/icon-fav-active.svg";
       imgfavs.setAttribute("width", "18px");
       imgfavs.className = "imgfavs";
       imgfavs.id = "imgfav" + a;
@@ -246,7 +247,7 @@ function adelante() {
       }
 
       var imgfavs = document.createElement("img");
-      imgfavs.src = "..//assets/icon-fav-active.svg";
+      imgfavs.src = "assets/icon-fav-active.svg";
       imgfavs.setAttribute("width", "18px");
       imgfavs.className = "imgfavs";
       imgfavs.id = "imgfav" + a;
@@ -314,7 +315,7 @@ favtrend.addEventListener("click", function (e) {
   var favoritrend = document.getElementById("favtrend0").name;
   arrayLike.push(favoritrend);
   var imgfav = document.createElement("img");
-  imgfav.src = "..//assets/icon-fav-active.svg";
+  imgfav.src = "assets/icon-fav-active.svg";
   imgfav.setAttribute("width", "18px");
   imgfav.className = "imgfavs";
   imgfav.id = "imgfav0";
@@ -331,7 +332,7 @@ favtrend1.addEventListener("click", function (e) {
   var favoritrend1 = document.getElementById("favtrend1").name;
   arrayLike.push(favoritrend1);
   var imgfav = document.createElement("img");
-  imgfav.src = "..//assets/icon-fav-active.svg";
+  imgfav.src = "assets/icon-fav-active.svg";
   imgfav.setAttribute("width", "18px");
   imgfav.className = "imgfavs";
   imgfav.id = "imgfav1";
@@ -348,7 +349,7 @@ favtrend2.addEventListener("click", function (e) {
   favoritrend2 = document.getElementById("favtrend2").name;
   arrayLike.push(favoritrend2);
   var imgfav = document.createElement("img");
-  imgfav.src = "..//assets/icon-fav-active.svg";
+  imgfav.src = "assets/icon-fav-active.svg";
   imgfav.setAttribute("width", "18px");
   imgfav.className = "imgfavs";
   imgfav.id = "imgfav2";
@@ -375,4 +376,80 @@ function downloadTrend(card) {
     tagtrend.click();
     document.body.removeChild(tagtrend);
   });
+} /////////////////////////////////////////Para mobile
+
+
+var touchimg0 = document.getElementById("img0");
+touchimg0.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("hice click en el modal 0");
+  var urlmodal = document.getElementById("downtrend0").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+  document.getElementById("titulo_modal").textContent = document.getElementById("user0").textContent;
+  document.getElementById("usuario_modal").textContent = document.getElementById("tit0").textContent;
+});
+var touchimg1 = document.getElementById("img1");
+touchimg1.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("hice click en el modal 1");
+  var urlmodal = document.getElementById("downtrend1").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+  document.getElementById("titulo_modal").textContent = document.getElementById("user1").textContent;
+  document.getElementById("usuario_modal").textContent = document.getElementById("tit1").textContent;
+});
+var touchimg2 = document.getElementById("img2");
+touchimg2.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("hice click en el modal 2");
+  var urlmodal = document.getElementById("downtrend2").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+  document.getElementById("titulo_modal").textContent = document.getElementById("user2").textContent;
+  document.getElementById("usuario_modal").textContent = document.getElementById("tit2").textContent;
+}); ///////////////////////Etiquetas de tendecias/////////////////////////////
+//  ***   ETIQUETAS DE TENDENCIAS  ***  \\
+
+var getTrendingTags = function getTrendingTags() {
+  return regeneratorRuntime.async(function getTrendingTags$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return regeneratorRuntime.awrap(fetch("".concat(trendingTagsEndpoint, "?api_key=").concat(apiKey)).then(function (response) {
+            return response.json();
+          }).then(function (trendingTags) {
+            console.log(trendingTags);
+            console.log("Estas son las etiquetas de tendecias");
+            mostrarTags(trendingTags);
+          })["catch"](function (err) {
+            return console.log(err);
+          }));
+
+        case 2:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+};
+
+getTrendingTags();
+
+function mostrarTags(trendingTags) {
+  console.log(trendingTags);
+
+  for (var index = 0; index < 5; index++) {
+    var wordp = document.createElement("span");
+
+    if (index < 4) {
+      wordp.textContent = trendingTags.data[index] + ",";
+    } else {
+      wordp.textContent = trendingTags.data[index];
+    } //console.log( wordp.textContent);
+
+
+    document.getElementById("parrafTrending").appendChild(wordp);
+  }
 }

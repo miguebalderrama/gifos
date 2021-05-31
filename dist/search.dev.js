@@ -10,7 +10,8 @@ var tags = document.querySelector('input[type="search"]');
 var letterInput = null;
 var indice = 0;
 var contBusqueda = 0;
-var gustados = new Array(); //////////////////////////////////////////// guardo en un objeto queda para la proxima//////////////////////
+var gustados = new Array();
+var trendingTagsEndpoint = 'https://api.giphy.com/v1/trending/searches'; //////////////////////////////////////////// guardo en un objeto queda para la proxima//////////////////////
 //////////////////////////////////////////////   Si guardaba los gifs como objetos era mas rapido//////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -139,7 +140,8 @@ function searchs() {
       var overlay = document.createElement("div");
       overlay.className = "overlay";
       var img = document.createElement("img");
-      img.src = url; // img.setAttribute("width", "260px");
+      img.src = url;
+      img.id = "amp" + identifier; // img.setAttribute("width", "260px");
       // img.setAttribute("height", "200px");
 
       img.className = "cards";
@@ -251,6 +253,7 @@ function searchs() {
 
 document.querySelector(".imagenes").addEventListener("click", function (e) {
   console.log("hubo un click");
+  console.log(e.target.id);
 
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");
@@ -265,6 +268,23 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     document.getElementById("usuario_modal").textContent = usermodal;
     console.log(urlmodal);
     document.getElementById("imagen_ampliada").src = urlmodal;
+  }
+
+  if (e.target && e.target.matches("img.cards")) {
+    console.log("presionamos alguna imagen");
+    console.log(e.target);
+    document.getElementById("modal").style = "display:block";
+
+    var _identifi = e.target.id.substring(3, e.target.id.length);
+
+    console.log(_identifi);
+    var _urlmodal = document.getElementById("download" + _identifi).src;
+    var _titlemodal = document.getElementById("titulo" + _identifi).textContent;
+    var _usermodal = document.getElementById("user" + _identifi).textContent;
+    document.getElementById("titulo_modal").textContent = _titlemodal;
+    document.getElementById("usuario_modal").textContent = _usermodal;
+    console.log(_urlmodal);
+    document.getElementById("imagen_ampliada").src = _urlmodal;
   }
 
   if (e.target && e.target.matches("a.down")) {
@@ -366,4 +386,48 @@ document.getElementById("lupon").addEventListener("click", function () {
   console.log("hubo un click en lupon");
   document.getElementById("lupon").setAttribute("style", "visibility: hidden");
   searchs();
-});
+}); ///////////////////////Etiquetas de tendecias/////////////////////////////
+//  ***   ETIQUETAS DE TENDENCIAS  ***  \\
+
+var getTrendingTags = function getTrendingTags() {
+  return regeneratorRuntime.async(function getTrendingTags$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return regeneratorRuntime.awrap(fetch("".concat(trendingTagsEndpoint, "?api_key=").concat(apiKey)).then(function (response) {
+            return response.json();
+          }).then(function (trendingTags) {
+            console.log(trendingTags);
+            console.log("Estas son las etiquetas de tendecias");
+            mostrarTags(trendingTags);
+          })["catch"](function (err) {
+            return console.log(err);
+          }));
+
+        case 2:
+        case "end":
+          return _context.stop();
+      }
+    }
+  });
+};
+
+getTrendingTags();
+
+function mostrarTags(trendingTags) {
+  console.log(trendingTags);
+
+  for (var index = 0; index < 5; index++) {
+    var wordp = document.createElement("span");
+
+    if (index < 4) {
+      wordp.textContent = trendingTags.data[index] + ", ";
+    } else {
+      wordp.textContent = trendingTags.data[index];
+    } //console.log( wordp.textContent);
+
+
+    document.getElementById("parrafTrending").appendChild(wordp);
+  }
+}
