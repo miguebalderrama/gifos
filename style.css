@@ -6,6 +6,9 @@ html {
   --colorVerMas:#572ee5;
   --anchoCard:"260px";
   --altoCard: "200px";
+  --crearGifoHover: "assets/CTA-crear-gifo-hover.svg"
+
+;
 }
 
 * {
@@ -924,7 +927,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     background: var(--nombreVariable) no-repeat;
   }
   .menuppal ul li .miGifo:hover {
-    background: url("assets/CTA-crear-gifo-hover.svg") no-repeat;
+    background: var(--crearGifoHover) no-repeat;
   }
   .imagenes {
     margin-top: 30px;
