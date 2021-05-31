@@ -2,6 +2,10 @@ html {
   --nombreVariable: url("assets/button-crear-gifo.svg") ;
   --colorPrimario:#572ee5;
   --colorNav:#572ee5;
+  --verMasHover:#ffffff;
+  
+  --colorVerMas:#572ee5;
+
 }
 * {
   margin: 0;
@@ -126,23 +130,24 @@ body {
             //background-size: 20px;
             opacity: 0.9;
             //padding-left: 25px;
-            background: url("..//assets/icon-search.svg") right no-repeat;
+            background: var(--lupa) right no-repeat;
             
           }
           .input:focus {
             background: none;
           }
-        }
-        
-
+          
         input::-webkit-search-decoration {
           display: none;
         }
         input::-webkit-search-cancel-button {
           -webkit-appearance: none;
-          background: url("assets/close.svg") no-repeat;
+          background: var(--close) no-repeat;
           width: 14px;
           height: 14px;
+        }
+        
+
 
           //cursor: pointer;
         }
@@ -298,7 +303,7 @@ body {
     }
     .boton_ver_mas {
       border: 1px solid var(--colorPrimario);
-      background: var(--ver-mas) no-repeat;
+      background: var(--verMas) no-repeat;
       border-radius: 25px;
       width: 127px;
       height: 50px;
@@ -313,11 +318,12 @@ body {
     .ver_mas_p {
       margin-top: 1.2em;
       font-family: "Montserrat", sans-serif;
+      
     }
     .boton_ver_mas:hover {
-      border: 1px solid var(--colorPrimario);;
-      background: #572ee5 no-repeat;
-      color: white;
+      border: 1px solid var(--verMasHover);
+      background: var(--verMasHover) no-repeat;
+      color: var(--verMasFuenteHover);
     }
 
     .modal {

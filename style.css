@@ -2,6 +2,8 @@ html {
   --nombreVariable: url("assets/button-crear-gifo.svg") ;
   --colorPrimario:#572ee5;
   --colorNav:#572ee5;
+  --verMasHover:#ffffff;
+  --colorVerMas:#572ee5;
 }
 
 * {
@@ -137,20 +139,20 @@ body main .busqueda .form .lupita .input {
   margin-left: 10px;
   width: 80%;
   opacity: 0.9;
-  background: url("..//assets/icon-search.svg") right no-repeat;
+  background: var(--lupa) right no-repeat;
 }
 
 body main .busqueda .form .lupita .input:focus {
   background: none;
 }
 
-body main .busqueda .form input::-webkit-search-decoration {
+body main .busqueda .form .lupita input::-webkit-search-decoration {
   display: none;
 }
 
-body main .busqueda .form input::-webkit-search-cancel-button {
+body main .busqueda .form .lupita input::-webkit-search-cancel-button {
   -webkit-appearance: none;
-  background: url("assets/close.svg") no-repeat;
+  background: var(--close) no-repeat;
   width: 14px;
   height: 14px;
 }
@@ -352,7 +354,7 @@ body main .parraf #imagenes #searchis {
 
 body main .boton_ver_mas {
   border: 1px solid var(--colorPrimario);
-  background: var(--ver-mas) no-repeat;
+  background: var(--verMas) no-repeat;
   border-radius: 25px;
   width: 127px;
   height: 50px;
@@ -371,9 +373,9 @@ body main .ver_mas_p {
 }
 
 body main .boton_ver_mas:hover {
-  border: 1px solid var(--colorPrimario);
-  background: #572ee5 no-repeat;
-  color: white;
+  border: 1px solid var(--verMasHover);
+  background: var(--verMasHover) no-repeat;
+  color: var(--verMasFuenteHover);
 }
 
 body main .modal {
