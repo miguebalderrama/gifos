@@ -6,7 +6,7 @@ html {
   --colorVerMas:#572ee5;
   --anchoCard:"260px";
   --altoCard: "200px";
-  --crearGifoHover:url("assets/CTA-crear-gifo-hover.svg");
+  --crearGifoHover: url("assets/CTA-crear-gifo-hover.svg");
 
 }
 * {
@@ -205,6 +205,7 @@ body {
             opacity: 1;
           }
           .overlay {
+            display: none;
             .titulo {
               color: white;
               opacity: 1;
@@ -271,7 +272,7 @@ body {
             width: 100%;
             transition: 0.5s ease;
             opacity: 0;
-            display: flex;
+            //display: flex;///////////////////////////////////////que pasa//////////
             //justify-content: center;
             //align-content: space-between;
             flex-direction: column-reverse;
@@ -850,6 +851,11 @@ body {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-evenly;
+          .divi{
+            .overlay{
+              display: flex;
+            }
+          }
           .cards{
             width: 260px;
             height: 200px;
@@ -1130,6 +1136,11 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        .divi{
+          .overlay{
+            display: flex;
+          }
+        }
         .cards{
           width: 260px;
           height: 200px;

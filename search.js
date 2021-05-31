@@ -141,6 +141,7 @@ function searchs() {
           overlay.className = "overlay";
           let img = document.createElement("img");
           img.src = url;
+          img.id="amp"+identifier;
          // img.setAttribute("width", "260px");
          // img.setAttribute("height", "200px");
           img.className="cards";
@@ -251,11 +252,26 @@ function searchs() {
 // let over= document.querySelector('.overlay')
 document.querySelector(".imagenes").addEventListener("click", function (e) {
   console.log("hubo un click");
+  console.log(e.target.id);
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");
     console.log(e.target);
     document.getElementById("modal").style = "display:block";
     let identifi = e.target.id.substring(7, e.target.id.length);
+    console.log(identifi);
+    let urlmodal = document.getElementById("download" + identifi).src;
+    let titlemodal = document.getElementById("titulo" + identifi).textContent;
+    let usermodal = document.getElementById("user" + identifi).textContent;
+    document.getElementById("titulo_modal").textContent=titlemodal;
+    document.getElementById("usuario_modal").textContent=usermodal;
+    console.log(urlmodal);
+    document.getElementById("imagen_ampliada").src = urlmodal;
+  }
+  if (e.target && e.target.matches("img.cards")) {
+    console.log("presionamos alguna imagen");
+    console.log(e.target);
+    document.getElementById("modal").style = "display:block";
+    let identifi = e.target.id.substring(3, e.target.id.length);
     console.log(identifi);
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
@@ -368,3 +384,4 @@ document.getElementById("lupon").addEventListener("click", function() {
   searchs();
   
 });
+

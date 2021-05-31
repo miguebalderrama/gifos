@@ -6,9 +6,7 @@ html {
   --colorVerMas:#572ee5;
   --anchoCard:"260px";
   --altoCard: "200px";
-  --crearGifoHover: "assets/CTA-crear-gifo-hover.svg"
-
-;
+  --crearGifoHover: url("assets/CTA-crear-gifo-hover.svg");
 }
 
 * {
@@ -235,6 +233,7 @@ body main .parraf .imagenes .divi .overlay:hover {
 }
 
 body main .parraf .imagenes .divi .overlay {
+  display: none;
   position: absolute;
   top: 0;
   -webkit-box-sizing: border-box;
@@ -246,9 +245,6 @@ body main .parraf .imagenes .divi .overlay {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
@@ -1008,6 +1004,11 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
   }
+  body main .parraf #imagenes .divi .overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   body main .parraf #imagenes .cards {
     width: 260px;
     height: 200px;
@@ -1319,6 +1320,11 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+  body main .parraf #imagenes .divi .overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   body main .parraf #imagenes .cards {
     width: 260px;
