@@ -534,7 +534,9 @@ body main .GIFOS .carousel .card {
 
 body main .GIFOS .carousel .card .overlay:hover {
   opacity: 1;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body main .GIFOS .carousel .card .overlay {
@@ -1079,6 +1081,9 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     padding: 0;
   }
   body main .GIFOS .carousel .card .overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     position: absolute;
@@ -1409,6 +1414,9 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     padding: 0;
   }
   body main .GIFOS .carousel .card .overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     position: absolute;

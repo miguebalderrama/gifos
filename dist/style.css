@@ -421,7 +421,7 @@ body main .GIFOS .carousel .card {
 }
 body main .GIFOS .carousel .card .overlay:hover {
   opacity: 1;
-  display: none;
+  display: flex;
 }
 body main .GIFOS .carousel .card .overlay {
   display: none;
@@ -855,6 +855,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     padding: 0;
   }
   body main .GIFOS .carousel .card .overlay {
+    display: flex;
     box-sizing: border-box;
     position: absolute;
     bottom: 0;
@@ -1130,6 +1131,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     padding: 0;
   }
   body main .GIFOS .carousel .card .overlay {
+    display: flex;
     box-sizing: border-box;
     position: absolute;
     bottom: 0;

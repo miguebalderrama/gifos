@@ -457,7 +457,7 @@ body {
           padding: 0;
           .overlay:hover {
             opacity: 1;
-            display: none;
+            display: flex;
           }
           .overlay {
             display: none;
@@ -918,6 +918,8 @@ body {
             margin: 1rem;
             padding: 0;
             .overlay {
+              //display:block;
+              display: flex;
               box-sizing: border-box;
               position: absolute;
               bottom: 0;
@@ -1168,6 +1170,7 @@ body {
         justify-content: space-evenly;
         .divi{
           .overlay{
+           // display: block;
             display: flex;
           }
         }
@@ -1216,6 +1219,7 @@ body {
           margin: 1rem;
           padding: 0;
           .overlay {
+            display: flex;
             box-sizing: border-box;
             position: absolute;
             bottom: 0;
