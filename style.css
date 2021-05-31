@@ -206,6 +206,7 @@ body main .parraf .parrafTrending {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
 }
 
 body main .parraf .parrafTrending span {
