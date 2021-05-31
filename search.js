@@ -141,8 +141,9 @@ function searchs() {
           overlay.className = "overlay";
           let img = document.createElement("img");
           img.src = url;
-          img.setAttribute("width", "260px");
-          img.setAttribute("height", "200px");
+         // img.setAttribute("width", "260px");
+         // img.setAttribute("height", "200px");
+          img.className="cards";
           div.appendChild(img);
           div.appendChild(overlay);
           document.getElementById("imagenes").appendChild(div);

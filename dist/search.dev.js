@@ -10,7 +10,22 @@ var tags = document.querySelector('input[type="search"]');
 var letterInput = null;
 var indice = 0;
 var contBusqueda = 0;
-var gustados = new Array(); ///////////////////////VOy a cargar mi local storage////////////////////
+var gustados = new Array(); //////////////////////////////////////////// guardo en un objeto queda para la proxima//////////////////////
+//////////////////////////////////////////////   Si guardaba los gifs como objetos era mas rapido//////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+var arrFavoriteGifs = [];
+
+var addToFav = function addToFav(gif, username, title) {
+  var objGif = {
+    gif: gif,
+    username: username,
+    title: title
+  };
+  arrFavoriteGifs.push(objGif);
+  localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
+}; ///////////////////////VOy a cargar mi local storage////////////////////
+
 
 var record = JSON.parse(localStorage.getItem("favoritosLocal"));
 console.log("Que hay en mi record??" + record);
@@ -28,6 +43,7 @@ tags.addEventListener("input", function () {
 
   if (letterInput == 0) {
     console.log("campos vacio");
+    document.getElementById("lupon").setAttribute("style", "visibility: hidden");
 
     for (var flag = 0; flag < indice; flag++) {
       var d = document.getElementById("busqueda");
@@ -41,8 +57,10 @@ tags.addEventListener("input", function () {
 
   if (letterInput.length > 2) {
     console.log("fecheamos");
-    document.getElementById("inpu").setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
-    document.getElementById("inpu").setAttribute("style", "background: url(\"..//assets/icon-search.svg\") left no-repeat");
+    document.getElementById("inpu").setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)"); //document.getElementById("inpu").setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
+    //let imgfavs = document.createElement("img");
+
+    document.getElementById("lupon").setAttribute("style", "visibility: visible");
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -59,6 +77,7 @@ tags.addEventListener("input", function () {
         div.innerText = element.name;
         div.setAttribute("class", "sug");
         div.setAttribute("id", "sug" + indice);
+        div.style = "background: var(--lupa) left/4% no-repeat";
         document.getElementById("busqueda").appendChild(div);
         indice++;
       });
@@ -77,6 +96,7 @@ var input = document.querySelector('input[type="search"]');
 var buscar = null;
 var identifier = 0;
 input.addEventListener("search", function () {
+  document.getElementById("lupon").setAttribute("style", "visibility: hidden");
   searchs();
 });
 
@@ -119,9 +139,10 @@ function searchs() {
       var overlay = document.createElement("div");
       overlay.className = "overlay";
       var img = document.createElement("img");
-      img.src = url;
-      img.setAttribute("width", "260px");
-      img.setAttribute("height", "200px");
+      img.src = url; // img.setAttribute("width", "260px");
+      // img.setAttribute("height", "200px");
+
+      img.className = "cards";
       div.appendChild(img);
       div.appendChild(overlay);
       document.getElementById("imagenes").appendChild(div);
@@ -211,7 +232,7 @@ function searchs() {
     if (cantGifs == 0) {
       console.log("no hay nada que mostrar");
       var imgouch = document.createElement("img");
-      imgouch.src = "..//assets/icon-busqueda-sin-resultado.svg";
+      imgouch.src = "assets/icon-busqueda-sin-resultado.svg";
       imgouch.setAttribute("width", "260px");
       imgouch.setAttribute("height", "200px");
       var message = document.createElement("p");
@@ -238,6 +259,10 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     var identifi = e.target.id.substring(7, e.target.id.length);
     console.log(identifi);
     var urlmodal = document.getElementById("download" + identifi).src;
+    var titlemodal = document.getElementById("titulo" + identifi).textContent;
+    var usermodal = document.getElementById("user" + identifi).textContent;
+    document.getElementById("titulo_modal").textContent = titlemodal;
+    document.getElementById("usuario_modal").textContent = usermodal;
     console.log(urlmodal);
     document.getElementById("imagen_ampliada").src = urlmodal;
   }
@@ -255,9 +280,17 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
   if (e.target && e.target.matches("a.fav")) {
     console.log("presionamos algun favoritos");
     console.log(e.target.id);
-    var favoritear = document.getElementById(e.target.id).name;
+    var favoritear = document.getElementById(e.target.id).name; //////////////////////////////en el futuro lo guardo como obj//////////////////////////////////////
+
+    var identifierfav = e.target.id.substring(9, e.target.id.length);
+    console.log(identifierfav);
+    var gif = document.getElementById("download" + identifierfav).src;
+    var title = document.getElementById("titulo" + identifierfav).textContent;
+    var user = document.getElementById("user" + identifierfav).textContent;
+    addToFav(gif, title, user); /////////////////////////////////////////////////////////////////////
+
     var imgfav = document.createElement("img");
-    imgfav.src = "..//assets/icon-fav-active.svg";
+    imgfav.src = "assets/icon-fav-active.svg";
     imgfav.setAttribute("width", "18px");
     imgfav.className = "imgfavs";
     document.getElementById(e.target.id).appendChild(imgfav);
@@ -322,4 +355,15 @@ document.querySelector(".form").addEventListener("click", function (e) {
     document.querySelector('input[type="search"]').value = sugges;
     searchs();
   }
-}); /////////////////iconos trendings////////////////
+}); /////////////////cerrar modal////////////////
+
+document.getElementById("cerrar_modal").addEventListener("click", function (e) {
+  console.log("hubo un click cerrar modal");
+  document.getElementById("modal").style = "display:none";
+}); ////////////////busqueda por lupon//////////////
+
+document.getElementById("lupon").addEventListener("click", function () {
+  console.log("hubo un click en lupon");
+  document.getElementById("lupon").setAttribute("style", "visibility: hidden");
+  searchs();
+});
