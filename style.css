@@ -21,6 +21,10 @@ html {
   border: none;
 }
 
+.darkMode header .menuppal.is_active {
+  background-color: black;
+}
+
 .darkMode main .busqueda .form .lupita .input {
   background-color: #37383c;
 }

@@ -16,10 +16,13 @@ html {
   color: #fff;
   header{
     .menuppal{
-            background-color: transparent; 
-           
+    background-color: transparent;            
     border: none;
   }
+ .menuppal.is_active{
+  background-color: black;
+  }
+  
   }
   main{
     .busqueda{
