@@ -59,14 +59,14 @@ body main section .tittle h1 {
   margin: auto;
   padding: 0rem 2rem;
   font-family: "Montserrat", sans-serif;
-  font-size: 32px;
+  font-size: 25px;
   color: var(--colorPrimario);
   line-height: 2rem;
   text-align: center;
 }
 
 body main section .tittle h1 span {
-  font-size: 32px;
+  font-size: 25px;
   color: #50e3c2;
 }
 
@@ -994,6 +994,9 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
   body main .busqueda .form .input {
     width: 80%;
   }
+  body main .busqueda .tittle h1 {
+    font-size: 32px;
+  }
   body main .parraf #imagenes {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1300,6 +1303,12 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
             box-sizing: border-box;
     margin: auto;
     margin-top: 3rem;
+  }
+  body main .busqueda .tittle h1 {
+    font-size: 32px;
+  }
+  body main .busqueda .tittle h1 span {
+    font-size: 32px;
   }
   body main .busqueda #ilustra {
     max-width: 60%;

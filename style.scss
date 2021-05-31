@@ -64,12 +64,12 @@ body {
           margin: auto;
           padding: 0rem 2rem;
           font-family: "Montserrat", sans-serif;
-          font-size: 32px;
+          font-size: 25px;
           color:var(--colorPrimario);
           line-height: 2rem;
           text-align: center;
           span {
-            font-size: 32px;
+            font-size: 25px;
             color: #50e3c2;
           }
         }
@@ -803,6 +803,8 @@ body {
       justify-content: space-between;
     }
     main {
+
+
       .modal {
         padding-top: 8em;
         .cerrar_modal {
@@ -843,6 +845,11 @@ body {
           width: 50%;
           .input {
             width: 80%;
+          }
+        }
+        .tittle{
+          h1{
+            font-size: 32px;
           }
         }
       }
@@ -1119,7 +1126,14 @@ body {
       box-sizing: border-box;
       margin: auto;
       margin-top: 3rem;
-
+.tittle{
+  h1{
+    font-size: 32px;
+    span{
+      font-size: 32px;
+    }
+  }
+}
       #ilustra {
         max-width: 60%;
         margin-top: 2em;
