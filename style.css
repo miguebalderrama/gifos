@@ -19,6 +19,10 @@ html {
   color: #fff;
 }
 
+.darkMode header {
+  background-color: #37383c;
+}
+
 .darkMode header .menuppal {
   background-color: transparent;
   border: none;
@@ -26,6 +30,10 @@ html {
 
 .darkMode header .menuppal.is_active {
   background-color: black;
+}
+
+.darkMode main {
+  padding-top: 100px;
 }
 
 .darkMode main .busqueda .form .lupita .input {
@@ -37,21 +45,27 @@ html {
 }
 
 body header {
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 1200px;
+  width: 100%;
   margin: auto;
   padding: 1rem 1.2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 1000;
 }
 
 body header img {
   width: 3rem;
+}
+
+body main {
+  padding-top: 100px;
 }
 
 body main section .tittle h1 {
@@ -510,7 +524,7 @@ body main .GIFOS .carousel {
 }
 
 body main .GIFOS .carousel .card {
-  width: 357px;
+  width: 243px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
@@ -649,8 +663,8 @@ body main .GIFOS .carousel .card .overlay .icon #download:hover {
 }
 
 body main .GIFOS .carousel .card .giftrend {
-  width: 357px;
-  height: 275px;
+  width: 243px;
+  height: 187px;
   z-index: 100;
 }
 
@@ -944,6 +958,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding: 0.6em 5% 0.5em 5%;
   }
   body main .modal {
     padding-top: 8em;
@@ -1211,6 +1226,13 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.8em 20% 0.8em 20%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   body main .modal {
     display: -webkit-box;

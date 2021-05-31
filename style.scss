@@ -17,6 +17,7 @@ html {
   background-color: #37383c;
   color: #fff;
   header{
+    background-color: #37383c;
     .menuppal{
     background-color: transparent;            
     border: none;
@@ -27,6 +28,7 @@ html {
   
   }
   main{
+    padding-top: 100px;
     .busqueda{
       .form{
         .lupita{
@@ -45,18 +47,22 @@ html {
 body {
   //*background: #37383C;
   header {
+    position:fixed;
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
+    //max-width: 1200px;
+    width: 100%;
     // border-top: solid #572ee5 5px;
     margin: auto;
     padding: 1rem 1.2rem;
     box-sizing: border-box;
+    z-index: 1000;
     img {
       width: 3rem;
     }
   }
   main {
+    padding-top: 100px;
     section {
       .tittle {
         h1 {
@@ -444,7 +450,7 @@ body {
         scroll-snap-points-x: repeat(300px);
         scroll-snap-type: mandatory;
         .card {
-          width: 357px;
+          width: 243px;
           box-sizing: border-box;
           position: relative;
           margin: 1rem;
@@ -553,8 +559,8 @@ body {
           }
 
           .giftrend {
-            width: 357px;
-            height: 275px;
+            width: 243px;
+            height: 187px;
             z-index: 100;
           }
         }
@@ -801,6 +807,8 @@ body {
   body {
     header {
       justify-content: space-between;
+      //max-width: 1200px;
+      padding: 0.6em 5% 0.5em 5%;
     }
     main {
 
@@ -1038,7 +1046,13 @@ body {
 }
 body {
   header {
+    //height: 97px;
+    //max-width: 1200px;
     justify-content: space-between;
+    //margin: auto;
+    display: flex;
+    padding: 0.8em 20% 0.8em 20%;
+    align-items: center;
   }
   main {
     .modal {
