@@ -341,3 +341,36 @@ function downloadTrend(card){
   });
    }
 
+/////////////////////////////////////////Para mobile
+
+var touchimg0=document.getElementById("img0")
+touchimg0.addEventListener("click", function (e){
+  e.preventDefault();
+  console.log("hice click en el modal 0")
+  let urlmodal = document.getElementById("downtrend0").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+  document.getElementById("titulo_modal").textContent=document.getElementById("user0").textContent;
+    document.getElementById("usuario_modal").textContent=document.getElementById("tit0").textContent;
+})
+
+var touchimg1=document.getElementById("img1")
+touchimg1.addEventListener("click", function (e){
+  e.preventDefault();
+  console.log("hice click en el modal 1")
+  let urlmodal = document.getElementById("downtrend1").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+  document.getElementById("titulo_modal").textContent=document.getElementById("user1").textContent;
+    document.getElementById("usuario_modal").textContent=document.getElementById("tit1").textContent;
+})
+var touchimg2=document.getElementById("img2")
+touchimg2.addEventListener("click", function (e){
+  e.preventDefault();
+  console.log("hice click en el modal 2")
+  let urlmodal = document.getElementById("downtrend2").src;
+  document.getElementById("modal").style = "display:block";
+  document.getElementById("imagen_ampliada").src = urlmodal;
+  document.getElementById("titulo_modal").textContent=document.getElementById("user2").textContent;
+    document.getElementById("usuario_modal").textContent=document.getElementById("tit2").textContent;
+})

@@ -534,9 +534,11 @@ body main .GIFOS .carousel .card {
 
 body main .GIFOS .carousel .card .overlay:hover {
   opacity: 1;
+  display: none;
 }
 
 body main .GIFOS .carousel .card .overlay {
+  display: none;
   position: absolute;
   top: 0;
   -webkit-box-sizing: border-box;
@@ -548,9 +550,6 @@ body main .GIFOS .carousel .card .overlay {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
