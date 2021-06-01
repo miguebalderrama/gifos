@@ -264,7 +264,12 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
     document.getElementById("titulo_modal").textContent=titlemodal;
+    let gustamodal=document.getElementById("favoritos"+identifi).name;
+    let downmodal=document.getElementById("download"+identifi).src;
     document.getElementById("usuario_modal").textContent=usermodal;
+    document.getElementById("gustamodal").name= gustamodal;
+    document.getElementById("downmodal").src=downmodal;
+
     console.log(urlmodal);
     document.getElementById("imagen_ampliada").src = urlmodal;
   }
@@ -419,3 +424,19 @@ function mostrarTags(trendingTags){
   }
 
 }
+
+//////////////////////////gustamodal////////////////////////
+
+
+document.getElementById("gustamodal").addEventListener("click", function () {
+  let favoritear = document.getElementById("gustamodal").name;
+  let imgfav = document.createElement("img");
+  imgfav.src = "assets/icon-fav-active.svg";
+  imgfav.setAttribute("width", "18px");
+  imgfav.style="margin: 8px 0 0 7px";
+  imgfav.className = "imgfavs";
+  document.getElementById("gustamodal").appendChild(imgfav);
+  console.log(favoritear);
+  gustados.push(favoritear);
+  localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+});
