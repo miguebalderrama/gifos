@@ -2,6 +2,7 @@
 //
 //
 //let apiKey = "bw24LFlb3BXkhx9uB9goI91bEaW3Sm8H";
+const $lupon = document.querySelector('#lupon');
 var vermas = 1;
 var cantGifs = 0;
 let tags = document.querySelector('input[type="search"]');

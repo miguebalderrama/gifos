@@ -1,7 +1,7 @@
 // *   MODO NOCTURNO  *  \º
 const $switchThemeBtn = document.querySelector('#switchTheme');
 const $logo = document.querySelector('#logo');
-const $lupon = document.querySelector('#lupon');
+//
 
 const switchTheme = () => {
 	document.body.classList.toggle('darkMode');

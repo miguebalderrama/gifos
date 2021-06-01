@@ -1,6 +1,45 @@
+html {
+  --nombreVariable: url("assets/button-crear-gifo.svg");
+  --colorPrimario: #572ee5;
+  --colorNav: #572ee5;
+  --verMasHover: #ffffff;
+  --colorVerMas: #572ee5;
+  --anchoCard: "260px";
+  --altoCard: "200px";
+  --crearGifoHover: url("assets/CTA-crear-gifo-hover.svg");
+}
 * {
     margin: 0;
     padding: 0;
+  }
+  .darkMode {
+    background-color: #37383c;
+    color: #fff;
+    header {
+      background-color: #37383c;
+      .menuppal {
+        background-color: transparent;
+        border: none;
+      }
+      .menuppal.is_active {
+        background-color: black;
+      }
+    }
+    main {
+      padding-top: 100px;
+      .busqueda {
+        .form {
+          .lupita {
+            .input {
+              background-color: #37383c;
+            }
+          }
+        }
+      }
+      .GIFOS {
+        background-color: #222326;
+      }
+    }
   }
   body {
     //*background: #37383C;

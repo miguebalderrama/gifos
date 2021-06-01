@@ -217,7 +217,7 @@ if(a==2){
   }
 }
 }
-///////////// listener de los icinos de los trending/////////////////////////
+///////////// listener de los iconos de los trending/////////////////////////
 
 var downtrend=document.getElementById("downtrend0")
 downtrend.addEventListener("click", function (e){
