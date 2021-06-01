@@ -244,6 +244,10 @@ amptrenddos.addEventListener("click", function (e){
   document.getElementById("imagen_ampliada").src = urlmodal;
   document.getElementById("titulo_modal").textContent=document.getElementById("user2").textContent;
     document.getElementById("usuario_modal").textContent=document.getElementById("tit2").textContent;
+    let gustamod=document.getElementById("favtrend2").name;
+    let downmodal=document.getElementById("downtrend2").src;    
+    document.getElementById("gustamodal").name= gustamod;
+    document.getElementById("downmodal").src=downmodal;
 })
 var amptrenduno=document.getElementById("amptrend1")
 amptrenduno.addEventListener("click", function (e){
@@ -254,6 +258,10 @@ amptrenduno.addEventListener("click", function (e){
   document.getElementById("imagen_ampliada").src = urlmodal;
   document.getElementById("titulo_modal").textContent=document.getElementById("user1").textContent;
     document.getElementById("usuario_modal").textContent=document.getElementById("tit1").textContent;
+    let gustamod=document.getElementById("favtrend1").name;
+    let downmodal=document.getElementById("downtrend1").src;    
+    document.getElementById("gustamodal").name= gustamod;
+    document.getElementById("downmodal").src=downmodal;
 })
 var amptrendcero=document.getElementById("amptrend0")
 amptrendcero.addEventListener("click", function (e){
@@ -263,7 +271,11 @@ amptrendcero.addEventListener("click", function (e){
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
   document.getElementById("titulo_modal").textContent=document.getElementById("user0").textContent;
-    document.getElementById("usuario_modal").textContent=document.getElementById("tit0").textContent;
+  document.getElementById("usuario_modal").textContent=document.getElementById("tit0").textContent;
+  let gustamod = document.getElementById("favtrend0").name;
+  let downmodal = document.getElementById("downtrend0").src;    
+  document.getElementById("gustamodal").name= gustamod;
+  document.getElementById("downmodal").src=downmodal;
 })
 /////////////////////////favoritos detectcion/////////////////////
 
@@ -352,7 +364,11 @@ touchimg0.addEventListener("click", function (e){
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
   document.getElementById("titulo_modal").textContent=document.getElementById("user0").textContent;
-    document.getElementById("usuario_modal").textContent=document.getElementById("tit0").textContent;
+  document.getElementById("usuario_modal").textContent=document.getElementById("tit0").textContent;
+  let gustamod = document.getElementById("favtrend0").name;
+  let downmodal = document.getElementById("downtrend0").src;    
+  document.getElementById("gustamodal").name= gustamod;
+  document.getElementById("downmodal").src=downmodal;
 })
 
 var touchimg1=document.getElementById("img1")
@@ -364,6 +380,10 @@ touchimg1.addEventListener("click", function (e){
   document.getElementById("imagen_ampliada").src = urlmodal;
   document.getElementById("titulo_modal").textContent=document.getElementById("user1").textContent;
     document.getElementById("usuario_modal").textContent=document.getElementById("tit1").textContent;
+    let gustamod = document.getElementById("favtrend0").name;
+  let downmodal = document.getElementById("downtrend0").src;    
+  document.getElementById("gustamodal").name= gustamod;
+  document.getElementById("downmodal").src=downmodal;
 })
 var touchimg2=document.getElementById("img2")
 touchimg2.addEventListener("click", function (e){
@@ -374,4 +394,8 @@ touchimg2.addEventListener("click", function (e){
   document.getElementById("imagen_ampliada").src = urlmodal;
   document.getElementById("titulo_modal").textContent=document.getElementById("user2").textContent;
     document.getElementById("usuario_modal").textContent=document.getElementById("tit2").textContent;
+    let gustamod = document.getElementById("favtrend0").name;
+  let downmodal = document.getElementById("downtrend0").src;    
+  document.getElementById("gustamodal").name= gustamod;
+  document.getElementById("downmodal").src=downmodal;
 })

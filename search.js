@@ -263,10 +263,10 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
+    document.getElementById("usuario_modal").textContent=usermodal;
     document.getElementById("titulo_modal").textContent=titlemodal;
     let gustamodal=document.getElementById("favoritos"+identifi).name;
-    let downmodal=document.getElementById("download"+identifi).src;
-    document.getElementById("usuario_modal").textContent=usermodal;
+    let downmodal=document.getElementById("download"+identifi).src;    
     document.getElementById("gustamodal").name= gustamodal;
     document.getElementById("downmodal").src=downmodal;
 
