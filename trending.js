@@ -380,8 +380,8 @@ touchimg1.addEventListener("click", function (e){
   document.getElementById("imagen_ampliada").src = urlmodal;
   document.getElementById("titulo_modal").textContent=document.getElementById("user1").textContent;
     document.getElementById("usuario_modal").textContent=document.getElementById("tit1").textContent;
-    let gustamod = document.getElementById("favtrend0").name;
-  let downmodal = document.getElementById("downtrend0").src;    
+    let gustamod = document.getElementById("favtrend1").name;
+  let downmodal = document.getElementById("downtrend1").src;    
   document.getElementById("gustamodal").name= gustamod;
   document.getElementById("downmodal").src=downmodal;
 })
@@ -394,8 +394,8 @@ touchimg2.addEventListener("click", function (e){
   document.getElementById("imagen_ampliada").src = urlmodal;
   document.getElementById("titulo_modal").textContent=document.getElementById("user2").textContent;
     document.getElementById("usuario_modal").textContent=document.getElementById("tit2").textContent;
-    let gustamod = document.getElementById("favtrend0").name;
-  let downmodal = document.getElementById("downtrend0").src;    
+    let gustamod = document.getElementById("favtrend2").name;
+  let downmodal = document.getElementById("downtrend2").src;    
   document.getElementById("gustamodal").name= gustamod;
   document.getElementById("downmodal").src=downmodal;
 })
