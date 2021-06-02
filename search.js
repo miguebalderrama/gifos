@@ -260,7 +260,7 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     console.log(e.target);
     document.getElementById("modal").style = "display:block";
     let identifi = e.target.id.substring(7, e.target.id.length);
-    console.log(identifi);
+    console.log("amplie la imagen numero "+identifi);
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
@@ -279,7 +279,7 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     console.log(e.target);
     document.getElementById("modal").style = "display:block";
     let identifi = e.target.id.substring(3, e.target.id.length);
-    console.log(identifi);
+    console.log("cliquee la imegen numero"+identifi);
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
@@ -287,6 +287,8 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     document.getElementById("usuario_modal").textContent=usermodal;
     console.log(urlmodal);
     document.getElementById("imagen_ampliada").src = urlmodal;
+    let gustamodal=document.getElementById("favoritos"+identifi).name;
+    document.getElementById("gustamodal").name= gustamodal;
   }
   if (e.target && e.target.matches("a.down")) {
     console.log("presionamos algun download");
@@ -437,7 +439,7 @@ document.getElementById("gustamodal").addEventListener("click", function () {
   imgfav.style="margin: 8px 0 0 7px";
   imgfav.className = "imgfavs";
   document.getElementById("gustamodal").appendChild(imgfav);
-  console.log(favoritear);
+  console.log(favoritear+"no me imprime");
   gustados.push(favoritear);
   localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
 });

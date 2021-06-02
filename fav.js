@@ -211,6 +211,7 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     document.getElementById("usuario_modal").textContent=usermodal;
     console.log(urlmodal);
     document.getElementById("imagen_ampliada").src = urlmodal;
+    document.getElementById("imagen_ampliada").name = identifi;
   }
   if (e.target && e.target.matches("a.down")) {
     console.log("presionamos algun download");
@@ -282,3 +283,44 @@ function downloadGif(blob, target) {
   tag.click();
   document.body.removeChild(tag);
 }
+
+///////////////////////////////////////////////////////
+document.getElementById("gustamodal").addEventListener("click", function () {
+  document.getElementById("imagen_ampliada").name 
+  console.log("presionamos algun eliminar");
+    
+    let favoritear = document.getElementById("gustamodal").name;
+    
+    console.log("Elimine este gif"+favoritear);
+    let element = favoritear;
+    let idx = gustados.indexOf(element);
+    gustados.splice(idx,1);
+    console.log(gustados);
+    console.log("eliminamos este "+idx);
+    localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+
+    ///////////////////////////////////////////////////////////////////
+
+     recordfa = JSON.parse(localStorage.getItem("favoritosLocal"));
+    console.log("Que hay en mi record??  " + recordfa);
+     recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
+      return recordfa.indexOf(valor) === indice;
+    }
+    )
+    gustados = recordfav;
+     cantGifs=gustados.length;
+    console.log("tenemos estos gustados "+gustados.length);
+    if (gustados == null) {
+      gustados = new Array();
+    }
+    ///////////////////////////////////////////////////////////////////
+
+  // Eliminando todos los hijos de un elemento
+  let elementrash  = document.getElementById("imagenes");
+  let identifier = document.getElementById("imagen_ampliada").name ;
+  elementrash.removeChild (document.getElementById(identifier))
+  document.getElementById("modal").style="display:none";
+  
+ 
+
+});
