@@ -873,14 +873,14 @@ html {
             margin: auto;
             font-family: "Montserrat", sans-serif;
             font-size: 25px;
-            color: #572ee5;
+            color: var(--colorPrimario);
             text-align: center;
             line-height: 30px;
           }
           p {
             font-family: "Roboto", sans-serif;
             font-size: 18px;
-            color: #000000;
+            // color: #000000;
             text-align: center;
             margin: auto;
             padding-top: 0.8em;
@@ -899,6 +899,8 @@ html {
               margin: 1rem;
               padding: 0;
               .overlay {
+                //display:block;
+                display: flex;
                 box-sizing: border-box;
                 position: absolute;
                 bottom: 0;
@@ -1092,14 +1094,14 @@ html {
             margin: auto;
             font-family: "Montserrat", sans-serif;
             font-size: 25px;
-            color: #572ee5;
+            color: var(--colorPrimario);
             text-align: center;
             line-height: 30px;
           }
           p {
             font-family: "Roboto", sans-serif;
             font-size: 18px;
-            color: #000000;
+            //color: #000000;
             text-align: center;
             margin: auto;
             padding-top: 0.8em;
@@ -1118,6 +1120,7 @@ html {
               margin: 1rem;
               padding: 0;
               .overlay {
+                display: flex;
                 box-sizing: border-box;
                 position: absolute;
                 bottom: 0;
@@ -1143,7 +1146,6 @@ html {
               background: url("assets/Button-Slider-right.svg") no-repeat;
               border: none;
               padding: 10px;
-  
               outline: none;
             }
             #right:hover {

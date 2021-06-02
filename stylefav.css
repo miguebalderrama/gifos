@@ -1040,14 +1040,13 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     margin: auto;
     font-family: "Montserrat", sans-serif;
     font-size: 25px;
-    color: #572ee5;
+    color: var(--colorPrimario);
     text-align: center;
     line-height: 30px;
   }
   body main .GIFOS p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    color: #000000;
     text-align: center;
     margin: auto;
     padding-top: 0.8em;
@@ -1077,6 +1076,9 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     padding: 0;
   }
   body main .GIFOS .carousel .card .overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     position: absolute;
@@ -1292,14 +1294,13 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     margin: auto;
     font-family: "Montserrat", sans-serif;
     font-size: 25px;
-    color: #572ee5;
+    color: var(--colorPrimario);
     text-align: center;
     line-height: 30px;
   }
   body main .GIFOS p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    color: #000000;
     text-align: center;
     margin: auto;
     padding-top: 0.8em;
@@ -1329,6 +1330,9 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     padding: 0;
   }
   body main .GIFOS .carousel .card .overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     position: absolute;
