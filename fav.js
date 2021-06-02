@@ -41,6 +41,7 @@ function pintar(){
         overlay.className = "overlay";
         let img = document.createElement("img");
         img.src = urlorigin;
+        img.className="cards";
         img.setAttribute("width", "260px");
         img.setAttribute("height", "200px");
         div.appendChild(img);

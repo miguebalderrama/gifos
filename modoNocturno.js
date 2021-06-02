@@ -24,7 +24,7 @@ const setLocalStorageTheme = () => {
 		document.body.classList.add('darkMode');
 		$switchThemeBtn.textContent = 'Modo Diurno';
 	$logo.src = 'assets/Logo-modo-noc.svg';
-	$lupon.src="assets/icon-search-mod-noc.svg"
+	//$lupon.src="assets/icon-search-mod-noc.svg"
 	//$crearGifBtn.src = 'assets/CTA-crar-gifo-modo-noc.svg';
 	document.documentElement.style.setProperty('--nombreVariable', 'url("assets/CTA-crear-gifo-hover-modo-noc.svg")');
 	document.documentElement.style.setProperty('--lupa', 'url("assets/icon-search-mod-noc.svg")');
@@ -48,7 +48,7 @@ const setLocalStorageTheme = () => {
 	} else {
 		document.body.classList.remove('darkMode');
 		$logo.src ='img/logo-mobile.svg';
-		$lupon.src="assets/icon-search.svg"
+	//	$lupon.src="assets/icon-search.svg"
 		$switchThemeBtn.textContent = 'Modo Nocturno';
 		document.documentElement.style.setProperty('--nombreVariable', 'url("assets/button-crear-gifo.svg")');
 		document.documentElement.style.setProperty('--lupa', 'url("assets/icon-search.svg")');
