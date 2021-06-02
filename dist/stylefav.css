@@ -28,9 +28,6 @@ html {
 .darkMode header .menuppal.is_active {
   background-color: black;
 }
-.darkMode main {
-  padding-top: 100px;
-}
 .darkMode main .busqueda .form .lupita .input {
   background-color: #37383c;
 }
@@ -187,6 +184,7 @@ body main .parraf .imagenes .divi .overlay:hover {
   opacity: 1;
 }
 body main .parraf .imagenes .divi .overlay {
+  display: none;
   position: absolute;
   top: 0;
   box-sizing: border-box;
@@ -196,7 +194,6 @@ body main .parraf .imagenes .divi .overlay {
   width: 100%;
   transition: 0.5s ease;
   opacity: 0;
-  display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
 }
@@ -288,8 +285,8 @@ body main .parraf .imagenes #searchis {
   height: 120px;
 }
 body main .boton_ver_mas {
-  border: 1px solid #572ee5;
-  background: var(--ver-mas) no-repeat;
+  border: 1px solid var(--colorPrimario);
+  background: var(--verMas) no-repeat;
   border-radius: 25px;
   width: 127px;
   height: 50px;
@@ -297,7 +294,7 @@ body main .boton_ver_mas {
   margin-bottom: 2em;
   font-weight: bold;
   font-size: 13px;
-  color: #572ee5;
+  color: var(--colorPrimario);
   letter-spacing: 0;
   text-align: center;
 }
@@ -306,9 +303,9 @@ body main .ver_mas_p {
   font-family: "Montserrat", sans-serif;
 }
 body main .boton_ver_mas:hover {
-  border: 1px solid #572ee5;
-  background: #572ee5 no-repeat;
-  color: white;
+  border: 1px solid var(--verMasHover);
+  background: var(--verMasHover) no-repeat;
+  color: var(--verMasFuenteHover);
 }
 body main .modal {
   display: flex;
@@ -319,12 +316,12 @@ body main .modal {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
-  padding-top: 15em;
+  padding-top: 8em;
 }
 body main .modal .iconmodal {
   position: absolute;
-  margin-left: 1240px;
-  top: 640px;
+  margin-left: 280px;
+  top: 390px;
   display: flex;
 }
 body main .modal .iconmodal .down {
@@ -344,8 +341,8 @@ body main .modal .iconmodal .fav {
 }
 body main .modal .cerrar_modal {
   position: absolute;
-  right: 25%;
-  top: 76px;
+  right: 6%;
+  top: 100px;
   background: url("assets/close.svg") no-repeat;
   width: 1em;
   height: 1em;
@@ -355,26 +352,28 @@ body main .modal .cerrar_modal {
 body main .modal .titulo_modal {
   position: absolute;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  left: 600px;
-  top: 660px;
+  left: 21px;
+  top: 405px;
+  color: black;
 }
 body main .modal .usuario_modal {
   position: absolute;
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  top: 640px;
-  left: 600px;
+  font-size: 14px;
+  top: 390px;
+  left: 21px;
+  color: black;
 }
 body main .modal .contain_modal {
   margin: auto;
-  height: 385px;
-  width: 695px;
+  height: 245px;
+  width: 318px;
 }
 body main .modal .contain_modal .imagen_ampliada {
   width: 100%;
-  height: 385px;
+  height: 245px;
   z-index: 2000;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -801,6 +800,9 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+  body main .parraf .imagenes .divi .overlay {
+    display: flex;
+  }
   body main .parraf .imagenes .cards {
     width: 260px;
     height: 200px;
@@ -930,7 +932,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     font-size: 1rem;
     line-height: 1em;
     height: 1em;
-    color: rgba(87, 46, 229, 0.9);
+    color: var(--colorPrimario);
     text-decoration: none;
     background-image: linear-gradient(#50e3c2, #50e3c2);
     background-position: 0% 100%;
@@ -948,7 +950,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     width: 54px;
     height: 54px;
     margin-top: 10px;
-    background: url("assets/button-crear-gifo.svg") no-repeat;
+    background: var(--nombreVariable) no-repeat;
   }
 
   .menuppal ul li .miGifo:hover {

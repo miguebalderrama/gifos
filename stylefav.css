@@ -246,6 +246,7 @@ body main .parraf .imagenes .divi .overlay:hover {
 }
 
 body main .parraf .imagenes .divi .overlay {
+  display: none;
   position: absolute;
   top: 0;
   -webkit-box-sizing: border-box;
@@ -257,9 +258,6 @@ body main .parraf .imagenes .divi .overlay {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
@@ -414,13 +412,13 @@ body main .modal {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
-  padding-top: 15em;
+  padding-top: 8em;
 }
 
 body main .modal .iconmodal {
   position: absolute;
-  margin-left: 1240px;
-  top: 640px;
+  margin-left: 280px;
+  top: 390px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,8 +443,8 @@ body main .modal .iconmodal .fav {
 
 body main .modal .cerrar_modal {
   position: absolute;
-  right: 25%;
-  top: 76px;
+  right: 6%;
+  top: 100px;
   background: url("assets/close.svg") no-repeat;
   width: 1em;
   height: 1em;
@@ -457,29 +455,31 @@ body main .modal .cerrar_modal {
 body main .modal .titulo_modal {
   position: absolute;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  left: 600px;
-  top: 660px;
+  left: 21px;
+  top: 405px;
+  color: black;
 }
 
 body main .modal .usuario_modal {
   position: absolute;
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  top: 640px;
-  left: 600px;
+  font-size: 14px;
+  top: 390px;
+  left: 21px;
+  color: black;
 }
 
 body main .modal .contain_modal {
   margin: auto;
-  height: 385px;
-  width: 695px;
+  height: 245px;
+  width: 318px;
 }
 
 body main .modal .contain_modal .imagen_ampliada {
   width: 100%;
-  height: 385px;
+  height: 245px;
   z-index: 2000;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -494,7 +494,7 @@ body main .GIFOS h2 {
   margin: auto;
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
-  color: #572ee5;
+  color: var(--colorPrimario);
   text-align: center;
   line-height: 30px;
 }
@@ -502,7 +502,6 @@ body main .GIFOS h2 {
 body main .GIFOS p {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  color: #000000;
   text-align: center;
   margin: auto;
   padding-top: 0.8em;
@@ -524,7 +523,7 @@ body main .GIFOS .carousel {
 }
 
 body main .GIFOS .carousel .card {
-  width: 357px;
+  width: 243px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
@@ -534,9 +533,13 @@ body main .GIFOS .carousel .card {
 
 body main .GIFOS .carousel .card .overlay:hover {
   opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body main .GIFOS .carousel .card .overlay {
+  display: none;
   position: absolute;
   top: 0;
   -webkit-box-sizing: border-box;
@@ -548,9 +551,6 @@ body main .GIFOS .carousel .card .overlay {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
@@ -663,8 +663,8 @@ body main .GIFOS .carousel .card .overlay .icon #download:hover {
 }
 
 body main .GIFOS .carousel .card .giftrend {
-  width: 357px;
-  height: 275px;
+  width: 243px;
+  height: 187px;
   z-index: 100;
 }
 
@@ -1017,6 +1017,11 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+  body main .parraf .imagenes .divi .overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   body main .parraf .imagenes .cards {
     width: 260px;

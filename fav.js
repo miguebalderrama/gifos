@@ -42,6 +42,7 @@ function pintar(){
         let img = document.createElement("img");
         img.src = urlorigin;
         img.className="cards";
+        img.id="amp"+identifierfav;
         img.setAttribute("width", "260px");
         img.setAttribute("height", "200px");
         div.appendChild(img);
@@ -188,6 +189,20 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     console.log(e.target);
     document.getElementById("modal").style = "display:block";
     let identifi = e.target.id.substring(7, e.target.id.length);
+    console.log(identifi);
+    let urlmodal = document.getElementById("download" + identifi).src;
+    let titlemodal = document.getElementById("titulo" + identifi).textContent;
+    let usermodal = document.getElementById("user" + identifi).textContent;
+    document.getElementById("titulo_modal").textContent=titlemodal;
+    document.getElementById("usuario_modal").textContent=usermodal;
+    console.log(urlmodal);
+    document.getElementById("imagen_ampliada").src = urlmodal;
+  }
+  if (e.target && e.target.matches("img.cards")) {
+    console.log("presionamos alguna imagen");
+    console.log(e.target);
+    document.getElementById("modal").style = "display:block";
+    let identifi = e.target.id.substring(3, e.target.id.length);
     console.log(identifi);
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
