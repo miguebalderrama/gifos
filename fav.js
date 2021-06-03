@@ -5,6 +5,10 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
   console.log("hubo un click cerrar modal");
   document.getElementById("modal").style = "display:none";
 });
+document.getElementById("cerrar_modalfav").addEventListener("click", function (e) {
+  console.log("hubo un click cerrar modal");
+  document.getElementById("modalfav").style = "display:none";
+});
 
 /////////////////////////////
 gustados = new Array();
@@ -187,31 +191,31 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");
     console.log(e.target);
-    document.getElementById("modal").style = "display:block";
+    document.getElementById("modalfav").style = "display:block";
     let identifi = e.target.id.substring(7, e.target.id.length);
     console.log(identifi);
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
-    document.getElementById("titulo_modal").textContent=titlemodal;
-    document.getElementById("usuario_modal").textContent=usermodal;
+    document.getElementById("titulo_modalfav").textContent=titlemodal;
+    document.getElementById("usuario_modalfav").textContent=usermodal;
     console.log(urlmodal);
-    document.getElementById("imagen_ampliada").src = urlmodal;
+    document.getElementById("imagen_ampliadafav").src = urlmodal;
   }
   if (e.target && e.target.matches("img.cards")) {
     console.log("presionamos alguna imagen");
     console.log(e.target);
-    document.getElementById("modal").style = "display:block";
+    document.getElementById("modalfav").style = "display:block";
     let identifi = e.target.id.substring(3, e.target.id.length);
     console.log(identifi);
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
-    document.getElementById("titulo_modal").textContent=titlemodal;
-    document.getElementById("usuario_modal").textContent=usermodal;
+    document.getElementById("titulo_modalfav").textContent=titlemodal;
+    document.getElementById("usuario_modalfav").textContent=usermodal;
     console.log(urlmodal);
-    document.getElementById("imagen_ampliada").src = urlmodal;
-    document.getElementById("imagen_ampliada").name = identifi;
+    document.getElementById("imagen_ampliadafav").src = urlmodal;
+    document.getElementById("imagen_ampliadafav").name = identifi;
   }
   if (e.target && e.target.matches("a.down")) {
     console.log("presionamos algun download");
@@ -285,11 +289,11 @@ function downloadGif(blob, target) {
 }
 
 ///////////////////////////////////////////////////////
-document.getElementById("gustamodal").addEventListener("click", function () {
-  document.getElementById("imagen_ampliada").name 
+document.getElementById("gustamodalfav").addEventListener("click", function () {
+  
   console.log("presionamos algun eliminar");
     
-    let favoritear = document.getElementById("gustamodal").name;
+    let favoritear = document.getElementById("gustamodalfav").name;
     
     console.log("Elimine este gif"+favoritear);
     let element = favoritear;
@@ -317,10 +321,23 @@ document.getElementById("gustamodal").addEventListener("click", function () {
 
   // Eliminando todos los hijos de un elemento
   let elementrash  = document.getElementById("imagenes");
-  let identifier = document.getElementById("imagen_ampliada").name ;
+  let identifier = document.getElementById("imagen_ampliadafav").name ;
   elementrash.removeChild (document.getElementById(identifier))
-  document.getElementById("modal").style="display:none";
+  document.getElementById("modalfav").style="display:none";
   
  
 
+});
+
+document.getElementById("gustamodal").addEventListener("click", function () {
+  let favoritear = document.getElementById("gustamodal").name;
+  let imgfav = document.createElement("img");
+  imgfav.src = "assets/icon-fav-active.svg";
+  imgfav.setAttribute("width", "18px");
+  imgfav.style="margin: 8px 0 0 7px";
+  imgfav.className = "imgfavs";
+  document.getElementById("gustamodal").appendChild(imgfav);
+  console.log(favoritear+"no me imprime");
+  gustados.push(favoritear);
+  localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
 });

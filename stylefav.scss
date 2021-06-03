@@ -358,9 +358,17 @@ html {
             height: 32px;
             cursor: pointer;
           }
-          .fav {
+          .nofav {
             display: block;
             background: url("assets/icon-trash-normal.svg");
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+          }
+          .fav {
+            display: block;
+            background: url("assets/icon-fav.svg");
             background-repeat: no-repeat;
             width: 32px;
             height: 32px;

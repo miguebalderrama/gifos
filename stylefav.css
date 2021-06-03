@@ -432,9 +432,18 @@ body main .modal .iconmodal .down {
   cursor: pointer;
 }
 
-body main .modal .iconmodal .fav {
+body main .modal .iconmodal .nofav {
   display: block;
   background: url("assets/icon-trash-normal.svg");
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+body main .modal .iconmodal .fav {
+  display: block;
+  background: url("assets/icon-fav.svg");
   background-repeat: no-repeat;
   width: 32px;
   height: 32px;
