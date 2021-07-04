@@ -229,13 +229,7 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
   if (e.target && e.target.matches("a.fav")) {
     console.log("presionamos algun favoritos");
     console.log(e.target.id);
-    let favoritear = document.getElementById(e.target.id).name;
-    //let imgfav = document.createElement("img");
-    //imgfav.src = "assets/icon-trash-hover.svg";
-    //imgfav.setAttribute("width", "18px");
-    //imgfav.className = "imgfavs";
-    //document.getElementById(e.target.id).appendChild(imgfav);
-    //document.getElementById("favoritos"+e.target.id).remove;
+    let favoritear = document.getElementById(e.target.id).name;  
     console.log("Elimine este gif"+favoritear);
     let element = favoritear;
     let idx = gustados.indexOf(element);

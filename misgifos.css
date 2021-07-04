@@ -600,7 +600,7 @@ body main .GIFOS .carousel .card .overlay .iconos .down {
 }
 
 body main .GIFOS .carousel .card .overlay .iconos .fav {
-  background: url("assets/icon-trash-normal.svg");
+  background: url("assets/icon-fav.svg");
   background-repeat: no-repeat;
   width: 32px;
   height: 32px;
@@ -624,7 +624,7 @@ body main .GIFOS .carousel .card .overlay .iconos .down:hover {
 }
 
 body main .GIFOS .carousel .card .overlay .iconos .fav:hover {
-  background: url("assets/icon-trash-hover.svg") no-repeat;
+  background: url("assets/icon-fav-hover.svg") no-repeat;
 }
 
 body main .GIFOS .carousel .card .overlay .iconos .amp:hover {
