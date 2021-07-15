@@ -364,7 +364,7 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 .videoasset #container .message {
   width: 80%;
   font-size: 20px;
-  color: #572ee5;
+  color: var(--colorPrimario);
   text-align: center;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -375,7 +375,6 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
 }
 
 .videoasset #container .message p {
-  color: black;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -895,7 +894,7 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   body main .videoasset #container .message {
     width: 50%;
     font-size: 25px;
-    color: #572ee5;
+    color: var(--colorPrimario);
     text-align: center;
     line-height: 35px;
     text-align: center;
@@ -905,7 +904,6 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
     color: #50e3c2;
   }
   body main .videoasset #container .message p {
-    color: black;
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
