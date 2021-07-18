@@ -163,8 +163,8 @@ body main .comenzar {
 }
 
 body main .comenzar #start {
-  color: #572ee5;
-  border: solid 1.5px #572ee5;
+  color: var(--colorPrimario);
+  border: 1px solid var(--colorPrimario);
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   width: 127px;
@@ -172,13 +172,14 @@ body main .comenzar #start {
   border-radius: 25px;
   font-weight: bold;
   outline: none;
-  background: none;
+  background: var(--verMas) no-repeat;
   cursor: pointer;
 }
 
 body main .comenzar #start:hover {
-  color: white;
-  background-color: #572ee5;
+  border: 1px solid var(--verMasHover);
+  background: var(--verMasHover) no-repeat;
+  color: var(--verMasFuenteHover);
 }
 
 body footer {
@@ -826,7 +827,7 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
             align-items: center;
     width: 688px;
     height: 390px;
-    border: 1.5px #572ee5 solid;
+    border: 1px solid var(--colorPrimario);
   }
   body main .videoasset #container #video {
     width: 480px;
@@ -945,8 +946,8 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
     height: 30px;
     margin-right: 1em;
     margin-left: 1em;
-    color: #572ee5;
-    border: solid #572ee5 1.5px;
+    color: var(--colorPrimario);
+    border: 1px solid var(--colorPrimario);
     border-radius: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -985,7 +986,7 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
             text-decoration: underline solid 2px #5ed7c6;
   }
   body main .pasos .line {
-    border-bottom: solid #572ee5 7px;
+    border-bottom: solid var(--colorPrimario) 7px;
     width: 80%;
     margin: auto;
   }

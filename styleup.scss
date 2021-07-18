@@ -129,8 +129,8 @@ body {
       justify-content: center;
       margin-top: 1.5em;
       #start {
-        color: #572ee5;
-        border: solid 1.5px #572ee5;
+        color: var(--colorPrimario);
+        border: 1px solid var(--colorPrimario);
         font-size: 16px;
         font-family: "Roboto", sans-serif;
         width: 127px;
@@ -138,12 +138,14 @@ body {
         border-radius: 25px;
         font-weight: bold;
         outline: none;
-        background: none;
+        background: var(--verMas) no-repeat;
         cursor: pointer;
       }
       #start:hover {
-        color: white;
-        background-color: #572ee5;
+        border: 1px solid var(--verMasHover);
+        background: var(--verMasHover) no-repeat;
+        color: var(--verMasFuenteHover);
+        
       }
     }
   }
@@ -621,7 +623,7 @@ body {
   align-items: center;
   width: 688px;
   height: 390px;
-  border: 1.5px #572ee5 solid;
+  border: 1px solid var(--colorPrimario);
   #video {
     width: 480px;
     height: 320px;
@@ -716,8 +718,10 @@ body {
               height: 30px;
               margin-right: 1em;
               margin-left: 1em;
-              color: #572ee5;
-              border: solid #572ee5 1.5px;
+              //color: #572ee5;
+             // border: solid #572ee5 1.5px;
+              color: var(--colorPrimario);
+        border: 1px solid var(--colorPrimario);
               border-radius: 50%;
               display: flex;
               justify-content: center;
@@ -754,7 +758,7 @@ body {
         }
 
         .line {
-          border-bottom: solid #572ee5 7px;
+          border-bottom: solid var(--colorPrimario) 7px;
           width: 80%;
           margin: auto;
         }
