@@ -7,6 +7,9 @@ html {
   --anchoCard: "260px";
   --altoCard: "200px";
   --crearGifoHover: url("assets/CTA-crear-gifo-hover.svg");
+  --textModal:#000000;
+  --close: url("assets/close.svg")
+;
 }
 
 * {
@@ -435,7 +438,7 @@ body main .modal {
   top: 0px;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: var(--verMas);
   padding-top: 8em;
 }
 
@@ -469,7 +472,7 @@ body main .modal .cerrar_modal {
   position: absolute;
   right: 6%;
   top: 100px;
-  background: url("assets/close.svg") no-repeat;
+  background: var(--close) no-repeat;
   width: 1em;
   height: 1em;
   z-index: 2000;
@@ -483,7 +486,7 @@ body main .modal .titulo_modal {
   font-weight: bold;
   left: 21px;
   top: 405px;
-  color: black;
+  color: var(--textModal);
 }
 
 body main .modal .usuario_modal {
@@ -492,7 +495,7 @@ body main .modal .usuario_modal {
   font-size: 14px;
   top: 390px;
   left: 21px;
-  color: black;
+  color: var(--textModal);
 }
 
 body main .modal .contain_modal {
