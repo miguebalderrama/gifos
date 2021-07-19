@@ -3,10 +3,12 @@ html {
   --colorPrimario: #572ee5;
   --colorNav: #572ee5;
   --verMasHover: #ffffff;
+  --textModal:#000000;
   --colorVerMas: #572ee5;
   --anchoCard: "260px";
   --altoCard: "200px";
   --crearGifoHover: url("assets/CTA-crear-gifo-hover.svg");
+  --close: url("assets/close.svg") ;
 }
 
 * {
@@ -315,7 +317,7 @@ body main .modal {
   top: 0px;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: var(--verMas);
   padding-top: 8em;
 }
 body main .modal .iconmodal {
@@ -327,6 +329,14 @@ body main .modal .iconmodal {
 body main .modal .iconmodal .down {
   display: block;
   background: url("assets/icon-download.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+body main .modal .iconmodal .nofav {
+  display: block;
+  background: url("assets/icon-trash-normal.svg");
+  background-repeat: no-repeat;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -343,7 +353,7 @@ body main .modal .cerrar_modal {
   position: absolute;
   right: 6%;
   top: 100px;
-  background: url("assets/close.svg") no-repeat;
+  background: var(--close) no-repeat;
   width: 1em;
   height: 1em;
   z-index: 2000;
@@ -356,7 +366,7 @@ body main .modal .titulo_modal {
   font-weight: bold;
   left: 21px;
   top: 405px;
-  color: black;
+  color: var(--textModal);
 }
 body main .modal .usuario_modal {
   position: absolute;
@@ -364,7 +374,7 @@ body main .modal .usuario_modal {
   font-size: 14px;
   top: 390px;
   left: 21px;
-  color: black;
+  color: var(--textModal);
 }
 body main .modal .contain_modal {
   margin: auto;
@@ -386,14 +396,13 @@ body main .GIFOS h2 {
   margin: auto;
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
-  color: #572ee5;
+  color: var(--colorPrimario);
   text-align: center;
   line-height: 30px;
 }
 body main .GIFOS p {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
-  color: #000000;
   text-align: center;
   margin: auto;
   padding-top: 0.8em;
@@ -409,7 +418,7 @@ body main .GIFOS .carousel {
   scroll-snap-type: mandatory;
 }
 body main .GIFOS .carousel .card {
-  width: 357px;
+  width: 243px;
   box-sizing: border-box;
   position: relative;
   margin: 1rem;
@@ -417,8 +426,10 @@ body main .GIFOS .carousel .card {
 }
 body main .GIFOS .carousel .card .overlay:hover {
   opacity: 1;
+  display: flex;
 }
 body main .GIFOS .carousel .card .overlay {
+  display: none;
   position: absolute;
   top: 0;
   box-sizing: border-box;
@@ -428,7 +439,6 @@ body main .GIFOS .carousel .card .overlay {
   width: 100%;
   transition: 0.5s ease;
   opacity: 0;
-  display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
 }
@@ -515,8 +525,8 @@ body main .GIFOS .carousel .card .overlay .icon #download:hover {
   opacity: 1;
 }
 body main .GIFOS .carousel .card .giftrend {
-  width: 357px;
-  height: 275px;
+  width: 243px;
+  height: 187px;
   z-index: 100;
 }
 body main .GIFOS .carousel .card:hover .overlay {
@@ -820,14 +830,13 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     margin: auto;
     font-family: "Montserrat", sans-serif;
     font-size: 25px;
-    color: #572ee5;
+    color: var(--colorPrimario);
     text-align: center;
     line-height: 30px;
   }
   body main .GIFOS p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    color: #000000;
     text-align: center;
     margin: auto;
     padding-top: 0.8em;
@@ -847,6 +856,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     padding: 0;
   }
   body main .GIFOS .carousel .card .overlay {
+    display: flex;
     box-sizing: border-box;
     position: absolute;
     bottom: 0;
@@ -1027,14 +1037,13 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     margin: auto;
     font-family: "Montserrat", sans-serif;
     font-size: 25px;
-    color: #572ee5;
+    color: var(--colorPrimario);
     text-align: center;
     line-height: 30px;
   }
   body main .GIFOS p {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    color: #000000;
     text-align: center;
     margin: auto;
     padding-top: 0.8em;
@@ -1054,6 +1063,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     padding: 0;
   }
   body main .GIFOS .carousel .card .overlay {
+    display: flex;
     box-sizing: border-box;
     position: absolute;
     bottom: 0;

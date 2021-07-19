@@ -1,6 +1,9 @@
 // *   MODO NOCTURNO  *  \º
 const $switchThemeBtn = document.querySelector('#switchTheme');
 const $logo = document.querySelector('#logo');
+const $pelicula = document.querySelector('#pelicula');
+const $cintaUno = document.querySelector('#element-cinta1');
+const $cintaDos = document.querySelector('#element-cinta2');
 //
 
 const switchTheme = () => {
@@ -24,6 +27,9 @@ const setLocalStorageTheme = () => {
 		document.body.classList.add('darkMode');
 		$switchThemeBtn.textContent = 'Modo Diurno';
 	    $logo.src = 'assets/Logo-modo-noc.svg';
+		$pelicula.src = 'assets/pelicula-modo-noc.svg';
+		$cintaUno.src = 'assets/element_cinta1-modo-noc.svg';
+		$cintaDos.src = 'assets/element_cinta2-modo-noc.svg';
 	//$lupon.src="assets/icon-search-mod-noc.svg"
 	//$crearGifBtn.src = 'assets/CTA-crar-gifo-modo-noc.svg';
 	document.documentElement.style.setProperty('--nombreVariable', 'url("assets/CTA-crear-gifo-hover-modo-noc.svg")');
@@ -31,7 +37,7 @@ const setLocalStorageTheme = () => {
 	document.documentElement.style.setProperty('--colorPrimario', '#ffffff');
 	document.documentElement.style.setProperty('--close', 'url("assets/close-modo-noct.svg")');
 	document.documentElement.style.setProperty('--verMas', '#37383C');
-	document.documentElement.style.setProperty('--verMasHover', '#ffffff');
+	document.documentElement.style.setProperty('--verMasHover', '#ffffff');	
 	document.documentElement.style.setProperty('--verMasFuenteHover', '#000000');
 	document.documentElement.style.setProperty('--crearGifoHover', 'url("assets/CTA-crear-gifo-hover-modo-noc.svg")');
 	
@@ -48,6 +54,9 @@ const setLocalStorageTheme = () => {
 	} else {
 		document.body.classList.remove('darkMode');
 		$logo.src ='img/logo-mobile.svg';
+		$pelicula.src = 'assets/pelicula.svg';
+		$cintaUno.src = 'assets/element_cinta1.svg';
+		$cintaDos.src = 'assets/element_cinta2.svg';
 	//	$lupon.src="assets/icon-search.svg"
 		$switchThemeBtn.textContent = 'Modo Nocturno';
 		document.documentElement.style.setProperty('--nombreVariable', 'url("assets/button-crear-gifo.svg")');
@@ -60,6 +69,7 @@ const setLocalStorageTheme = () => {
 		document.documentElement.style.setProperty('--ColorVerMas', '#572ee5');
 		document.documentElement.style.setProperty('--verMasFuenteHover', '#ffffff');
 		document.documentElement.style.setProperty('--crearGifoHover', 'url("assets/CTA-crear-gifo-hover.svg")');
+		
 		
 	}
 	

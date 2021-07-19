@@ -34,6 +34,7 @@ const setLocalStorageTheme = () => {
 	document.documentElement.style.setProperty('--verMasHover', '#ffffff');
 	document.documentElement.style.setProperty('--verMasFuenteHover', '#000000');
 	document.documentElement.style.setProperty('--crearGifoHover', 'url("assets/CTA-crear-gifo-hover-modo-noc.svg")');
+	document.documentElement.style.setProperty('--textModal', '#ffffff');
 	
 	
 	//	$burgerMenu.src = 'assets/burger-modo-noct.svg';
@@ -60,6 +61,7 @@ const setLocalStorageTheme = () => {
 		document.documentElement.style.setProperty('--ColorVerMas', '#572ee5');
 		document.documentElement.style.setProperty('--verMasFuenteHover', '#ffffff');
 		document.documentElement.style.setProperty('--crearGifoHover', 'url("assets/CTA-crear-gifo-hover.svg")');
+		document.documentElement.style.setProperty('--textModal', '#37383c');
 		
 	}
 	
