@@ -831,6 +831,7 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
   }
   body main .videoasset #container #video {
     width: 480px;
+    height: auto;
     background-color: white;
     margin: auto;
     display: block;
