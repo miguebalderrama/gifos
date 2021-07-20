@@ -99,7 +99,7 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
     navigator.mediaDevices.getUserMedia({
     audio: false,
     video: {
-       height: { max: 320 }
+       height: { max: 270 }
     }
  })
  .then(function(stream) {
