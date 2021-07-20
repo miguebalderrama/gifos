@@ -337,14 +337,14 @@ html {
         top: 0px;
         width: 100%;
         height: 100%;
-        background-color: #ffffff;
+        background-color: var(--verMas);
         //border: solid 1px #572EE5;
-        padding-top: 15em;
+        padding-top: 8em;
   
         .iconmodal {
           position: absolute;
-          margin-left: 1240px;
-          top: 640px;
+          margin-left: 280px;
+          top: 390px;
           display: flex;
   
           .down {
@@ -356,7 +356,7 @@ html {
           }
           .fav {
             display: block;
-            background: url("assets/icon-trash-normal.svg");
+            background: url("assets/icon-fav.svg");
             background-repeat: no-repeat;
             width: 32px;
             height: 32px;
@@ -365,9 +365,9 @@ html {
         }
         .cerrar_modal {
           position: absolute;
-          right: 25%;
-          top: 76px;
-          background: url("assets/close.svg") no-repeat;
+          right: 6%;
+          top: 100px;
+          background: var(--close) no-repeat;
           width: 1em;
           height: 1em;
           z-index: 2000;
@@ -376,28 +376,28 @@ html {
         .titulo_modal {
           position: absolute;
           font-family: "Roboto", sans-serif;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: bold;
-  
-          left: 600px;
-  
-          top: 660px;
+          left: 21px;
+          top: 405px;
+          color: var(--textModal);
         }
         .usuario_modal {
           position: absolute;
           font-family: "Roboto", sans-serif;
-          font-size: 15px;
-          top: 640px;
-          left: 600px; ///600px
+          font-size: 14px;
+          top: 390px;
+          left: 21px; ///600px
+          color: var(--textModal);
         }
   
         .contain_modal {
           margin: auto;
-          height: 385px;
-          width: 695px;
+          height: 245px;
+          width: 318px;
           .imagen_ampliada {
             width: 100%;
-            height: 385px;
+            height: 245px;
             z-index: 2000;
             background-repeat: no-repeat;
             background-size: 100% 100%;
