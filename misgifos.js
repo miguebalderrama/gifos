@@ -12,6 +12,7 @@ gustados = recordfav;
 let recordgifo = JSON.parse(localStorage.getItem("misGifos"));
 console.log("Que hay en mi record??  " + recordgifo);
 misGifiados= recordgifo;
+cantGifs=misGifiados.length;///probando
 
 if (gustados == null) {
   gustados = new Array();
@@ -27,7 +28,7 @@ fetch(urlfav)
     let div = document.createElement("div");
           div.id = identifiergif;
           div.className = "divi";
-          div.style = "display:block"; ////////////ver mas............
+          div.style = "display:none"; ////////////ver mas............
           let overlay = document.createElement("div");
           overlay.className = "overlay";
           let img = document.createElement("img");
@@ -206,3 +207,28 @@ function downloadGifos(blob, target) {
   tags.click();
   //document.body.removeChild(tags);
 }
+
+let vermasfav=1;
+document.getElementById("boton_ver_mas").addEventListener("click", function () {
+  console.log(cantGifs);
+  let pags = Math.trunc(cantGifs / 12);
+  let bloque = 12;
+  let limits = bloque + bloque * vermasfav;
+  if (vermasfav < pags) {
+    console.log(pags);
+    for (let index = bloque * vermasfav; index < limits; index++) {
+      const element = document.getElementById(index);
+      element.style = "display:block";
+      document.getElementById("boton_ver_mas").style = "display:block";
+    }
+    vermasfav++;
+    console.log(vermasfav);
+  } else {
+    for (let index = bloque * vermasfav; index < cantGifs; index++) {
+      const element = document.getElementById(index);
+      element.style = "display:block";
+    }
+    vermasfav = 1;
+    document.getElementById("boton_ver_mas").style = "display:none";
+  }
+});
