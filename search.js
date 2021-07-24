@@ -373,6 +373,7 @@ document.querySelector(".form").addEventListener("click", function (e) {
     sugges = document.getElementById(e.target.id).innerText;
     console.log(sugges);
     document.querySelector('input[type="search"]').value = sugges;
+    document.getElementById("lupon").setAttribute("style","visibility: hidden");///que onda
     searchs();
   }
 });
