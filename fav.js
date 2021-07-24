@@ -201,6 +201,7 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     document.getElementById("usuario_modalfav").textContent=usermodal;
     console.log(urlmodal);
     document.getElementById("imagen_ampliadafav").src = urlmodal;
+    document.getElementById("imagen_ampliadafav").name = identifi;
   }
   if (e.target && e.target.matches("img.cards")) {
     console.log("presionamos alguna imagen");

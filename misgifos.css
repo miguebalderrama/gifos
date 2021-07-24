@@ -245,6 +245,7 @@ body main .parraf #imagenes .divi .overlay:hover {
 }
 
 body main .parraf #imagenes .divi .overlay {
+  display: none;
   position: absolute;
   top: 0;
   -webkit-box-sizing: border-box;

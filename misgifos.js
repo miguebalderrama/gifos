@@ -143,6 +143,21 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     console.log(urlmodal);
     document.getElementById("imagen_ampliada").src = urlmodal;
   }
+  if (e.target && e.target.matches("img.cards")) {//////////amplia card al presionar sin overlay
+    console.log("presionamos alguna imagen");
+    console.log(e.target);
+    document.getElementById("modalfav").style = "display:block";
+    let identifi = e.target.id.substring(3, e.target.id.length);
+    console.log(identifi);
+    let urlmodal = document.getElementById("download" + identifi).src;
+    let titlemodal = document.getElementById("titulo" + identifi).textContent;
+    let usermodal = document.getElementById("user" + identifi).textContent;
+    document.getElementById("titulo_modalfav").textContent=titlemodal;
+    document.getElementById("usuario_modalfav").textContent=usermodal;
+    console.log(urlmodal);
+    document.getElementById("imagen_ampliadafav").src = urlmodal;
+    document.getElementById("imagen_ampliadafav").name = identifi;
+  }
   if (e.target && e.target.matches("a.down")) {
     console.log("presionamos algun download");
     console.log(e.target.id);
