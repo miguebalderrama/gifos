@@ -33,6 +33,8 @@ fetch(urlfav)
           overlay.className = "overlay";
           let img = document.createElement("img");
           img.src = urlorigin;
+          img.className="cards";
+          img.id="amp"+identifiergif;
           img.setAttribute("width", "260px");
           img.setAttribute("height", "200px");
           div.appendChild(img);

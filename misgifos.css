@@ -194,10 +194,32 @@ body main .parraf {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .parraf .parrafTrending {
+  margin: auto;
+  padding: 1.2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+body main .parraf .parrafTrending span {
+  color: var(--colorPrimario);
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
 }
 
 body main .parraf h3 {
-  color: #572ee5;
+  color: var(--colorPrimario);
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -206,7 +228,7 @@ body main .parraf h3 {
 body main .parraf p {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  color: #572ee5;
+  color: var(--colorPrimario);
   line-height: 40px;
   width: 80%;
   text-align: center;
@@ -219,12 +241,12 @@ body main .parraf h2 {
   margin: auto;
   font-family: "Montserrat", sans-serif;
   font-size: 35px;
-  color: #572ee5;
+  color: var(--colorPrimario);
   text-align: center;
   line-height: 30px;
 }
 
-body main .parraf #imagenes {
+body main .parraf .imagenes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,16 +257,21 @@ body main .parraf #imagenes {
           justify-content: space-evenly;
 }
 
-body main .parraf #imagenes .divi {
+body main .parraf .imagenes .cards {
+  width: 156px;
+  height: 120px;
+}
+
+body main .parraf .imagenes .divi {
   position: relative;
   margin-top: 1em;
 }
 
-body main .parraf #imagenes .divi .overlay:hover {
+body main .parraf .imagenes .divi .overlay:hover {
   opacity: 1;
 }
 
-body main .parraf #imagenes .divi .overlay {
+body main .parraf .imagenes .divi .overlay {
   display: none;
   position: absolute;
   top: 0;
@@ -257,9 +284,6 @@ body main .parraf #imagenes .divi .overlay {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
@@ -269,7 +293,7 @@ body main .parraf #imagenes .divi .overlay {
           justify-content: flex-start;
 }
 
-body main .parraf #imagenes .divi .overlay .titulo {
+body main .parraf .imagenes .divi .overlay .titulo {
   color: white;
   opacity: 1;
   font-family: "Roboto", sans-serif;
@@ -279,7 +303,7 @@ body main .parraf #imagenes .divi .overlay .titulo {
   margin-left: 0.5em;
 }
 
-body main .parraf #imagenes .divi .overlay .user {
+body main .parraf .imagenes .divi .overlay .user {
   color: white;
   opacity: 1;
   margin-bottom: 0px;
@@ -288,7 +312,7 @@ body main .parraf #imagenes .divi .overlay .user {
   margin-left: 0.5em;
 }
 
-body main .parraf #imagenes .divi .overlay .iconos {
+body main .parraf .imagenes .divi .overlay .iconos {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -302,76 +326,76 @@ body main .parraf #imagenes .divi .overlay .iconos {
   height: 32px;
 }
 
-body main .parraf #imagenes .divi .overlay .iconos .down {
+body main .parraf .imagenes .divi .overlay .iconos .down {
   background: url("assets/icon-download.svg") no-repeat;
   width: 32px;
   height: 32px;
   cursor: pointer;
 }
 
-body main .parraf #imagenes .divi .overlay .iconos .fav {
-  background: url("assets/icon-trash-normal.svg");
+body main .parraf .imagenes .divi .overlay .iconos .fav {
+  background: url("assets/icon-fav.svg");
   background-repeat: no-repeat;
   width: 32px;
   height: 32px;
   cursor: pointer;
 }
 
-body main .parraf #imagenes .divi .overlay .iconos .fav .imgfavs {
+body main .parraf .imagenes .divi .overlay .iconos .fav .imgfavs {
   margin-left: 7px;
   margin-top: 7px;
 }
 
-body main .parraf #imagenes .divi .overlay .iconos .amp {
+body main .parraf .imagenes .divi .overlay .iconos .amp {
   background: url("assets/icon-max-normal.svg") no-repeat;
   width: 32px;
   height: 32px;
   cursor: pointer;
 }
 
-body main .parraf #imagenes .divi .overlay .iconos .down:hover {
+body main .parraf .imagenes .divi .overlay .iconos .down:hover {
   background: url("assets/icon-download-hover.svg") no-repeat;
 }
 
-body main .parraf #imagenes .divi .overlay .iconos .fav:hover {
-  background: url("assets/icon-trash-hover.svg") no-repeat;
+body main .parraf .imagenes .divi .overlay .iconos .fav:hover {
+  background: url("assets/icon-fav-hover.svg") no-repeat;
 }
 
-body main .parraf #imagenes .divi .overlay .iconos .amp:hover {
+body main .parraf .imagenes .divi .overlay .iconos .amp:hover {
   background: url("assets/icon-max-hover.svg") no-repeat;
 }
 
-body main .parraf #imagenes .divi .overlay .estado {
+body main .parraf .imagenes .divi .overlay .estado {
   color: white;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   display: none;
 }
 
-body main .parraf #imagenes .divi .overlay .icon {
+body main .parraf .imagenes .divi .overlay .icon {
   position: absolute;
   top: 4px;
   right: 4px;
   display: none;
 }
 
-body main .parraf #imagenes .divi .overlay .icon #copy {
+body main .parraf .imagenes .divi .overlay .icon #copy {
   opacity: 0.7;
 }
 
-body main .parraf #imagenes .divi .overlay .icon #download {
+body main .parraf .imagenes .divi .overlay .icon #download {
   opacity: 0.7;
 }
 
-body main .parraf #imagenes .divi .overlay .icon #copy:hover {
+body main .parraf .imagenes .divi .overlay .icon #copy:hover {
   opacity: 1;
 }
 
-body main .parraf #imagenes .divi .overlay .icon #download:hover {
+body main .parraf .imagenes .divi .overlay .icon #download:hover {
   opacity: 1;
 }
 
-body main .parraf #imagenes #searchis {
+body main .parraf .imagenes #searchis {
   margin-top: 1.5em;
   width: 156px;
   height: 120px;
@@ -1018,6 +1042,15 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+  body main .parraf #imagenes .divi .overlay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body main .parraf #imagenes .cards {
+    width: 260px;
+    height: 200px;
   }
   body main .parraf #imagenes #searchis {
     margin-top: 1.5em;

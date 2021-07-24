@@ -163,8 +163,25 @@ html {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        //width: 70%;
+        //margin: auto;
+        .parrafTrending {
+          margin: auto;
+          //width: 70%;
+          padding: 1.2em;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          span {
+            color: var(--colorPrimario);
+            font-size: 14px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 300;
+          }
+        }
         h3 {
-          color: #572ee5;
+          color: var(--colorPrimario);
           font-size: 18px;
           font-family: "Montserrat", sans-serif;
           font-weight: 700;
@@ -172,7 +189,7 @@ html {
         p {
           font-family: "Montserrat", sans-serif;
           font-size: 14px;
-          color: #572ee5;
+          color: var(--colorPrimario);
           line-height: 40px;
           width: 80%;
           text-align: center;
@@ -184,14 +201,18 @@ html {
           margin: auto;
           font-family: "Montserrat", sans-serif;
           font-size: 35px;
-          color: #572ee5;
+          color: var(--colorPrimario);
           text-align: center;
           line-height: 30px;
         }
-        #imagenes {
+        .imagenes {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-evenly;
+          .cards {
+            width: 156px;
+            height: 120px;
+          }
           .divi {
             position: relative;
             margin-top: 1em;
@@ -200,7 +221,7 @@ html {
               opacity: 1;
             }
             .overlay {
-              display: none;/////////para mobile
+              display: none;
               .titulo {
                 color: white;
                 opacity: 1;
@@ -233,7 +254,7 @@ html {
                   cursor: pointer;
                 }
                 .fav {
-                  background: url("assets/icon-trash-normal.svg");
+                  background: url("assets/icon-fav.svg");
                   background-repeat: no-repeat;
                   width: 32px;
                   height: 32px;
@@ -253,7 +274,7 @@ html {
                   background: url("assets/icon-download-hover.svg") no-repeat;
                 }
                 .fav:hover {
-                  background: url("assets/icon-trash-hover.svg") no-repeat;
+                  background: url("assets/icon-fav-hover.svg") no-repeat;
                 }
                 .amp:hover {
                   background: url("assets/icon-max-hover.svg") no-repeat;
@@ -267,7 +288,7 @@ html {
               width: 100%;
               transition: 0.5s ease;
               opacity: 0;
-              display: flex;
+              //display: flex;///////////////////////////////////////que pasa//////////
               //justify-content: center;
               //align-content: space-between;
               flex-direction: column-reverse;
@@ -837,6 +858,15 @@ html {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
+            .divi {
+              .overlay {
+                display: flex;
+              }
+            }
+            .cards {
+              width: 260px;
+              height: 200px;
+            }
             #searchis {
               margin-top: 1.5em;
               width: 260px;
