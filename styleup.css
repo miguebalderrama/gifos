@@ -986,7 +986,7 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
             text-decoration: underline solid 2px #5ed7c6;
   }
   body main .pasos .line {
-    border-bottom: solid var(--colorPrimario) 7px;
+    border-bottom: solid #572ee5 7px;
     width: 80%;
     margin: auto;
   }

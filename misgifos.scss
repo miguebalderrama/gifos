@@ -306,8 +306,8 @@ html {
         }
       }
       .boton_ver_mas {
-        border: 1px solid #572ee5;
-        background: var(--ver-mas) no-repeat;
+        border: 1px solid var(--colorPrimario);
+        background: var(--verMas) no-repeat;
         border-radius: 25px;
         width: 127px;
         height: 50px;
@@ -315,7 +315,7 @@ html {
         margin-bottom: 2em;
         font-weight: bold;
         font-size: 13px;
-        color: #572ee5;
+        color: var(--colorPrimario);
         letter-spacing: 0;
         text-align: center;
       }
@@ -324,9 +324,9 @@ html {
         font-family: "Montserrat", sans-serif;
       }
       .boton_ver_mas:hover {
-        border: 1px solid #572ee5;
-        background: #572ee5 no-repeat;
-        color: white;
+        border: 1px solid var(--verMasHover);
+        background: var(--verMasHover) no-repeat;
+        color: var(--verMasFuenteHover);
       }
   
       .modal {
