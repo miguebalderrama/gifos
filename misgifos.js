@@ -5,6 +5,10 @@ document.getElementById("cerrar_modal").addEventListener("click", function (e) {
   console.log("hubo un click cerrar modal");
   document.getElementById("modal").style = "display:none";
 });
+document.getElementById("cerrar_modalfav").addEventListener("click", function (e) {
+  console.log("hubo un click cerrar modal");
+  document.getElementById("modalfav").style = "display:none";
+});
 gustados = new Array();
 let recordfav = JSON.parse(localStorage.getItem("favoritosLocal"));
 gustados = recordfav;
@@ -134,16 +138,17 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");
     console.log(e.target);
-    document.getElementById("modal").style = "display:block";
+    document.getElementById("modalfav").style = "display:block";
     let identifi = e.target.id.substring(7, e.target.id.length);
     console.log(identifi);
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
-    document.getElementById("titulo_modal").textContent=titlemodal;
-    document.getElementById("usuario_modal").textContent=usermodal;
+    document.getElementById("titulo_modalfav").textContent=titlemodal;
+    document.getElementById("usuario_modalfav").textContent=usermodal;
     console.log(urlmodal);
-    document.getElementById("imagen_ampliada").src = urlmodal;
+    document.getElementById("imagen_ampliadafav").src = urlmodal;
+    document.getElementById("imagen_ampliadafav").name = identifi;
   }
   if (e.target && e.target.matches("img.cards")) {//////////amplia card al presionar sin overlay
     console.log("presionamos alguna imagen");
