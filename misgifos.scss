@@ -253,6 +253,14 @@ body {
                 height: 32px;
                 cursor: pointer;
               }
+              .nofav {
+                display: block;
+                background: url("assets/icon-trash-normal.svg");
+                background-repeat: no-repeat;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+              }
               .fav {
                 background: url("assets/icon-trash-normal.svg");
                 background-repeat: no-repeat;
@@ -372,6 +380,14 @@ body {
         .down {
           display: block;
           background: url("assets/icon-download.svg") no-repeat;
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+        }
+        .nofav {
+          display: block;
+          background: url("assets/icon-trash-normal.svg");
+          background-repeat: no-repeat;
           width: 32px;
           height: 32px;
           cursor: pointer;

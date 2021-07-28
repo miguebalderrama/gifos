@@ -333,6 +333,15 @@ body main .parraf .imagenes .divi .overlay .iconos .down {
   cursor: pointer;
 }
 
+body main .parraf .imagenes .divi .overlay .iconos .nofav {
+  display: block;
+  background: url("assets/icon-trash-normal.svg");
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
 body main .parraf .imagenes .divi .overlay .iconos .fav {
   background: url("assets/icon-trash-normal.svg");
   background-repeat: no-repeat;
@@ -453,6 +462,15 @@ body main .modal .iconmodal {
 body main .modal .iconmodal .down {
   display: block;
   background: url("assets/icon-download.svg") no-repeat;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+body main .modal .iconmodal .nofav {
+  display: block;
+  background: url("assets/icon-trash-normal.svg");
+  background-repeat: no-repeat;
   width: 32px;
   height: 32px;
   cursor: pointer;
