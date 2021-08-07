@@ -416,6 +416,8 @@ function mostrarTags(trendingTags){
       console.log(trendingTags);
   for (let index = 0; index < 5; index++) {
     let wordp=document.createElement("span");
+    wordp.style="cursor:pointer";
+    wordp.id=index+"word";
     if(index<4){
      wordp.textContent= trendingTags.data[index]+", ";
      }
@@ -428,6 +430,18 @@ function mostrarTags(trendingTags){
   }
 
 }
+
+document.getElementById("parrafTrending").addEventListener("click", function(e) {
+  
+  let suggesWord = document.getElementById(e.target.id).innerText;
+    console.log(suggesWord);
+    let cadenaCorregida = suggesWord.substring(0, suggesWord.length - 2);
+    document.querySelector('input[type="search"]').value = cadenaCorregida;
+    document.getElementById("lupon").setAttribute("style","visibility: hidden");///que onda
+    searchs();
+  
+});
+
 
 //////////////////////////gustamodal////////////////////////
 
