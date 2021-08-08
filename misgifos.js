@@ -254,3 +254,44 @@ document.getElementById("boton_ver_mas").addEventListener("click", function () {
     document.getElementById("boton_ver_mas").style = "display:none";
   }
 });
+////////////////eliminar desde el modal////////
+
+document.getElementById("gustamodalfav").addEventListener("click", function () {
+  
+  console.log("presionamos algun eliminar");
+    
+  let favoritear = document.getElementById("gustamodalfav").name;
+    
+  console.log("Elimine este gif"+favoritear);
+  let element = favoritear;
+  let idx = misGifiados.indexOf(element);
+  misGifiados.splice(idx,1);
+  console.log(misGifiados);
+  console.log("eliminamos este "+idx);
+  localStorage.setItem("misGifos", JSON.stringify(misGifiados));
+
+  ///////////////////////////////////////////////////////////////////
+
+   recordfa = JSON.parse(localStorage.getItem("misGifos"));
+  console.log("Que hay en mi record??  " + recordfa);
+   recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
+    return recordfa.indexOf(valor) === indice;
+  }
+  )
+  misGifiados = recordfav;
+   cantGifs=misGifiados.length;
+  console.log("tenemos estos gustados "+misGifiados.length);
+  if (misGifiados == null) {
+    misGifiados = new Array();
+  }
+  ///////////////////////////////////////////////////////////////////
+
+// Eliminando todos los hijos de un elemento
+let elementrash  = document.getElementById("imagenes");
+let identifier = document.getElementById("imagen_ampliadafav").name ;
+elementrash.removeChild (document.getElementById(identifier))
+document.getElementById("modalfav").style="display:none";
+
+
+
+});

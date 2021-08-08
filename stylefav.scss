@@ -814,6 +814,16 @@ html {
       main {
         .modal {
           padding-top: 8em;
+            
+      .contain_modal {
+        margin: auto;
+        //height: 245px;
+        width: 600px;
+        height: 385px;
+        .imagen_ampliada {
+          width: 100%;
+          height: 100%;          
+        }}
           .cerrar_modal {
             right: 15%;
             top: 50px;
@@ -1044,6 +1054,16 @@ html {
       main {
         .modal {
           padding-top: 8em;
+            
+      .contain_modal {
+        margin: auto;
+        //height: 245px;
+        width: 600px;
+        height: 385px;
+        .imagen_ampliada {
+          width: 100%;
+          height: 100%;          
+        }}
           .cerrar_modal {
             right: 15%;
             top: 50px;
