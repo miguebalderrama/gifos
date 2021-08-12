@@ -458,3 +458,27 @@ document.getElementById("gustamodal").addEventListener("click", function () {
   gustados.push(favoritear);
   localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
 });
+//////////////////////////download del modal//////////////////////////////
+document.getElementById("downmodal").addEventListener("click", function () {
+console.log("presionamos  download del modal");
+//console.log(imagen_ampliada);
+fetch(document.getElementById("imagen_ampliada").src)
+  .then((response) => response.blob())
+  .then(function (myBlob) {    
+    downloadGifModal(myBlob);
+  });
+});
+
+function downloadGifModal(blob) {
+  
+  var objectURL = URL.createObjectURL(blob);
+  console.log(objectURL);
+  let tag = document.createElement("a");
+  tag.href = objectURL;
+  tag.download = `${
+    document.getElementById("titulo_modal").textContent
+  }.gif`;
+  document.body.appendChild(tag);
+  tag.click();
+  document.body.removeChild(tag);
+}
