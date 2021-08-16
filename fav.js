@@ -1,9 +1,17 @@
 var identifierfav = 0;
 let cantGifs=0;
+var corazones=0;
 /////////////////cerrar modal////////////////
 document.getElementById("cerrar_modal").addEventListener("click", function (e) {
+  
   console.log("hubo un click cerrar modal");
+  let ele = document.getElementById("gustamodal");
+while (ele.firstChild) {
+  ele.removeChild(ele.firstChild);
+}  
+  corazones=0;
   document.getElementById("modal").style = "display:none";
+  
 });
 document.getElementById("cerrar_modalfav").addEventListener("click", function (e) {
   console.log("hubo un click cerrar modal");
@@ -325,6 +333,7 @@ document.getElementById("gustamodalfav").addEventListener("click", function () {
 });
 
 document.getElementById("gustamodal").addEventListener("click", function () {
+  if (corazones==0) {    
   let favoritear = document.getElementById("gustamodal").name;
   let imgfav = document.createElement("img");
   imgfav.src = "assets/icon-fav-active.svg";
@@ -335,4 +344,41 @@ document.getElementById("gustamodal").addEventListener("click", function () {
   console.log(favoritear+"no me imprime");
   gustados.push(favoritear);
   localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+  corazones=1;
+}
+
 });
+
+//////////////////////////download del modal//////////////////////////////
+document.getElementById("downmodal").addEventListener("click", function () {
+  console.log("presionamos  download del modal");
+  //console.log(imagen_ampliada);
+  fetch(document.getElementById("imagen_ampliada").src)
+    .then((response) => response.blob())
+    .then(function (myBlob) {    
+      downloadGifModal(myBlob);
+    });
+  });
+  document.getElementById("downmodalfav").addEventListener("click", function () {
+    console.log("presionamos  download del modal");
+    //console.log(imagen_ampliada);
+    fetch(document.getElementById("imagen_ampliadafav").src)
+      .then((response) => response.blob())
+      .then(function (myBlob) {    
+        downloadGifModal(myBlob);
+      });
+    });
+  
+  function downloadGifModal(blob) {
+    
+    var objectURL = URL.createObjectURL(blob);
+    console.log(objectURL);
+    let tag = document.createElement("a");
+    tag.href = objectURL;
+    tag.download = `${
+      document.getElementById("titulo_modal").textContent
+    }.gif`;
+    document.body.appendChild(tag);
+    tag.click();
+    document.body.removeChild(tag);
+  }
