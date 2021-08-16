@@ -10,6 +10,7 @@ let letterInput = null;
 let indice = 0;
 var contBusqueda = 0;
 var gustados = new Array();
+var corazones=0;
 const trendingTagsEndpoint = 'https://api.giphy.com/v1/trending/searches';
 //////////////////////////////////////////// guardo en un objeto queda para la proxima//////////////////////
 //////////////////////////////////////////////   Si guardaba los gifs como objetos era mas rapido//////////////
@@ -382,6 +383,11 @@ document.querySelector(".form").addEventListener("click", function (e) {
 document.getElementById("cerrar_modal").addEventListener("click", function (e) {
   
   console.log("hubo un click cerrar modal");
+  let ele = document.getElementById("gustamodal");
+while (ele.firstChild) {
+  ele.removeChild(ele.firstChild);
+}  
+  corazones=0;
   document.getElementById("modal").style = "display:none";
   
 });
@@ -447,6 +453,7 @@ document.getElementById("parrafTrending").addEventListener("click", function(e) 
 
 
 document.getElementById("gustamodal").addEventListener("click", function () {
+  if(corazones==0){
   let favoritear = document.getElementById("gustamodal").name;
   let imgfav = document.createElement("img");
   imgfav.src = "assets/icon-fav-active.svg";
@@ -457,6 +464,8 @@ document.getElementById("gustamodal").addEventListener("click", function () {
   console.log(favoritear+"no me imprime");
   gustados.push(favoritear);
   localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
+  corazones=1;
+}
 });
 //////////////////////////download del modal//////////////////////////////
 document.getElementById("downmodal").addEventListener("click", function () {
