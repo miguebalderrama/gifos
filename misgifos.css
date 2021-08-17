@@ -1371,7 +1371,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     top: 0px;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: var(--verMas);
     padding-top: 15em;
   }
   body main .modal .contain_modal {
