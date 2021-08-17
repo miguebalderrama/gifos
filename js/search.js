@@ -12,9 +12,7 @@ var contBusqueda = 0;
 var gustados = new Array();
 var corazones=0;
 const trendingTagsEndpoint = 'https://api.giphy.com/v1/trending/searches';
-//////////////////////////////////////////// guardo en un objeto queda para la proxima//////////////////////
-//////////////////////////////////////////////   Si guardaba los gifs como objetos era mas rapido//////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 let arrFavoriteGifs = [];
 const addToFav = (gif, username, title) => {
 	let objGif = {
@@ -24,13 +22,10 @@ const addToFav = (gif, username, title) => {
 	};
 
 	arrFavoriteGifs.push(objGif);
-
-	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));
-	
+	localStorage.setItem('FavoriteGifs', JSON.stringify(arrFavoriteGifs));	
 };
 ///////////////////////VOy a cargar mi local storage////////////////////
 var record = JSON.parse(localStorage.getItem("favoritosLocal"));
-console.log("Que hay en mi record??" + record);
 gustados = record;
 if (gustados == null) {
  gustados = new Array();
@@ -42,10 +37,8 @@ if (gustados == null) {
 
 tags.addEventListener("input", () => {
   let url = `https://api.giphy.com/v1/tags/related/${letterInput}?api_key=${apiKey}&lang=es&limit=8`;
-  console.log("La tecla presionada fue " + tags.value);
   letterInput = tags.value;
-  if (letterInput == 0) {
-    console.log("campos vacio");
+  if (letterInput == 0) {   
     document.getElementById("lupon").setAttribute("style","visibility: hidden");
     for (let flag = 0; flag < indice; flag++) {
       var d = document.getElementById("busqueda");
@@ -57,11 +50,9 @@ tags.addEventListener("input", () => {
       .getElementById("inpu")
       .setAttribute("style", "border-bottom: none");
   }
-  if (letterInput.length > 2) {
+  if (letterInput.length > 1) {
     console.log("fecheamos");
     document.getElementById("inpu").setAttribute("style", "border-bottom: solid 2px rgb(167, 167, 167)");
-    //document.getElementById("inpu").setAttribute("style", `background: url("..//assets/icon-search.svg") left no-repeat`);
-    //let imgfavs = document.createElement("img");
     document.getElementById("lupon").setAttribute("style","visibility: visible");
     
     
@@ -74,8 +65,7 @@ tags.addEventListener("input", () => {
           d.removeChild(d_nested);
         }
         indice = 0;
-        json.data.forEach((element) => {
-          console.log(element.name);
+        json.data.forEach((element) => {         
           let div = document.createElement("div");
           div.innerText = element.name;
           div.setAttribute("class", "sug");
@@ -86,13 +76,9 @@ tags.addEventListener("input", () => {
         });
       })
       .catch((error) => (document.body.appendChild = error));
-  }
-  {
-    console.log("todavia nada");
-  }
+  }  
 });
 
-//////////////////////////////////
 //////////////////////////////////
 
 const input = document.querySelector('input[type="search"]');
@@ -104,8 +90,7 @@ input.addEventListener("search", () => {
 
 });
 
-function searchs() {
-  console.log("The term searched for was " + input.value);
+function searchs() {  
   event.preventDefault();
   buscar = input.value;
   document.getElementById("inpu").setAttribute("style", "border-bottom: none");
@@ -123,8 +108,6 @@ function searchs() {
     .then((response) => response.json())
     .then((json) => {
       cantGifs = json.data.length;
-
-      console.log(json);
       var e = document.getElementById("imagenes");
       var child = e.lastElementChild; /////////here remove last search
       while (child) {
@@ -144,9 +127,7 @@ function searchs() {
           overlay.className = "overlay";
           let img = document.createElement("img");
           img.src = url;
-          img.id="amp"+identifier;
-         // img.setAttribute("width", "260px");
-         // img.setAttribute("height", "200px");
+          img.id="amp"+identifier;         
           img.className="cards";
           div.appendChild(img);
           div.appendChild(overlay);
@@ -177,9 +158,7 @@ function searchs() {
           iconos.appendChild(amp);
           identifier++;
         });
-      identifier = 0;
-      // document.getElementById("titleTrending").style="display:none";
-      // document.getElementById("parrafTrending").style="display:none";
+      identifier = 0;      
       let titleSearch = document.getElementById("titleSearchs");
       titleSearch.style = "display.block";
       titleSearch.textContent = buscar;
@@ -187,34 +166,28 @@ function searchs() {
         .map((data) => data.title)
         .forEach((title) => {
           document.getElementById("titulo" + identifier).textContent = title;
-          identifier++;
-          console.log(title);
+          identifier++;          
         });
       identifier = 0;
       json.data
         .map((user) => user.username)
         .forEach((username) => {
           document.getElementById("user" + identifier).textContent = username;
-          identifier++;
-          console.log(username);
+          identifier++;          
         });
       identifier = 0;
       json.data
         .map((data) => data.images.downsized_large.url)
         .forEach((urlorigin) => {
-          document.getElementById("download" + identifier).src = urlorigin;
-          //document.getElementById("download"+identifier).download="tuGifo.gif"
+          document.getElementById("download" + identifier).src = urlorigin;         
           document.getElementById("download" + identifier).target = "_blank";
-
-          identifier++;
-          //console.log(title);
+          identifier++;         
         });
       identifier = 0;
       //////////////////// prueba ids gifs /////////////////////////////
       json.data.map((data) => data.id).forEach((id) => {
           document.getElementById("favoritos" + identifier).name = id;
-          identifier++;
-          console.log(id);
+          identifier++;         
         });
       identifier = 0;
 
@@ -235,7 +208,6 @@ function searchs() {
         }
       }
       if (cantGifs == 0) {
-        console.log("no hay nada que mostrar");
         let imgouch = document.createElement("img");
         imgouch.src = "assets/icon-busqueda-sin-resultado.svg";
         imgouch.setAttribute("width", "260px");
@@ -251,12 +223,8 @@ function searchs() {
     .catch((error) => (document.body.appendChild = error));
 }
 //////////////////////////////////////////////
-
-// let over= document.querySelector('.overlay')
 document.querySelector(".imagenes").addEventListener("click", function (e) {
-  console.log("hubo un click");
-  console.log(e.target.id);
-  if (e.target && e.target.matches("a.amp")) {
+   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");
     console.log(e.target);
     document.getElementById("modal").style = "display:block";
@@ -366,8 +334,7 @@ document.getElementById("boton_ver_mas").addEventListener("click", function () {
 });
 /////////////////////////buscamos las sugerencias////////////
 document.querySelector(".form").addEventListener("click", function (e) {
-  let sugess = 0;
-  console.log("hubo un click");
+  let sugess = 0;  
   if (e.target && e.target.matches("div.sug")) {
     console.log("presionamos alguna sugerencia");
     console.log(e.target.id);
@@ -408,9 +375,7 @@ document.getElementById("lupon").addEventListener("click", function() {
 const getTrendingTags = async () => {
 	await fetch(`${trendingTagsEndpoint}?api_key=${apiKey}`)
 		.then((response) => response.json())
-		.then((trendingTags) => {
-			console.log(trendingTags);
-      console.log("Estas son las etiquetas de tendecias");
+		.then((trendingTags) => {			
 		mostrarTags(trendingTags);
 		})
 		.catch((err) => console.log(err));
@@ -418,8 +383,7 @@ const getTrendingTags = async () => {
 
 getTrendingTags();
 
-function mostrarTags(trendingTags){
-      console.log(trendingTags);
+function mostrarTags(trendingTags){      
   for (let index = 0; index < 5; index++) {
     let wordp=document.createElement("span");
     wordp.style="cursor:pointer";
@@ -439,8 +403,7 @@ function mostrarTags(trendingTags){
 
 document.getElementById("parrafTrending").addEventListener("click", function(e) {
   
-  let suggesWord = document.getElementById(e.target.id).innerText;
-    console.log(suggesWord);
+  let suggesWord = document.getElementById(e.target.id).innerText;   
     let cadenaCorregida = suggesWord.substring(0, suggesWord.length - 2);
     document.querySelector('input[type="search"]').value = cadenaCorregida;
     document.getElementById("lupon").setAttribute("style","visibility: hidden");///que onda

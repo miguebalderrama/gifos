@@ -31,13 +31,11 @@ fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=5`)
       .map((gif) => gif.images.original.url)
       .forEach((url) => {
         arraygifs[count] = url;
-        count++;
-        console.log(arraygifs.length);
+        count++;        
       });
     count = 0;
     json.data.map((data) => data.title).forEach((title) => {
-        arrayTitle[count] = title;
-        console.log(arrayTitle[count]);
+        arrayTitle[count] = title;       
         count++;
       });
     count = 0;
@@ -67,7 +65,7 @@ fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=5`)
     }
   })
   .catch((error) => (document.body.appendChild = error));
-console.log(arraygifs.length);
+
 
 ////////////////////////////////////////////////////////////////////////
 // Carousel de GIFS
@@ -143,8 +141,7 @@ function atras() {
       document.getElementById("favtrend" + i).name=arrayId[i + counti ];
       
     }
-  }
-  console.log(counti);
+  }  
   for (let a = 0; a < 3; a++) {
     if(arrayLike.find(element => element == (document.getElementById("favtrend"+a).name))){
       if(a==0){
@@ -193,7 +190,6 @@ function adelante() {
       document.getElementById("favtrend" + i).name=arrayId[i + counti ];
     }
   }
-  console.log(counti);
   for (let a = 0; a < 3; a++) {
   if(arrayLike.find(element => element == (document.getElementById("favtrend"+a).name))){
     if(a==0){

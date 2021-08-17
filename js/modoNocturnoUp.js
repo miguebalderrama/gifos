@@ -41,23 +41,13 @@ const setLocalStorageTheme = () => {
 	document.documentElement.style.setProperty('--verMasFuenteHover', '#000000');
 	document.documentElement.style.setProperty('--crearGifoHover', 'url("assets/CTA-crear-gifo-hover-modo-noc.svg")');
 	
-	
-	//	$burgerMenu.src = 'assets/burger-modo-noct.svg';
-	//	$navbarSearchBtn.src = 'assets/icon-search-mod-noc.svg';
-	//	$navbarSearchCloseBtn.src = 'assets/close-modo-noct.svg';
-	//	$searchBtn.src = 'assets/icon-search-mod-noc.svg';
-	//	$searchCloseBtn.src = 'assets/close-modo-noct.svg';
-	//	$previousBtn.src = 'assets/button-slider-left-md-noct.svg';
-	//	$nextBtn.src = 'assets/button-slider-right-md-noct.svg';
-	//	$camera.src = 'assets/camara-modo-noc.svg';
-	//	$celuloide.src = 'assets/pelicula-modo-noc.svg';
 	} else {
 		document.body.classList.remove('darkMode');
 		$logo.src ='img/logo-mobile.svg';
 		$pelicula.src = 'assets/pelicula.svg';
 		$cintaUno.src = 'assets/element_cinta1.svg';
 		$cintaDos.src = 'assets/element_cinta2.svg';
-	//	$lupon.src="assets/icon-search.svg"
+	
 		$switchThemeBtn.textContent = 'Modo Nocturno';
 		document.documentElement.style.setProperty('--nombreVariable', 'url("assets/button-crear-gifo.svg")');
 		document.documentElement.style.setProperty('--lupa', 'url("assets/icon-search.svg")');
