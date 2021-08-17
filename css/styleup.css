@@ -1,12 +1,12 @@
 html {
-  --nombreVariable: url("assets/button-crear-gifo.svg");
+  --nombreVariable: url("../assets/button-crear-gifo.svg");
   --colorPrimario: #572ee5;
   --colorNav: #572ee5;
   --verMasHover: #ffffff;
   --colorVerMas: #572ee5;
   --anchoCard: "260px";
   --altoCard: "200px";
-  --crearGifoHover: url("assets/CTA-crear-gifo-hover.svg");
+  --crearGifoHover: url("../assets/CTA-crear-gifo-hover.svg");
 }
 
 * {
@@ -226,33 +226,33 @@ body footer .redes .iconitos .contain_icon_face {
   width: 20px;
   margin-left: 8px;
   height: 20px;
-  background: url("assets/icon_facebook.svg") no-repeat;
+  background: url("../assets/icon_facebook.svg") no-repeat;
 }
 
 body footer .redes .iconitos .contain_icon_face:hover {
-  background: url("assets/icon_facebook_hover.svg") no-repeat;
+  background: url("../assets/icon_facebook_hover.svg") no-repeat;
 }
 
 body footer .redes .iconitos .contain_icon_instagram {
   width: 20px;
   margin-left: 6px;
   height: 20px;
-  background: url("assets/icon_instagram.svg") no-repeat;
+  background: url("../assets/icon_instagram.svg") no-repeat;
 }
 
 body footer .redes .iconitos .contain_icon_instagram:hover {
-  background: url("assets/icon_instagram-hover.svg") no-repeat;
+  background: url("../assets/icon_instagram-hover.svg") no-repeat;
 }
 
 body footer .redes .iconitos .contain_icon_twitter {
   width: 20px;
   margin-left: 10px;
   height: 20px;
-  background: url("assets/icon-twitter.svg") no-repeat;
+  background: url("../assets/icon-twitter.svg") no-repeat;
 }
 
 body footer .redes .iconitos .contain_icon_twitter:hover {
-  background: url("assets/icon-twitter-hover.svg") no-repeat;
+  background: url("../assets/icon-twitter-hover.svg") no-repeat;
 }
 
 .input:focus {
@@ -647,10 +647,10 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
     width: 54px;
     height: 54px;
     margin-top: 10px;
-    background: url("assets/button-crear-gifo.svg") no-repeat;
+    background: url("../assets/button-crear-gifo.svg") no-repeat;
   }
   .menuppal ul li .miGifo:hover {
-    background: url("assets/CTA-crear-gifo-hover.svg") no-repeat;
+    background: url("../assets/CTA-crear-gifo-hover.svg") no-repeat;
   }
   .busqueda {
     display: -webkit-box;
@@ -1014,28 +1014,28 @@ body footer .redes .iconitos .contain_icon_twitter:hover {
     width: 20px;
     margin-left: 15px;
     height: 20px;
-    background: url("assets/icon_facebook.svg") no-repeat;
+    background: url("../assets/icon_facebook.svg") no-repeat;
   }
   body footer .redes .iconitos .contain_icon_face:hover {
-    background: url("assets/icon_facebook_hover.svg") no-repeat;
+    background: url("../assets/icon_facebook_hover.svg") no-repeat;
   }
   body footer .redes .iconitos .contain_icon_instagram {
     width: 20px;
     margin-left: 8px;
     height: 20px;
-    background: url("assets/icon_instagram.svg") no-repeat;
+    background: url("../assets/icon_instagram.svg") no-repeat;
   }
   body footer .redes .iconitos .contain_icon_instagram:hover {
-    background: url("assets/icon_instagram-hover.svg") no-repeat;
+    background: url("../assets/icon_instagram-hover.svg") no-repeat;
   }
   body footer .redes .iconitos .contain_icon_twitter {
     width: 20px;
     margin-left: 15px;
     height: 20px;
-    background: url("assets/icon-twitter.svg") no-repeat;
+    background: url("../assets/icon-twitter.svg") no-repeat;
   }
   body footer .redes .iconitos .contain_icon_twitter:hover {
-    background: url("assets/icon-twitter-hover.svg") no-repeat;
+    background: url("../assets/icon-twitter-hover.svg") no-repeat;
   }
   body footer .pie_footer {
     padding-right: 150px;

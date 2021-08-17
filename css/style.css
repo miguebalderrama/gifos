@@ -1237,7 +1237,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
     width: 54px;
     height: 54px;
     margin-top: 10px;
-    background: var(--nombreVariable) no-repeat;
+    background: url("../assets/button-crear-gifo.svg") no-repeat;
   }
   .menuppal ul li .miGifo:hover {
     background: url("../assets/CTA-crear-gifo-hover.svg") no-repeat;

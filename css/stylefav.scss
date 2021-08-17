@@ -1,5 +1,5 @@
 html {
-  --nombreVariable: url("assets/button-crear-gifo.svg");
+  --nombreVariable: url("../assets/button-crear-gifo.svg");
   --colorPrimario: #572ee5;
   --colorNav: #572ee5;
   --verMasHover: #ffffff;
@@ -7,8 +7,8 @@ html {
   --colorVerMas: #572ee5;
   --anchoCard: "260px";
   --altoCard: "200px";
-  --crearGifoHover: url("assets/CTA-crear-gifo-hover.svg");
-  --close: url("assets/close.svg")
+  --crearGifoHover: url("../assets/CTA-crear-gifo-hover.svg");
+  --close: url("../assets/close.svg")
 }
 * {
     margin: 0;
@@ -150,7 +150,7 @@ html {
           }
           input::-webkit-search-cancel-button {
             -webkit-appearance: none;
-            background: url("assets/close.svg") no-repeat;
+            background: url("../assets/close.svg") no-repeat;
             width: 14px;
             height: 14px;
   
@@ -232,13 +232,13 @@ html {
                 width: 100px;
                 height: 32px;
                 .down {
-                  background: url("assets/icon-download.svg") no-repeat;
+                  background: url("../assets/icon-download.svg") no-repeat;
                   width: 32px;
                   height: 32px;
                   cursor: pointer;
                 }
                 .fav {
-                  background: url("assets/icon-trash-normal.svg");
+                  background: url("../assets/icon-trash-normal.svg");
                   background-repeat: no-repeat;
                   width: 32px;
                   height: 32px;
@@ -249,19 +249,19 @@ html {
                   }
                 }
                 .amp {
-                  background: url("assets/icon-max-normal.svg") no-repeat;
+                  background: url("../assets/icon-max-normal.svg") no-repeat;
                   width: 32px;
                   height: 32px;
                   cursor: pointer;
                 }
                 .down:hover {
-                  background: url("assets/icon-download-hover.svg") no-repeat;
+                  background: url("../assets/icon-download-hover.svg") no-repeat;
                 }
                 .fav:hover {
-                  background: url("assets/icon-trash-hover.svg") no-repeat;
+                  background: url("../assets/icon-trash-hover.svg") no-repeat;
                 }
                 .amp:hover {
-                  background: url("assets/icon-max-hover.svg") no-repeat;
+                  background: url("../assets/icon-max-hover.svg") no-repeat;
                 }
               }
               position: absolute;
@@ -355,14 +355,14 @@ html {
   
           .down {
             display: block;
-            background: url("assets/icon-download.svg") no-repeat;
+            background: url("../assets/icon-download.svg") no-repeat;
             width: 32px;
             height: 32px;
             cursor: pointer;
           }
           .nofav {
             display: block;
-            background: url("assets/icon-trash-normal.svg");
+            background: url("../assets/icon-trash-normal.svg");
             background-repeat: no-repeat;
             width: 32px;
             height: 32px;
@@ -370,7 +370,7 @@ html {
           }
           .fav {
             display: block;
-            background: url("assets/icon-fav.svg");
+            background: url("../assets/icon-fav.svg");
             background-repeat: no-repeat;
             width: 32px;
             height: 32px;
@@ -490,13 +490,13 @@ html {
                 width: 100px;
                 height: 32px;
                 .down {
-                  background: url("assets/icon-download.svg") no-repeat;
+                  background: url("../assets/icon-download.svg") no-repeat;
                   width: 32px;
                   height: 32px;
                   cursor: pointer;
                 }
                 .fav {
-                  background: url("assets/icon-fav.svg");
+                  background: url("../assets/icon-fav.svg");
                   background-repeat: no-repeat;
                   width: 32px;
                   height: 32px;
@@ -507,19 +507,19 @@ html {
                   }
                 }
                 .amp {
-                  background: url("assets/icon-max-normal.svg") no-repeat;
+                  background: url("../assets/icon-max-normal.svg") no-repeat;
                   width: 32px;
                   height: 32px;
                   cursor: pointer;
                 }
                 .down:hover {
-                  background: url("assets/icon-download-hover.svg") no-repeat;
+                  background: url("../assets/icon-download-hover.svg") no-repeat;
                 }
                 .fav:hover {
-                  background: url("assets/icon-fav-hover.svg") no-repeat;
+                  background: url("../assets/icon-fav-hover.svg") no-repeat;
                 }
                 .amp:hover {
-                  background: url("assets/icon-max-hover.svg") no-repeat;
+                  background: url("../assets/icon-max-hover.svg") no-repeat;
                 }
               }
               position: absolute;
@@ -577,13 +577,13 @@ html {
             outline: none;
           }
           #right:hover {
-            background: url("assets/Button-Slider-right-hover.svg") no-repeat;
+            background: url("../assets/Button-Slider-right-hover.svg") no-repeat;
           }
           #left {
             display: none;
           }
           #left:hover {
-            background: url("assets/button-slider-left-hover.svg") no-repeat;
+            background: url("../assets/button-slider-left-hover.svg") no-repeat;
           }
         }
       }
@@ -614,28 +614,28 @@ html {
               width: 20px;
               margin-left: 8px;
               height: 20px;
-              background: url("assets/icon_facebook.svg") no-repeat;
+              background: url("../assets/icon_facebook.svg") no-repeat;
             }
             .contain_icon_face:hover {
-              background: url("assets/icon_facebook_hover.svg") no-repeat;
+              background: url("../assets/icon_facebook_hover.svg") no-repeat;
             }
             .contain_icon_instagram {
               width: 20px;
               margin-left: 6px;
               height: 20px;
-              background: url("assets/icon_instagram.svg") no-repeat;
+              background: url("../assets/icon_instagram.svg") no-repeat;
             }
             .contain_icon_instagram:hover {
-              background: url("assets/icon_instagram-hover.svg") no-repeat;
+              background: url("../assets/icon_instagram-hover.svg") no-repeat;
             }
             .contain_icon_twitter {
               width: 20px;
               margin-left: 10px;
               height: 20px;
-              background: url("assets/icon-twitter.svg") no-repeat;
+              background: url("../assets/icon-twitter.svg") no-repeat;
             }
             .contain_icon_twitter:hover {
-              background: url("assets/icon-twitter-hover.svg") no-repeat;
+              background: url("../assets/icon-twitter-hover.svg") no-repeat;
             }
           }
         }
@@ -944,27 +944,27 @@ html {
               display: block;
               width: 40px;
               height: 40px;
-              background: url("assets/Button-Slider-right.svg") no-repeat;
+              background: url("../assets/Button-Slider-right.svg") no-repeat;
               border: none;
               padding: 10px;
   
               outline: none;
             }
             #right:hover {
-              background: url("assets/Button-Slider-right-hover.svg") no-repeat;
+              background: url("../assets/Button-Slider-right-hover.svg") no-repeat;
             }
             #left {
               display: block;
               width: 40px;
               height: 40px;
-              background: url("assets/button-slider-left.svg") no-repeat;
+              background: url("../assets/button-slider-left.svg") no-repeat;
               border: none;
               padding: 10px;
               margin: 0px;
               outline: none;
             }
             #left:hover {
-              background: url("assets/button-slider-left-hover.svg") no-repeat;
+              background: url("../assets/button-slider-left-hover.svg") no-repeat;
             }
           }
         }
@@ -1034,7 +1034,7 @@ html {
         background: var(--nombreVariable) no-repeat;
       }
       .menuppal ul li .miGifo:hover {
-        background: url("assets/CTA-crear-gifo-hover.svg") no-repeat;
+        background: url("../assets/CTA-crear-gifo-hover.svg") no-repeat;
       }
     .imagenes {
       margin-top: 30px;
@@ -1174,26 +1174,26 @@ html {
               display: block;
               width: 40px;
               height: 40px;
-              background: url("assets/Button-Slider-right.svg") no-repeat;
+              background: url("../assets/Button-Slider-right.svg") no-repeat;
               border: none;
               padding: 10px;
               outline: none;
             }
             #right:hover {
-              background: url("assets/Button-Slider-right-hover.svg") no-repeat;
+              background: url("../assets/Button-Slider-right-hover.svg") no-repeat;
             }
             #left {
               display: block;
               width: 40px;
               height: 40px;
-              background: url("assets/button-slider-left.svg") no-repeat;
+              background: url("../assets/button-slider-left.svg") no-repeat;
               border: none;
               padding: 10px;
               margin: 0px;
               outline: none;
             }
             #left:hover {
-              background: url("assets/button-slider-left-hover.svg") no-repeat;
+              background: url("../assets/button-slider-left-hover.svg") no-repeat;
             }
           }
         }
@@ -1258,14 +1258,14 @@ html {
   
             .down {
               display: block;
-              background: url("assets/icon-download.svg") no-repeat;
+              background: url("../assets/icon-download.svg") no-repeat;
               width: 32px;
               height: 32px;
               cursor: pointer;
             }
             .fav {
               display: block;
-              background: url("assets/icon-fav.svg");
+              background: url("../assets/icon-fav.svg");
               background-repeat: no-repeat;
               width: 32px;
               height: 32px;
@@ -1276,7 +1276,7 @@ html {
             position: absolute;
             right: 15%;
             top: 76px;
-            background: url("assets/close.svg") no-repeat;
+            background: url("../assets/close.svg") no-repeat;
             width: 1em;
             height: 1em;
             z-index: 2000;
