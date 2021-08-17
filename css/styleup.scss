@@ -509,10 +509,11 @@ body {
     width: 54px;
     height: 54px;
     margin-top: 10px;
-    background: url("../assets/button-crear-gifo.svg") no-repeat;
+    background: url("../assets/CTA-crear-gifo-active.svg") no-repeat;
+    
   }
   .menuppal ul li .miGifo:hover {
-    background: url("../assets/CTA-crear-gifo-hover.svg") no-repeat;
+    background: url("../assets/CTA-crear-gifo-active.svg") no-repeat;
   }
   .busqueda {
     display: flex;
