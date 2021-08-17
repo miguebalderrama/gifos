@@ -145,15 +145,12 @@ function atras() {
   for (let a = 0; a < 3; a++) {
     if(arrayLike.find(element => element == (document.getElementById("favtrend"+a).name))){
       if(a==0){
-    console.log("hay un gustado en card 0")
-    favtrend0=1;
+        favtrend0=1;
   }
-  if(a==1){
-    console.log("hay un gustado en card 1")
+  if(a==1){   
     favtrend1=1;
   }
-  if(a==2){
-    console.log("hay un gustado en card 2")
+  if(a==2){    
     favtrend2=1;
   }
     let imgfavs = document.createElement("img");
@@ -192,16 +189,13 @@ function adelante() {
   }
   for (let a = 0; a < 3; a++) {
   if(arrayLike.find(element => element == (document.getElementById("favtrend"+a).name))){
-    if(a==0){
-  console.log("hay un gustado en card 0")
+    if(a==0){  
   favtrend0=1;
 }
-if(a==1){
-  console.log("hay un gustado en card 1")
+if(a==1){  
   favtrend1=1;
 }
-if(a==2){
-  console.log("hay un gustado en card 2")
+if(a==2){ 
   favtrend2=1;
 }
   let imgfavs = document.createElement("img");
@@ -233,8 +227,7 @@ downtrenddos.addEventListener("click", function (e){
 
 var amptrenddos=document.getElementById("amptrend2")
 amptrenddos.addEventListener("click", function (e){
-  e.preventDefault();
-  console.log("hice click en el modal 2")
+  e.preventDefault();  
   let urlmodal = document.getElementById("downtrend2").src;
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
@@ -247,8 +240,7 @@ amptrenddos.addEventListener("click", function (e){
 })
 var amptrenduno=document.getElementById("amptrend1")
 amptrenduno.addEventListener("click", function (e){
-  e.preventDefault();
-  console.log("hice click en el modal 1")
+  e.preventDefault();  
   let urlmodal = document.getElementById("downtrend1").src;
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;
@@ -261,8 +253,7 @@ amptrenduno.addEventListener("click", function (e){
 })
 var amptrendcero=document.getElementById("amptrend0")
 amptrendcero.addEventListener("click", function (e){
-  e.preventDefault();
-  console.log("hice click en el modal 0")
+  e.preventDefault();  
   let urlmodal = document.getElementById("downtrend0").src;
   document.getElementById("modal").style = "display:block";
   document.getElementById("imagen_ampliada").src = urlmodal;

@@ -4,8 +4,6 @@ var corazones=0;
 
 /////////////////cerrar modal////////////////
 document.getElementById("cerrar_modal").addEventListener("click", function (e) {
-  
-  console.log("hubo un click cerrar modal");
   let ele = document.getElementById("gustamodal");
 while (ele.firstChild) {
   ele.removeChild(ele.firstChild);
@@ -14,8 +12,7 @@ while (ele.firstChild) {
   document.getElementById("modal").style = "display:none";
   
 });
-document.getElementById("cerrar_modalfav").addEventListener("click", function (e) {
-  console.log("hubo un click cerrar modal");
+document.getElementById("cerrar_modalfav").addEventListener("click", function (e) {  
   document.getElementById("modalfav").style = "display:none";
 });
 gustados = new Array();
@@ -23,7 +20,6 @@ let recordfav = JSON.parse(localStorage.getItem("favoritosLocal"));
 gustados = recordfav;
 /////////////////////////////
 let recordgifo = JSON.parse(localStorage.getItem("misGifos"));
-console.log("Que hay en mi record??  " + recordgifo);
 misGifiados= recordgifo;
 cantGifs=misGifiados.length;///probando
 
@@ -36,8 +32,7 @@ let urlfav = `https://api.giphy.com/v1/gifs?api_key=bw24LFlb3BXkhx9uB9goI91bEaW3
 fetch(urlfav)
   .then((response) => response.json())
   .then((json) => {
-    json.data.map((data) => data.images.downsized_large.url).forEach((urlorigin) => {
-    console.log(urlorigin);
+    json.data.map((data) => data.images.downsized_large.url).forEach((urlorigin) => {    
     let div = document.createElement("div");
           div.id = identifiergif;
           div.className = "divi";
@@ -84,27 +79,23 @@ fetch(urlfav)
       .map((data) => data.title)
       .forEach((title) => {
         document.getElementById("titulo" + identifiergif).textContent = title;
-        identifiergif++;
-        console.log(title);
+        identifiergif++;        
       });
     identifiergif = 0;
     json.data
       .map((user) => user.username)
       .forEach((username) => {
         document.getElementById("user" + identifiergif).textContent = username;
-        identifiergif++;
-        console.log(username);
+        identifiergif++;       
       });
     identifiergif = 0;
     json.data
       .map((data) => data.images.downsized_large.url)
       .forEach((urlorigin) => {
-        document.getElementById("download" + identifiergif).src = urlorigin;
-        //document.getElementById("download"+identifier).download="tuGifo.gif"
+        document.getElementById("download" + identifiergif).src = urlorigin;        
         document.getElementById("download" + identifiergif).target = "_blank";
-
         identifiergif++;
-        //console.log(title);
+        
       });
     identifiergif = 0;
     //////////////////// prueba ids gifs /////////////////////////////
@@ -112,8 +103,7 @@ fetch(urlfav)
       .map((data) => data.id)
       .forEach((id) => {
         document.getElementById("favoritos" + identifiergif).name = id;
-        identifiergif++;
-        console.log(id);
+        identifiergif++;        
       });
     identifiergif = 0;
   
@@ -132,21 +122,14 @@ fetch(urlfav)
         element.style = "display:block";
         document.getElementById("boton_ver_mas").style = "display:block";
       }
-    }
-    
-    
-  
+    } 
 })
   .catch((error) => (document.body.appendChild = error));
 
-
   //////////////////////detectamos eventos sobre cards/////////////////
 
-document.querySelector(".imagenes").addEventListener("click", function (e) {
-  console.log("hubo un click");
-  if (e.target && e.target.matches("a.amp")) {
-    console.log("presionamos algun ampliar");
-    console.log(e.target);
+document.querySelector(".imagenes").addEventListener("click", function (e) {  
+  if (e.target && e.target.matches("a.amp")) {   
     document.getElementById("modalfav").style = "display:block";
     let identifi = e.target.id.substring(7, e.target.id.length);
     console.log(identifi);
@@ -155,13 +138,11 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     let usermodal = document.getElementById("user" + identifi).textContent;
     document.getElementById("titulo_modalfav").textContent=titlemodal;
     document.getElementById("usuario_modalfav").textContent=usermodal;
-    console.log(urlmodal);
+    
     document.getElementById("imagen_ampliadafav").src = urlmodal;
     document.getElementById("imagen_ampliadafav").name = identifi;
   }
   if (e.target && e.target.matches("img.cards")) {//////////amplia card al presionar sin overlay
-    console.log("presionamos alguna imagen");
-    console.log(e.target);
     document.getElementById("modalfav").style = "display:block";
     let identifi = e.target.id.substring(3, e.target.id.length);
     console.log(identifi);
@@ -169,14 +150,11 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
     document.getElementById("titulo_modalfav").textContent=titlemodal;
-    document.getElementById("usuario_modalfav").textContent=usermodal;
-    console.log(urlmodal);
+    document.getElementById("usuario_modalfav").textContent=usermodal;    
     document.getElementById("imagen_ampliadafav").src = urlmodal;
     document.getElementById("imagen_ampliadafav").name = identifi;
   }
-  if (e.target && e.target.matches("a.down")) {
-    console.log("presionamos algun download");
-    console.log(e.target.id);
+  if (e.target && e.target.matches("a.down")) {   
     fetch(document.getElementById(e.target.id).src)
       .then((response) => response.blob())
       .then(function (myBlob) {
@@ -184,32 +162,18 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
       });
   }
   if (e.target && e.target.matches("a.fav")) {
-    console.log("presionamos algun favoritos");
-    console.log(e.target.id);
+    console.log("presionamos algun favoritos");   
     let trashear = document.getElementById(e.target.id).name;
-    //let imgfav = document.createElement("img");
-    //imgfav.src = "assets/icon-trash-hover.svg";
-    //imgfav.setAttribute("width", "18px");
-    //imgfav.className = "imgfavs";
-    //document.getElementById(e.target.id).appendChild(imgfav);
-    //document.getElementById("favoritos"+e.target.id).remove;
-    console.log("Elimine este gif"+trashear);
     let element = trashear;
     let idx = misGifiados.indexOf(element);
-    misGifiados.splice(idx,1);
-    console.log(misGifiados);
-    console.log("eliminamos este "+idx);
+    misGifiados.splice(idx,1);    
     localStorage.setItem("misGifos", JSON.stringify(misGifiados));
 
     ///////////////////////////////////////////////////////////////////
 
      recordgifo = JSON.parse(localStorage.getItem("misGifos"));
-    console.log("Que hay en mi record??  " + recordgifo);
-    
-    
-    misGifiados = recordgifo;
-     cantGifs=misGifiados.length;
-    console.log("tenemos estos gustados "+misGifiados.length);
+     misGifiados = recordgifo;
+     cantGifs=misGifiados.length;    
     if (misGifiados == null) {
       misGifiados = new Array();
     }
@@ -227,8 +191,7 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
 
 
 function downloadGifos(blob, target) {
-  let identifier = target.substring(8, target.length);
-  console.log("user"+identifier);
+  let identifier = target.substring(8, target.length);  
   var objectURL = URL.createObjectURL(blob);
   console.log(objectURL);
   let tags = document.createElement("a");
@@ -240,20 +203,17 @@ function downloadGifos(blob, target) {
 }
 
 let vermasfav=1;
-document.getElementById("boton_ver_mas").addEventListener("click", function () {
-  console.log(cantGifs);
+document.getElementById("boton_ver_mas").addEventListener("click", function () { 
   let pags = Math.trunc(cantGifs / 12);
   let bloque = 12;
   let limits = bloque + bloque * vermasfav;
-  if (vermasfav < pags) {
-    console.log(pags);
+  if (vermasfav < pags) {    
     for (let index = bloque * vermasfav; index < limits; index++) {
       const element = document.getElementById(index);
       element.style = "display:block";
       document.getElementById("boton_ver_mas").style = "display:block";
     }
-    vermasfav++;
-    console.log(vermasfav);
+    vermasfav++;   
   } else {
     for (let index = bloque * vermasfav; index < cantGifs; index++) {
       const element = document.getElementById(index);
@@ -266,30 +226,21 @@ document.getElementById("boton_ver_mas").addEventListener("click", function () {
 ////////////////eliminar desde el modal////////
 
 document.getElementById("gustamodalfav").addEventListener("click", function () {
-  
-  console.log("presionamos algun eliminar");
-    
-  let favoritear = document.getElementById("gustamodalfav").name;
-    
-  console.log("Elimine este gif"+favoritear);
+  let favoritear = document.getElementById("gustamodalfav").name;    
   let element = favoritear;
   let idx = misGifiados.indexOf(element);
-  misGifiados.splice(idx,1);
-  console.log(misGifiados);
-  console.log("eliminamos este "+idx);
+  misGifiados.splice(idx,1); 
   localStorage.setItem("misGifos", JSON.stringify(misGifiados));
 
   ///////////////////////////////////////////////////////////////////
 
-   recordfa = JSON.parse(localStorage.getItem("misGifos"));
-  console.log("Que hay en mi record??  " + recordfa);
+   recordfa = JSON.parse(localStorage.getItem("misGifos")); 
    recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
     return recordfa.indexOf(valor) === indice;
   }
   )
   misGifiados = recordfav;
-   cantGifs=misGifiados.length;
-  console.log("tenemos estos gustados "+misGifiados.length);
+   cantGifs=misGifiados.length; 
   if (misGifiados == null) {
     misGifiados = new Array();
   }
@@ -317,8 +268,7 @@ document.getElementById("gustamodal").addEventListener("click", function () {
   imgfav.setAttribute("width", "18px");
   imgfav.style="margin: 8px 0 0 7px";
   imgfav.className = "imgfavs";
-  document.getElementById("gustamodal").appendChild(imgfav);
-  console.log(favoritear+"no me imprime");
+  document.getElementById("gustamodal").appendChild(imgfav); 
   gustados.push(favoritear);
   localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
   corazones=1;
@@ -326,7 +276,6 @@ document.getElementById("gustamodal").addEventListener("click", function () {
 });
 //////////////////////////download del modal//////////////////////////////
 document.getElementById("downmodal").addEventListener("click", function () {
-console.log("presionamos  download del modal");
 //console.log(imagen_ampliada);
 fetch(document.getElementById("imagen_ampliada").src)
   .then((response) => response.blob())
@@ -334,8 +283,7 @@ fetch(document.getElementById("imagen_ampliada").src)
     downloadGifModal(myBlob);
   });
 });
-document.getElementById("downmodalfav").addEventListener("click", function () {
-  console.log("presionamos  download del modal");
+document.getElementById("downmodalfav").addEventListener("click", function () {  
   //console.log(imagen_ampliada);
   fetch(document.getElementById("imagen_ampliadafav").src)
     .then((response) => response.blob())
@@ -347,8 +295,7 @@ document.getElementById("downmodalfav").addEventListener("click", function () {
 
 function downloadGifModal(blob) {
   
-  var objectURL = URL.createObjectURL(blob);
-  console.log(objectURL);
+  var objectURL = URL.createObjectURL(blob);  
   let tag = document.createElement("a");
   tag.href = objectURL;
   tag.download = `${

@@ -296,9 +296,7 @@ body {
             width: 100%;
             transition: 0.5s ease;
             opacity: 0;
-            //display: flex;///////////////////////////////////////que pasa//////////
-            //justify-content: center;
-            //align-content: space-between;
+           
             flex-direction: column-reverse;
             justify-content: flex-start;
 
@@ -683,7 +681,8 @@ body {
   background-color: none;
 }
 ._layer {
-  background: #572ee5;
+ // background: #572ee5;
+ background-color:  var(--colorPrimario);
   margin-bottom: 4px;
   border-radius: 2px;
   width: 15px;

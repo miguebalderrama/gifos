@@ -117,18 +117,13 @@ document.getElementById("start").addEventListener("click",function getStreamAndR
   uno.style.backgroundColor = "white";
   uno.style.color = "#572ee5";
  }) }
- if(grabacion==2){
-   // document.querySelector("h1").innerHTML =
-   // "Esperando para la grabacion del GIF...";
+ if(grabacion==2){   
   recorder = RecordRTC(miVideo.srcObject, {
     type: "gif",
     frameRate: 1,
     quality: 10,
     width: 480,
-    hidden: 240,
-   // onGifRecordingStarted: function () {
-   //   document.querySelector("h1").innerHTML = "Gif record iniciado.";
-   // },
+    hidden: 240,   
    
   });
 

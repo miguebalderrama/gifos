@@ -835,7 +835,7 @@ body footer .contain_footer .redes .iconitos .contain_icon_twitter:hover {
 }
 
 ._layer {
-  background: #572ee5;
+  background-color: var(--colorPrimario);
   margin-bottom: 4px;
   border-radius: 2px;
   width: 15px;

@@ -21,16 +21,12 @@ document.getElementById("cerrar_modalfav").addEventListener("click", function (e
 /////////////////////////////
 gustados = new Array();
 let recordfa = JSON.parse(localStorage.getItem("favoritosLocal"));
-
-console.log("Que hay en mi record??  " + recordfa);
 let recordfav = recordfa.filter((valor, indice) => {///elimino valores repetidos
   return recordfa.indexOf(valor) === indice;
 }
 )
 gustados = recordfav;
 cantGifs=gustados.length;
-console.log("tenemos estos gustados "+gustados.length);
-
 if (gustados == null) {
   gustados = new Array();
 }
@@ -43,8 +39,7 @@ function pintar(){
   .then((json) => {
     json.data
       .map((data) => data.images.downsized_large.url)
-      .forEach((urlorigin) => {
-        console.log(urlorigin);
+      .forEach((urlorigin) => {       
         let div = document.createElement("div");
         div.id = identifierfav;
         div.className = "divi";
@@ -90,16 +85,14 @@ function pintar(){
       .map((data) => data.title)
       .forEach((title) => {
         document.getElementById("titulo" + identifierfav).textContent = title;
-        identifierfav++;
-        console.log(title);
+        identifierfav++;        
       });
     identifierfav = 0;
     json.data
       .map((user) => user.username)
       .forEach((username) => {
         document.getElementById("user" + identifierfav).textContent = username;
-        identifierfav++;
-        console.log(username);
+        identifierfav++;        
       });
     identifierfav = 0;
     json.data
@@ -118,8 +111,7 @@ function pintar(){
       .map((data) => data.id)
       .forEach((id) => {
         document.getElementById("favoritos" + identifierfav).name = id;
-        identifierfav++;
-        console.log(id);
+        identifierfav++;        
       });
     identifierfav = 0;
   
@@ -169,7 +161,6 @@ pintar();
 ////////////////////////7 boton ver mas//////////
 let vermasfav=1;
 document.getElementById("boton_ver_mas").addEventListener("click", function () {
-  console.log(cantGifs);
   let pags = Math.trunc(cantGifs / 12);
   let bloque = 12;
   let limits = bloque + bloque * vermasfav;
@@ -194,8 +185,7 @@ document.getElementById("boton_ver_mas").addEventListener("click", function () {
 
 //////////////////////detectamos eventos sobre cards/////////////////
 
-document.querySelector(".imagenes").addEventListener("click", function (e) {
-  console.log("hubo un click");
+document.querySelector(".imagenes").addEventListener("click", function (e) {  
   if (e.target && e.target.matches("a.amp")) {
     console.log("presionamos algun ampliar");
     console.log(e.target);
@@ -211,18 +201,14 @@ document.querySelector(".imagenes").addEventListener("click", function (e) {
     document.getElementById("imagen_ampliadafav").src = urlmodal;
     document.getElementById("imagen_ampliadafav").name = identifi;
   }
-  if (e.target && e.target.matches("img.cards")) {
-    console.log("presionamos alguna imagen");
-    console.log(e.target);
+  if (e.target && e.target.matches("img.cards")) {       
     document.getElementById("modalfav").style = "display:block";
-    let identifi = e.target.id.substring(3, e.target.id.length);
-    console.log(identifi);
+    let identifi = e.target.id.substring(3, e.target.id.length);   
     let urlmodal = document.getElementById("download" + identifi).src;
     let titlemodal = document.getElementById("titulo" + identifi).textContent;
     let usermodal = document.getElementById("user" + identifi).textContent;
     document.getElementById("titulo_modalfav").textContent=titlemodal;
-    document.getElementById("usuario_modalfav").textContent=usermodal;
-    console.log(urlmodal);
+    document.getElementById("usuario_modalfav").textContent=usermodal;    
     document.getElementById("imagen_ampliadafav").src = urlmodal;
     document.getElementById("imagen_ampliadafav").name = identifi;
   }
@@ -292,18 +278,13 @@ function downloadGif(blob, target) {
 }
 
 ///////////////////////////////////////////////////////
-document.getElementById("gustamodalfav").addEventListener("click", function () {
-  
-  console.log("presionamos algun eliminar");
-    
-    let favoritear = document.getElementById("gustamodalfav").name;
-    
+document.getElementById("gustamodalfav").addEventListener("click", function () {  
+ 
+    let favoritear = document.getElementById("gustamodalfav").name;    
     console.log("Elimine este gif"+favoritear);
     let element = favoritear;
     let idx = gustados.indexOf(element);
-    gustados.splice(idx,1);
-    console.log(gustados);
-    console.log("eliminamos este "+idx);
+    gustados.splice(idx,1);    
     localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
 
     ///////////////////////////////////////////////////////////////////
@@ -315,8 +296,7 @@ document.getElementById("gustamodalfav").addEventListener("click", function () {
     }
     )
     gustados = recordfav;
-     cantGifs=gustados.length;
-    console.log("tenemos estos gustados "+gustados.length);
+     cantGifs=gustados.length;    
     if (gustados == null) {
       gustados = new Array();
     }
@@ -340,8 +320,7 @@ document.getElementById("gustamodal").addEventListener("click", function () {
   imgfav.setAttribute("width", "18px");
   imgfav.style="margin: 8px 0 0 7px";
   imgfav.className = "imgfavs";
-  document.getElementById("gustamodal").appendChild(imgfav);
-  console.log(favoritear+"no me imprime");
+  document.getElementById("gustamodal").appendChild(imgfav);  
   gustados.push(favoritear);
   localStorage.setItem("favoritosLocal", JSON.stringify(gustados));
   corazones=1;
@@ -351,8 +330,7 @@ document.getElementById("gustamodal").addEventListener("click", function () {
 
 //////////////////////////download del modal//////////////////////////////
 document.getElementById("downmodal").addEventListener("click", function () {
-  console.log("presionamos  download del modal");
-  //console.log(imagen_ampliada);
+  
   fetch(document.getElementById("imagen_ampliada").src)
     .then((response) => response.blob())
     .then(function (myBlob) {    
@@ -360,8 +338,7 @@ document.getElementById("downmodal").addEventListener("click", function () {
     });
   });
   document.getElementById("downmodalfav").addEventListener("click", function () {
-    console.log("presionamos  download del modal");
-    //console.log(imagen_ampliada);
+       //console.log(imagen_ampliada);
     fetch(document.getElementById("imagen_ampliadafav").src)
       .then((response) => response.blob())
       .then(function (myBlob) {    
@@ -371,8 +348,7 @@ document.getElementById("downmodal").addEventListener("click", function () {
   
   function downloadGifModal(blob) {
     
-    var objectURL = URL.createObjectURL(blob);
-    console.log(objectURL);
+    var objectURL = URL.createObjectURL(blob);    
     let tag = document.createElement("a");
     tag.href = objectURL;
     tag.download = `${
