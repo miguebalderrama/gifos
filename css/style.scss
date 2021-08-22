@@ -143,10 +143,11 @@ body {
             //background-size: 20px;
             opacity: 0.9;
             //padding-left: 25px;
-            background: var(--lupa) right no-repeat;
+//background: var(--lupa) right no-repeat;
           }
           .input:focus {
             background: none;
+
           }
 
           input::-webkit-search-decoration {
