@@ -145,7 +145,7 @@ body {
             //padding-left: 25px;
             //background: var(--lupa) right no-repeat;
           }
-          .input:focus {
+          .input:hover {
             background: none;
           }
 
@@ -153,7 +153,7 @@ body {
             display: none;
           }
           input::-webkit-search-cancel-button {
-            -webkit-appearance: none;
+           // -webkit-appearance: none;
             background: var(--close) no-repeat;
             width: 14px;
             height: 14px;
@@ -877,6 +877,10 @@ body {
           .input {
             width: 80%;
           }
+          .input:hover{
+            background: none;
+          }
+          
         }
         .tittle {
           h1 {

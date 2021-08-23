@@ -454,3 +454,9 @@ function downloadGifModal(blob) {
   tag.click();
   document.body.removeChild(tag);
 }
+
+let test = document.getElementById("inpu");
+test.addEventListener("mouseenter", function( event ) {
+  // highlight the mouseenter target
+  event.target.style.background = "none";
+});
